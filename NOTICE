@@ -25,3 +25,6 @@ International License (CC BY 4.0, https://creativecommons.org/licenses/by/4.0/):
   (scripts/build_hf_repos.py). All other files are unchanged.
 
 No endorsement by the original authors is implied.
+
+Evaluation data: FLORES-200 (NLLB Team et al., CC BY-SA 4.0) is downloaded by
+scripts/flores.py for scoring only; it is not redistributed here.

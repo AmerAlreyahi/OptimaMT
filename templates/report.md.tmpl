@@ -5,24 +5,25 @@ All numbers come from the scripts in this repository; raw data in [results/](res
 
 ## Summary
 
-| | Result |
-|---|---|
-| Change | Output projection (`Transpose` → `DequantizeLinear`) moved out of the merged decoder's two branches, in front of the `If` |
-| Pairs | $pairs |
-| Identical tokens | $identical_runs / $all_runs runs ($identical_tokens tokens; every pair, both session settings) |
-| Memory after load, `disable_quant_qdq = 1`, Linux | $qdq_off_v1_med → $qdq_off_v2_med MiB (median), $qdq_off_pct_min–$qdq_off_pct_max % less |
-| Memory after load, defaults, Linux | $default_v1_med → $default_v2_med MiB (median), $default_pct_min–$default_pct_max % less |
-| Memory after load, `disable_quant_qdq = 1`, Windows | $win_qdq_off_v1_med → $win_qdq_off_v2_med MiB (median), $win_qdq_off_pct_min–$win_qdq_off_pct_max % less |
-| Memory after load, defaults, Windows | $win_default_v1_med → $win_default_v2_med MiB (median), $win_default_pct_min–$win_default_pct_max % less |
-| Decoder speed (Linux) | unchanged: $ms_v1_qdq_off → $ms_v2_qdq_off ms/step (qdq off), $ms_v1_default → $ms_v2_default ms/step (defaults) |
+ONNX Runtime's `session.disable_quant_qdq = 1` decodes these models $speedup× faster than its defaults. With the
+original int8 exports it also folds the output layer to float twice, once per decoder branch. $name moves that
+subgraph in front of the branches, so it is folded once.
 
-`disable_quant_qdq = 1` decodes $speedup× faster than the defaults on Linux, $win_speedup× on Windows. With $name it
-needs about the memory the original needs with the defaults (Linux: $load_v2_qdq_off vs $load_v1_default MiB).
+| | Linux | Windows |
+|---|---:|---:|
+| ms/step, defaults → fast mode (median, 5 pairs) | $ms_v1_default → $ms_v2_qdq_off | $win_ms_v1_default → $win_ms_v2_qdq_off |
+| Fast mode memory, original → $name (median, $pairs pairs) | $qdq_off_v1_med → $qdq_off_v2_med MiB | $win_qdq_off_v1_med → $win_qdq_off_v2_med MiB |
+| Fast mode saving per pair | $qdq_off_pct_min–$qdq_off_pct_max % | $win_qdq_off_pct_min–$win_qdq_off_pct_max % |
+| Defaults memory, original → $name | $default_v1_med → $default_v2_med MiB | $win_default_v1_med → $win_default_v2_med MiB |
+| Speed change from the rebuild | none ($ms_v1_qdq_off → $ms_v2_qdq_off ms) | none ($win_ms_v1_qdq_off → $win_ms_v2_qdq_off ms) |
+
+Identical output: $identical_runs / $all_runs short-sentence runs; FLORES-200 devtest: $flores_summary.
+Browser (transformers.js, onnxruntime-web): $browser_summary.
 
 ## 1. The finding
 
-The merged decoder (Hugging Face Optimum) is one `If` node on `$g_cond`: branch `$g_b2` runs the first step,
-`$g_b1` the later ones. Each branch builds the same output projection from the same initializer
+The merged decoder (Hugging Face Optimum) is one `If` node on `$g_cond`: branch `$g_b1` runs the first step,
+`$g_b2` the later ones. Each branch builds the same output projection from the same initializer
 ($g_pair shown):
 
 | Node | Inputs | Output |
@@ -41,19 +42,7 @@ $g_held_table
 - Defaults: the `DequantizeLinear` stays; the transposed 8-bit matrix is folded per branch: two copies vs one.
 - This is constant folding of a duplicated subgraph, not `MatMulInteger` pre-packing.
 
-```mermaid
-flowchart LR
-  subgraph Original
-    W1["weight (8-bit)"] --> IF1{"If"}
-    IF1 --> A1["$g_b2: Transpose → DequantizeLinear → MatMul"]
-    IF1 --> B1["$g_b1: Transpose → DequantizeLinear → MatMul"]
-  end
-  subgraph $name
-    W2["weight (8-bit)"] --> T2["Transpose → DequantizeLinear"] --> IF2{"If"}
-    IF2 --> A2["$g_b2: MatMul"]
-    IF2 --> B2["$g_b1: MatMul"]
-  end
-```
+![What changed in the decoder](assets/decoder-change.svg)
 
 ## 2. Method
 
@@ -62,6 +51,8 @@ flowchart LR
 | Rebuild | [convert.py](scripts/convert.py) | Moves the two nodes before the `If`, checks both branches built the same value, runs `onnx.checker`. Output is byte-identical to the published files. |
 | Identical output | [verify.py](scripts/verify.py) | Greedy decoding of [fixed sentences](data/sentences.json), original vs rebuilt, token by token, both settings. |
 | Memory, speed | [measure.py](scripts/measure.py) | One fresh process per configuration; CPU, $threads threads, defaults or `disable_quant_qdq = 1`. |
+| Quality | [flores.py](scripts/flores.py) | FLORES-200 devtest, every pair, both settings: token ids, BLEU and chrF. |
+| Browser | [browser_test.py](tests/browser_test.py) | transformers.js in headless Chromium, 5 reference pairs. |
 
 Measurements:
 
@@ -82,6 +73,31 @@ $reference_table
 
 The load peak barely moves with `disable_quant_qdq = 1` (median $loadpeak_v1_qdq_off → $loadpeak_v2_qdq_off MiB):
 folding briefly holds intermediate copies either way. The batch peak drops $peak_pct.
+
+### FLORES-200 devtest
+
+[scripts/flores.py](scripts/flores.py): 1,012 sentences per pair, greedy, batches of 16, sacrebleu 2.5.1 (BLEU
+`13a`, `zh` for Chinese targets; chrF). Original and $name scores are listed once when equal. Scores are
+greedy-decoding scores (no beam search).
+
+<details><summary>Table: all $pairs pairs, fast mode</summary>
+
+$flores_table
+
+</details>
+
+### Browser
+
+[tests/browser_test.py](tests/browser_test.py): transformers.js 3.8.1 in headless Chromium $chromium,
+onnxruntime-web (WASM, 4 threads), 20-line batch, one fresh browser per configuration. Memory = RSS of all
+browser processes minus the RSS with a blank page (`measureUserAgentSpecificMemory` is not available in headless
+Chromium).
+
+$browser_table
+
+In the browser the saving holds in fast mode. With the defaults $name is not lighter right after loading
+(the WebAssembly heap only grows, so its size depends on the allocation pattern), but it is mostly lower after
+the batch. Fast mode is also faster in the browser, by less than in native ONNX Runtime.
 
 ### Windows
 

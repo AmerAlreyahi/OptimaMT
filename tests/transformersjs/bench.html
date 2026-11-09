@@ -1,0 +1,38 @@
+<!doctype html>
+<meta charset="utf-8">
+<title>browser benchmark</title>
+<script type="module">
+import { env, pipeline } from "/tjs/transformers.min.js";
+
+const q = new URLSearchParams(location.search);
+const pair = q.get("pair"), variant = q.get("variant"), qdqOff = q.get("qdq") === "1";
+const lines = JSON.parse(q.get("lines"));
+env.allowRemoteModels = false;
+env.allowLocalModels = true;
+env.localModelPath = `/models/${variant}/`;
+env.backends.onnx.wasm.wasmPaths = "/tjs/";
+env.backends.onnx.wasm.numThreads = 4;
+
+try {
+  const options = { dtype: "q8", device: "wasm" };
+  if (qdqOff) options.session_options = { extra: { session: { disable_quant_qdq: "1" } } };
+  const translator = await pipeline("translation", pair, options);
+  // the runner reads the browser's memory now, then lets the batch run
+  await new Promise((resolve) => { window.__continue = resolve; window.__loaded = true; });
+  const inputs = translator.tokenizer(lines, { padding: true, truncation: true });
+  const runs = [];
+  let ids;
+  for (let i = 0; i < 4; i++) {  // one warm-up, three timed
+    const t = performance.now();
+    ids = await translator.model.generate({ ...inputs, max_new_tokens: 256 });
+    const steps = ids.dims[1];
+    if (i > 0) runs.push((performance.now() - t) / steps);
+  }
+  runs.sort((a, b) => a - b);
+  window.__result = { ms_per_step: runs[1],
+                      steps: ids.dims[1], ids: Array.from(ids.data, Number).join(","),
+                      isolated: crossOriginIsolated };
+} catch (e) {
+  window.__result = { error: String(e && e.stack || e) };
+}
+</script>

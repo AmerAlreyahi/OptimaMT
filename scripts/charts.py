@@ -16,7 +16,7 @@ import matplotlib
 matplotlib.use("Agg")
 import matplotlib.pyplot as plt  # noqa: E402
 
-from common import CFG, CHARTS, HF, OSES, REFERENCE, RESULTS, ROOT, repo_id, sources, tagline  # noqa: E402
+from common import CFG, CHARTS, HF, OSES, REFERENCE, RESULTS, ROOT, repo_id, sentences, sources, tagline  # noqa: E402
 
 INK, MUTED, GRID, SURFACE = "#0b0b0b", "#52514e", "#e4e3df", "#fcfcfb"
 ORIGINAL, OURS = "#eb6834", "#2a78d6"
@@ -95,8 +95,10 @@ def saving(mems: dict) -> None:
 def page(refs: dict, mems: dict) -> None:
     """The interactive page: one self-contained HTML file, data inlined; one data set per operating system."""
     same = {(r["pair"], r["setting"]): r["identical"] == "yes" for r in read("identical.csv")}
-    data = {"name": CFG["name"], "tagline": f"{CFG['long_name']}: {tagline()}", "github": CFG["github_repo"],
-            "namespace": CFG["hf_namespace"], "os": {}}
+    data = {"name": CFG["name"], "tagline": tagline(), "github": CFG["github_repo"],
+            "namespace": CFG["hf_namespace"], "os": {},
+            "demo": [{"pair": p, "repo": repo_id(p), "text": sentences(p.split("-")[0])[0]}
+                     for p in ("de-en", "en-fr", "fr-en", "en-de", "es-en", "en-es")]}
     for os_, suffix in OSES.items():
         if os_ not in mems:
             continue
@@ -110,6 +112,10 @@ def page(refs: dict, mems: dict) -> None:
             "reference": [{"pair": r["pair"], "config": r["config"], "load": float(r["load_mib"]),
                            "peak": float(r["batch_peak_mib"]), "ms": float(r["ms_per_step"])} for r in refs[os_]],
         }
+    flores = read("flores.csv") if (RESULTS / "flores.csv").exists() else []
+    data["flores"] = [{k: r[k] for k in ("pair", "setting", "sentences", "identical_sentences", "bleu_original",
+                                         "bleu_rebuilt", "chrf_original", "chrf_rebuilt")} for r in flores]
+    data["browser"] = read("browser.csv") if (RESULTS / "browser.csv").exists() else []
     html = (ROOT / "templates" / "results.html").read_text(encoding="utf-8")
     html = html.replace("__TITLE__", f"{CFG['name']} results").replace("__DATA__", json.dumps(data))
     out = HF / "_space"

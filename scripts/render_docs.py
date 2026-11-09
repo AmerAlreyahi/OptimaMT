@@ -10,7 +10,8 @@ import json
 import statistics
 from string import Template
 
-from common import CFG, REFERENCE, RESULTS, ROOT, repo_id, results_url, sources, tagline
+from common import (CFG, REFERENCE, RESULTS, ROOT, collection_url, headline, repo_id, results_url, sources, tagline,
+                    used_in)
 
 SETTINGS = {"default": "ONNX Runtime defaults", "qdq_off": "`disable_quant_qdq = 1`"}
 
@@ -155,6 +156,79 @@ def main() -> None:
     v["versions_table"] = "\n".join(["| ONNX Runtime | Session options | Original (MiB) | Rebuilt (MiB) | Change "
                                      "| ms/step, rebuilt | Identical tokens |",
                                      "|---|---|---:|---:|---:|---:|---|"] + t)
+
+    # --- FLORES-200 and the browser
+    fl = read("flores.csv")
+    if fl:
+        ident = sum(r["identical_sentences"] == r["sentences"] for r in fl)
+        same_bleu = sum(r["bleu_original"] == r["bleu_rebuilt"] and r["chrf_original"] == r["chrf_rebuilt"] for r in fl)
+        v["flores_summary"] = (f"{len({r['pair'] for r in fl})} pairs × {len({r['setting'] for r in fl})} settings × "
+                               f"{fl[0]['sentences']} sentences: identical output in {ident} of {len(fl)} runs, "
+                               f"identical BLEU and chrF in {same_bleu} of {len(fl)}")
+        t = ["| Pair | BLEU | chrF | Sentences identical (fast / default) |", "|---|---:|---:|---|"]
+        by = {(r["pair"], r["setting"]): r for r in fl}
+        for p in pairs:
+            q, d = by[(p, "qdq_off")], by[(p, "default")]
+            def one(k):
+                a, b = q[k + "_original"], q[k + "_rebuilt"]
+                return a if a == b else f"{a} / {b}"
+            bleu, chrf = one("bleu"), one("chrf")
+            t.append(f"| {p} | {bleu} | {chrf} | {q['identical_sentences']} / {d['identical_sentences']} "
+                     f"of {q['sentences']} |")
+        v["flores_table"] = "\n".join(t)
+    else:
+        v["flores_summary"], v["flores_table"] = "not measured yet", ""
+    br = read("browser.csv")
+    if br:
+        def bmed(s, k):
+            return med(float(r[k]) for r in br if r["setting"] == s)
+        q = ("qdq_off", "default")
+        qa, qb = bmed("qdq_off", "loaded_mib_original"), bmed("qdq_off", "loaded_mib_rebuilt")
+        da, db = bmed("default", "loaded_mib_original"), bmed("default", "loaded_mib_rebuilt")
+        ident = sum(r["identical"] == "True" for r in br)
+        v["browser_summary"] = (
+            f"fast mode {qa:.0f} → {qb:.0f} MiB after load ({pct(qb, qa)}); defaults {da:.0f} → {db:.0f} MiB "
+            f"({'no saving' if db >= da else pct(db, da)} after load); fast mode "
+            f"{bmed('default', 'ms_per_step_original') / bmed('qdq_off', 'ms_per_step_rebuilt'):.1f}× faster; "
+            f"{'identical tokens' if ident == len(br) else f'identical tokens in {ident} of {len(br)} runs'}")
+        t = ["| Pair | Settings | After load (MiB) | After the batch (MiB) | ms/step | Identical |",
+             "|---|---|---:|---:|---:|---|"]
+        for r in br:
+            t.append(f"| {r['pair']} | {SETTINGS[r['setting']]} | "
+                     f"{arrow(float(r['loaded_mib_original']), float(r['loaded_mib_rebuilt']))} | "
+                     f"{arrow(float(r['after_batch_mib_original']), float(r['after_batch_mib_rebuilt']))} | "
+                     f"{arrow(float(r['ms_per_step_original']), float(r['ms_per_step_rebuilt']), 1)} | "
+                     f"{'yes' if r['identical'] == 'True' else 'no'} |")
+        v["browser_table"] = "\n".join(t)
+        v["chromium"] = br[0]["chromium"]
+    else:
+        v["browser_summary"], v["browser_table"], v["chromium"] = "not measured yet", "", "?"
+
+    # --- languages: one row per source language
+    by_src = {}
+    for e in src:
+        by_src.setdefault(e["source"], []).append(e)
+    t = ["| From | To |", "|---|---|"]
+    only_en = [x for x in by_src if [e["target"] for e in by_src[x]] == ["en"]]
+    for lang in sorted((x for x in by_src if x not in only_en), key=lambda x: -len(by_src[x])):
+        t.append(f"| {lang} | " + " · ".join(f"[{e['target']}](https://huggingface.co/{repo_id(e['pair'])})"
+                                             for e in sorted(by_src[lang], key=lambda e: e["target"])) + " |")
+    if only_en:
+        t.append("| " + " · ".join(f"[{x}](https://huggingface.co/{repo_id(x + '-en')})" for x in only_en) + " | en |")
+    v["language_table"] = "\n".join(t)
+
+    def badge(label, value, color):
+        q = lambda x: x.replace("-", "--").replace("_", "__").replace(" ", "%20")  # noqa: E731
+        return f"![{label}: {value}](https://img.shields.io/badge/{q(label)}-{q(value)}-{color})"
+    v["badges"] = " ".join([badge("models", "CC BY 4.0", "blue"), badge("code", "MIT", "green"),
+                            badge("pairs", str(len(pairs)), "orange"), badge("ONNX Runtime", v["ort"], "informational"),
+                            badge("FLORES-200", "identical output" if fl and ident == len(fl) else "see report",
+                                  "brightgreen")])
+    v["used_in"] = used_in()
+    v["collection_url"] = collection_url()
+    v["collection_label"] = f"the {CFG['name']} collection" if CFG.get("hf_collection") else \
+        collection_url().replace("https://", "")
+    v.update(headline())
 
     v.update(name=CFG["name"], long_name=CFG["long_name"], tagline=tagline(),
              results_url=results_url(), results_name=results_url().split("spaces/")[1], github=CFG["github_repo"],

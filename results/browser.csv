@@ -1,0 +1,11 @@
+pair,setting,loaded_mib_original,loaded_mib_rebuilt,after_batch_mib_original,after_batch_mib_rebuilt,ms_per_step_original,ms_per_step_rebuilt,identical,chromium
+en-ar,default,754.6,821.8,852.3,806.0,39.13,38.71,True,156.0.8078.4
+en-ar,qdq_off,1320.7,1070.4,1254.4,1004.4,29.28,29.24,True,156.0.8078.4
+ar-en,default,755.1,826.1,1387.6,1111.6,69.85,68.15,True,156.0.8078.4
+ar-en,qdq_off,1319.8,1077.9,1385.8,1157.7,61.31,60.01,True,156.0.8078.4
+en-de,default,722.4,792.0,846.0,819.0,35.79,36.29,True,156.0.8078.4
+en-de,qdq_off,1182.0,953.4,1272.3,1007.9,25.44,25.8,True,156.0.8078.4
+de-en,default,724.0,716.9,849.6,756.2,33.69,33.14,True,156.0.8078.4
+de-en,qdq_off,1254.1,960.1,1264.6,979.7,25.29,26.39,True,156.0.8078.4
+ja-en,default,738.9,803.0,1261.9,1357.8,68.93,69.28,True,156.0.8078.4
+ja-en,qdq_off,1288.0,1050.1,1492.5,1129.1,60.29,60.1,True,156.0.8078.4

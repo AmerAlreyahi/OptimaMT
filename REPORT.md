@@ -5,24 +5,25 @@ All numbers come from the scripts in this repository; raw data in [results/](res
 
 ## Summary
 
-| | Result |
-|---|---|
-| Change | Output projection (`Transpose` → `DequantizeLinear`) moved out of the merged decoder's two branches, in front of the `If` |
-| Pairs | 49 |
-| Identical tokens | 98 / 98 runs (9,800 tokens; every pair, both session settings) |
-| Memory after load, `disable_quant_qdq = 1`, Linux | 525 → 281 MiB (median), 45–49 % less |
-| Memory after load, defaults, Linux | 277 → 217 MiB (median), 14–22 % less |
-| Memory after load, `disable_quant_qdq = 1`, Windows | 500 → 257 MiB (median), 47–51 % less |
-| Memory after load, defaults, Windows | 196 → 166 MiB (median), 14–17 % less |
-| Decoder speed (Linux) | unchanged: 6.9 → 6.9 ms/step (qdq off), 17.3 → 17.3 ms/step (defaults) |
+ONNX Runtime's `session.disable_quant_qdq = 1` decodes these models 2.3–2.5× faster than its defaults. With the
+original int8 exports it also folds the output layer to float twice, once per decoder branch. OptimaMT moves that
+subgraph in front of the branches, so it is folded once.
 
-`disable_quant_qdq = 1` decodes 2.5× faster than the defaults on Linux, 2.3× on Windows. With OptimaMT it
-needs about the memory the original needs with the defaults (Linux: 275 vs 274 MiB).
+| | Linux | Windows |
+|---|---:|---:|
+| ms/step, defaults → fast mode (median, 5 pairs) | 17.3 → 6.9 | 21.3 → 9.1 |
+| Fast mode memory, original → OptimaMT (median, 49 pairs) | 525 → 281 MiB | 500 → 257 MiB |
+| Fast mode saving per pair | 45–49 % | 47–51 % |
+| Defaults memory, original → OptimaMT | 277 → 217 MiB | 196 → 166 MiB |
+| Speed change from the rebuild | none (6.9 → 6.9 ms) | none (9.2 → 9.1 ms) |
+
+Identical output: 98 / 98 short-sentence runs; FLORES-200 devtest: 49 pairs × 2 settings × 1012 sentences: identical output in 98 of 98 runs, identical BLEU and chrF in 98 of 98.
+Browser (transformers.js, onnxruntime-web): fast mode 1288 → 1050 MiB after load (-18 %); defaults 739 → 803 MiB (no saving after load); fast mode 1.3× faster; identical tokens.
 
 ## 1. The finding
 
-The merged decoder (Hugging Face Optimum) is one `If` node on `use_cache_branch`: branch `with_past` runs the first step,
-`no_past` the later ones. Each branch builds the same output projection from the same initializer
+The merged decoder (Hugging Face Optimum) is one `If` node on `use_cache_branch`: branch `no_past` runs the first step,
+`with_past` the later ones. Each branch builds the same output projection from the same initializer
 (en-ar shown):
 
 | Node | Inputs | Output |
@@ -44,19 +45,7 @@ ONNX Runtime folds constant nodes at load, inside the subgraph where they live. 
 - Defaults: the `DequantizeLinear` stays; the transposed 8-bit matrix is folded per branch: two copies vs one.
 - This is constant folding of a duplicated subgraph, not `MatMulInteger` pre-packing.
 
-```mermaid
-flowchart LR
-  subgraph Original
-    W1["weight (8-bit)"] --> IF1{"If"}
-    IF1 --> A1["with_past: Transpose → DequantizeLinear → MatMul"]
-    IF1 --> B1["no_past: Transpose → DequantizeLinear → MatMul"]
-  end
-  subgraph OptimaMT
-    W2["weight (8-bit)"] --> T2["Transpose → DequantizeLinear"] --> IF2{"If"}
-    IF2 --> A2["with_past: MatMul"]
-    IF2 --> B2["no_past: MatMul"]
-  end
-```
+![What changed in the decoder](assets/decoder-change.svg)
 
 ## 2. Method
 
@@ -65,6 +54,8 @@ flowchart LR
 | Rebuild | [convert.py](scripts/convert.py) | Moves the two nodes before the `If`, checks both branches built the same value, runs `onnx.checker`. Output is byte-identical to the published files. |
 | Identical output | [verify.py](scripts/verify.py) | Greedy decoding of [fixed sentences](data/sentences.json), original vs rebuilt, token by token, both settings. |
 | Memory, speed | [measure.py](scripts/measure.py) | One fresh process per configuration; CPU, 4 threads, defaults or `disable_quant_qdq = 1`. |
+| Quality | [flores.py](scripts/flores.py) | FLORES-200 devtest, every pair, both settings: token ids, BLEU and chrF. |
+| Browser | [browser_test.py](tests/browser_test.py) | transformers.js in headless Chromium, 5 reference pairs. |
 
 Measurements:
 
@@ -96,6 +87,92 @@ Measurements:
 
 The load peak barely moves with `disable_quant_qdq = 1` (median 630 → 511 MiB):
 folding briefly holds intermediate copies either way. The batch peak drops -41 %.
+
+### FLORES-200 devtest
+
+[scripts/flores.py](scripts/flores.py): 1,012 sentences per pair, greedy, batches of 16, sacrebleu 2.5.1 (BLEU
+`13a`, `zh` for Chinese targets; chrF). Original and OptimaMT scores are listed once when equal. Scores are
+greedy-decoding scores (no beam search).
+
+<details><summary>Table: all 49 pairs, fast mode</summary>
+
+| Pair | BLEU | chrF | Sentences identical (fast / default) |
+|---|---:|---:|---|
+| en-ar | 22.03 | 54.14 | 1012 / 1012 of 1012 |
+| en-fr | 46.42 | 68.96 | 1012 / 1012 of 1012 |
+| en-es | 26.15 | 54.81 | 1012 / 1012 of 1012 |
+| en-de | 34.7 | 62.51 | 1012 / 1012 of 1012 |
+| en-ru | 24.14 | 52.27 | 1012 / 1012 of 1012 |
+| en-zh | 31.63 | 28.29 | 1012 / 1012 of 1012 |
+| ar-en | 33.43 | 60.37 | 1012 / 1012 of 1012 |
+| fr-en | 41.43 | 66.62 | 1012 / 1012 of 1012 |
+| zh-en | 22.34 | 52.63 | 1012 / 1012 of 1012 |
+| ja-en | 17.68 | 47.7 | 1012 / 1012 of 1012 |
+| es-en | 27.64 | 58.08 | 1012 / 1012 of 1012 |
+| de-en | 40.04 | 66.18 | 1012 / 1012 of 1012 |
+| ru-en | 28.51 | 57.03 | 1012 / 1012 of 1012 |
+| it-en | 29.6 | 59.75 | 1012 / 1012 of 1012 |
+| nl-en | 29.11 | 57.99 | 1012 / 1012 of 1012 |
+| uk-en | 27.11 | 55.26 | 1012 / 1012 of 1012 |
+| pl-en | 23.7 | 53.09 | 1012 / 1012 of 1012 |
+| hi-en | 18.11 | 44.76 | 1012 / 1012 of 1012 |
+| id-en | 32.89 | 60.75 | 1012 / 1012 of 1012 |
+| vi-en | 24.31 | 51.95 | 1012 / 1012 of 1012 |
+| th-en | 18.44 | 47.77 | 1012 / 1012 of 1012 |
+| ko-en | 19.22 | 48.81 | 1012 / 1012 of 1012 |
+| en-it | 27.32 | 57.45 | 1012 / 1012 of 1012 |
+| en-nl | 24.63 | 56.57 | 1012 / 1012 of 1012 |
+| en-uk | 18.66 | 47.35 | 1012 / 1012 of 1012 |
+| en-hi | 11.33 | 32.0 | 1012 / 1012 of 1012 |
+| en-id | 37.56 | 64.66 | 1012 / 1012 of 1012 |
+| en-vi | 24.5 | 43.68 | 1012 / 1012 of 1012 |
+| de-es | 20.88 | 49.83 | 1012 / 1012 of 1012 |
+| de-fr | 32.2 | 59.38 | 1012 / 1012 of 1012 |
+| es-de | 17.75 | 50.18 | 1012 / 1012 of 1012 |
+| es-fr | 24.74 | 55.42 | 1012 / 1012 of 1012 |
+| es-it | 20.58 | 51.41 | 1012 / 1012 of 1012 |
+| es-ru | 14.77 | 44.71 | 1012 / 1012 of 1012 |
+| fr-de | 25.22 | 55.56 | 1012 / 1012 of 1012 |
+| fr-es | 21.37 | 49.9 | 1012 / 1012 of 1012 |
+| fr-ru | 15.07 | 44.17 | 1012 / 1012 of 1012 |
+| it-es | 21.72 | 51.17 | 1012 / 1012 of 1012 |
+| it-fr | 30.22 | 58.86 | 1012 / 1012 of 1012 |
+| ru-es | 18.07 | 46.65 | 1012 / 1012 of 1012 |
+| ru-fr | 24.43 | 52.95 | 1012 / 1012 of 1012 |
+| ru-uk | 20.36 | 49.51 | 1012 / 1012 of 1012 |
+| uk-ru | 23.28 | 51.04 | 1012 / 1012 of 1012 |
+| nl-fr | 22.88 | 52.15 | 1012 / 1012 of 1012 |
+| fr-ar | 13.61 | 45.82 | 1012 / 1012 of 1012 |
+| es-ar | 10.52 | 43.09 | 1012 / 1012 of 1012 |
+| ar-fr | 26.01 | 53.48 | 1012 / 1012 of 1012 |
+| ar-es | 17.85 | 46.35 | 1012 / 1012 of 1012 |
+| ar-de | 17.43 | 47.48 | 1012 / 1012 of 1012 |
+
+</details>
+
+### Browser
+
+[tests/browser_test.py](tests/browser_test.py): transformers.js 3.8.1 in headless Chromium 156.0.8078.4,
+onnxruntime-web (WASM, 4 threads), 20-line batch, one fresh browser per configuration. Memory = RSS of all
+browser processes minus the RSS with a blank page (`measureUserAgentSpecificMemory` is not available in headless
+Chromium).
+
+| Pair | Settings | After load (MiB) | After the batch (MiB) | ms/step | Identical |
+|---|---|---:|---:|---:|---|
+| en-ar | ONNX Runtime defaults | 755 → 822 | 852 → 806 | 39.1 → 38.7 | yes |
+| en-ar | `disable_quant_qdq = 1` | 1321 → 1070 | 1254 → 1004 | 29.3 → 29.2 | yes |
+| ar-en | ONNX Runtime defaults | 755 → 826 | 1388 → 1112 | 69.8 → 68.2 | yes |
+| ar-en | `disable_quant_qdq = 1` | 1320 → 1078 | 1386 → 1158 | 61.3 → 60.0 | yes |
+| en-de | ONNX Runtime defaults | 722 → 792 | 846 → 819 | 35.8 → 36.3 | yes |
+| en-de | `disable_quant_qdq = 1` | 1182 → 953 | 1272 → 1008 | 25.4 → 25.8 | yes |
+| de-en | ONNX Runtime defaults | 724 → 717 | 850 → 756 | 33.7 → 33.1 | yes |
+| de-en | `disable_quant_qdq = 1` | 1254 → 960 | 1265 → 980 | 25.3 → 26.4 | yes |
+| ja-en | ONNX Runtime defaults | 739 → 803 | 1262 → 1358 | 68.9 → 69.3 | yes |
+| ja-en | `disable_quant_qdq = 1` | 1288 → 1050 | 1492 → 1129 | 60.3 → 60.1 | yes |
+
+In the browser the saving holds in fast mode. With the defaults OptimaMT is not lighter right after loading
+(the WebAssembly heap only grows, so its size depends on the allocation pattern), but it is mostly lower after
+the batch. Fast mode is also faster in the browser, by less than in native ONNX Runtime.
 
 ### Windows
 

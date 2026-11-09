@@ -62,6 +62,11 @@
   #tip .v { font-weight: 600; font-variant-numeric: tabular-nums; }
   #tip .k { display: inline-block; width: 12px; height: 2px; margin-right: 6px; vertical-align: 4px; }
   details { margin-top: 8px; font-size: 14px; }
+  textarea { width: 100%; font: inherit; padding: 8px 10px; border-radius: 8px; border: 1px solid var(--line);
+             background: var(--surface); color: var(--text); resize: vertical; }
+  button.go { font: inherit; font-size: 14px; padding: 7px 16px; border-radius: 8px; border: 0; cursor: pointer;
+              background: var(--ours); color: #fff; }
+  button.go:disabled { opacity: 0.6; cursor: progress; }
   table { border-collapse: collapse; width: 100%; margin-top: 8px; font-variant-numeric: tabular-nums; }
   th, td { text-align: right; padding: 4px 8px; border-bottom: 1px solid var(--line); }
   th:first-child, td:first-child { text-align: left; }
@@ -91,6 +96,17 @@
 
   <div class="tiles" id="tiles"></div>
 
+  <section class="card" id="demo">
+    <div class="head"><h2>Try it in your browser</h2>
+      <select id="demoPair" aria-label="Language pair"></select></div>
+    <p class="muted" style="font-size:13px">Runs on your device with transformers.js in fast mode. The first
+      translation downloads the model (about 110 MB) once.</p>
+    <textarea id="demoText" rows="2" aria-label="Text to translate"></textarea>
+    <div style="display:flex;gap:12px;align-items:center;margin-top:8px;flex-wrap:wrap">
+      <button id="demoGo" class="go">Translate</button><span id="demoStatus" class="muted" style="font-size:13px"></span></div>
+    <p id="demoOut" style="font-size:17px;margin-top:8px" dir="auto"></p>
+  </section>
+
   <section class="card">
     <div class="head">
       <h2 id="allTitle"></h2>
@@ -112,6 +128,19 @@
       </div>
     </div>
     <svg id="ref" role="list" aria-label="Reference pairs"></svg>
+  </section>
+
+  <section class="card">
+    <h2>Same translations</h2>
+    <p id="floresLine" class="muted" style="font-size:14px"></p>
+    <details><summary>FLORES-200 scores per pair</summary><table id="floresTable"></table></details>
+  </section>
+
+  <section class="card">
+    <h2>In the browser</h2>
+    <p class="muted" style="font-size:14px">transformers.js in headless Chromium (WebAssembly, 4 threads): memory added
+      to all browser processes by loading the model, and decoder time per step.</p>
+    <table id="browserTable"></table>
   </section>
 
   <footer id="foot"></footer>
@@ -197,10 +226,12 @@ function render() {
                     orig: (x, y) => y.a - x.a };
   P.sort(sorters[state.sort]);
   // tiles
-  const tiles = [[fmt(median(P.map((p) => p.a))) + " MiB", "original, median"],
+  const ms = (c) => median([...new Set(O.reference.map((r) => r.pair))].map((p) =>
+    O.reference.find((r) => r.pair === p && r.config === c).ms));
+  const tiles = [[fmt(ms("v1-default") / ms("v2-qdq_off"), 1) + "×", "faster: fast mode vs defaults"],
+    [fmt(median(P.map((p) => p.a))) + " MiB", "original, median"],
     [fmt(median(P.map((p) => p.b))) + " MiB", D.name + ", median"],
-    [fmt(median(P.map((p) => -pct(p.a, p.b)))) + " %", "less memory, median"],
-    [`${O.pairs.filter((p) => p.identical).length} / ${O.pairs.length}`, "pairs with identical tokens"]];
+    [fmt(median(P.map((p) => -pct(p.a, p.b)))) + " %", "less memory, median"]];
   $("tiles").replaceChildren(...tiles.map(([v, l]) => { const d = document.createElement("div"); d.className = "tile";
     const bb = document.createElement("b"); bb.textContent = v; const sp = document.createElement("span"); sp.textContent = l;
     d.append(bb, sp); return d; }));
@@ -242,6 +273,59 @@ for (const o of OSES) { const btn = document.createElement("button"); btn.datase
 seg("os", "os"); seg("setting", "setting"); seg("metric", "metric");
 $("sort").addEventListener("change", (e) => { state.sort = e.target.value; render(); });
 matchMedia("(prefers-color-scheme: dark)").addEventListener("change", render);
+
+// FLORES-200 and browser tables (static data)
+function table(el, head, rows) {
+  el.replaceChildren();
+  const hr = el.insertRow();
+  for (const h of head) { const th = document.createElement("th"); th.textContent = h; hr.appendChild(th); }
+  for (const r of rows) { const tr = el.insertRow(); for (const c of r) tr.insertCell().textContent = c; }
+}
+if (D.flores.length) {
+  const ok = D.flores.filter((r) => r.identical_sentences === r.sentences).length;
+  $("floresLine").textContent = `FLORES-200 devtest, ${D.flores[0].sentences} sentences per pair, every pair, both ` +
+    `session settings: identical output in ${ok} of ${D.flores.length} runs, so BLEU and chrF are identical too.`;
+  table($("floresTable"), ["Pair", "BLEU", "chrF", "Identical sentences"],
+    D.flores.filter((r) => r.setting === "qdq_off").map((r) => [r.pair,
+      r.bleu_original === r.bleu_rebuilt ? r.bleu_original : `${r.bleu_original} / ${r.bleu_rebuilt}`,
+      r.chrf_original === r.chrf_rebuilt ? r.chrf_original : `${r.chrf_original} / ${r.chrf_rebuilt}`,
+      `${r.identical_sentences} / ${r.sentences}`]));
+}
+if (D.browser.length) {
+  table($("browserTable"), ["Pair", "Settings", "Memory (MiB)", "ms/step", "Same tokens"],
+    D.browser.map((r) => [r.pair, SET[r.setting],
+      `${fmt(+r.loaded_mib_original)} → ${fmt(+r.loaded_mib_rebuilt)}`,
+      `${fmt(+r.ms_per_step_original, 1)} → ${fmt(+r.ms_per_step_rebuilt, 1)}`, r.identical === "True" ? "yes" : "no"]));
+}
+
+// live demo: transformers.js is loaded only when the button is pressed
+const TJS = "https://cdn.jsdelivr.net/npm/@huggingface/transformers@3.8.1";
+const loadedModels = {};
+for (const d of D.demo) { const o = document.createElement("option"); o.value = d.repo; o.textContent = d.pair;
+  $("demoPair").appendChild(o); }
+const sample = () => D.demo.find((d) => d.repo === $("demoPair").value).text;
+$("demoText").value = sample();
+$("demoPair").addEventListener("change", () => { $("demoText").value = sample(); $("demoOut").textContent = ""; });
+$("demoGo").addEventListener("click", async () => {
+  const repo = $("demoPair").value, btn = $("demoGo"), status = $("demoStatus");
+  btn.disabled = true;
+  try {
+    if (!loadedModels[repo]) {
+      status.textContent = "Loading the model…";
+      const t = performance.now();
+      const { pipeline } = await import(TJS);
+      loadedModels[repo] = await pipeline("translation", repo,
+        { dtype: "q8", session_options: { extra: { session: { disable_quant_qdq: "1" } } } });
+      status.textContent = `Loaded in ${fmt((performance.now() - t) / 1000, 1)} s. Translating…`;
+    }
+    const t = performance.now();
+    const [out] = await loadedModels[repo]($("demoText").value);
+    $("demoOut").textContent = out.translation_text;
+    status.textContent = `Translated in ${fmt(performance.now() - t)} ms on this device.`;
+  } catch (e) {
+    status.textContent = "Could not run here: " + (e && e.message ? e.message : e);
+  } finally { btn.disabled = false; }
+});
 render();
 </script>
 </body>

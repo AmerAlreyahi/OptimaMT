@@ -1,0 +1,48 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 760 300" width="760" height="300" font-family="system-ui, -apple-system, Segoe UI, Roboto, sans-serif" font-size="13">
+  <rect width="760" height="300" rx="12" fill="#fcfcfb"/>
+  <defs>
+    <marker id="a" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0,0 L10,5 L0,10 z" fill="#8a8984"/></marker>
+  </defs>
+
+  <!-- Original -->
+  <text x="24" y="34" font-weight="700" font-size="15" fill="#0b0b0b">Original merged decoder</text>
+  <rect x="104" y="52" width="180" height="34" rx="8" fill="#ffffff" stroke="#c9c8c3"/>
+  <text x="194" y="74" text-anchor="middle" fill="#0b0b0b">weight, 8-bit</text>
+  <line x1="194" y1="86" x2="194" y2="112" stroke="#8a8984" stroke-width="1.5" marker-end="url(#a)"/>
+  <path d="M194 114 L224 134 L194 154 L164 134 Z" fill="#ffffff" stroke="#c9c8c3"/>
+  <text x="194" y="139" text-anchor="middle" fill="#0b0b0b">If</text>
+  <line x1="172" y1="148" x2="110" y2="182" stroke="#8a8984" stroke-width="1.5" marker-end="url(#a)"/>
+  <line x1="216" y1="148" x2="278" y2="182" stroke="#8a8984" stroke-width="1.5" marker-end="url(#a)"/>
+  <rect x="24" y="184" width="170" height="92" rx="8" fill="#fdeee7" stroke="#eb6834"/>
+  <text x="109" y="204" text-anchor="middle" font-weight="600" fill="#0b0b0b">first step</text>
+  <text x="109" y="226" text-anchor="middle" fill="#0b0b0b">Transpose</text>
+  <text x="109" y="246" text-anchor="middle" fill="#0b0b0b">DequantizeLinear</text>
+  <text x="109" y="266" text-anchor="middle" fill="#52514e">MatMul</text>
+  <rect x="204" y="184" width="170" height="92" rx="8" fill="#fdeee7" stroke="#eb6834"/>
+  <text x="289" y="204" text-anchor="middle" font-weight="600" fill="#0b0b0b">later steps</text>
+  <text x="289" y="226" text-anchor="middle" fill="#0b0b0b">Transpose</text>
+  <text x="289" y="246" text-anchor="middle" fill="#0b0b0b">DequantizeLinear</text>
+  <text x="289" y="266" text-anchor="middle" fill="#52514e">MatMul</text>
+
+  <line x1="392" y1="40" x2="392" y2="280" stroke="#e4e3df"/>
+
+  <!-- Rebuilt -->
+  <text x="410" y="34" font-weight="700" font-size="15" fill="#0b0b0b">Rebuilt (one copy)</text>
+  <rect x="490" y="52" width="180" height="34" rx="8" fill="#ffffff" stroke="#c9c8c3"/>
+  <text x="580" y="74" text-anchor="middle" fill="#0b0b0b">weight, 8-bit</text>
+  <line x1="580" y1="86" x2="580" y2="100" stroke="#8a8984" stroke-width="1.5" marker-end="url(#a)"/>
+  <rect x="490" y="102" width="180" height="52" rx="8" fill="#e6f0fb" stroke="#2a78d6"/>
+  <text x="580" y="123" text-anchor="middle" fill="#0b0b0b">Transpose</text>
+  <text x="580" y="143" text-anchor="middle" fill="#0b0b0b">DequantizeLinear</text>
+  <line x1="580" y1="154" x2="580" y2="166" stroke="#8a8984" stroke-width="1.5" marker-end="url(#a)"/>
+  <path d="M580 168 L606 184 L580 200 L554 184 Z" fill="#ffffff" stroke="#c9c8c3"/>
+  <text x="580" y="189" text-anchor="middle" fill="#0b0b0b">If</text>
+  <line x1="560" y1="194" x2="500" y2="222" stroke="#8a8984" stroke-width="1.5" marker-end="url(#a)"/>
+  <line x1="600" y1="194" x2="660" y2="222" stroke="#8a8984" stroke-width="1.5" marker-end="url(#a)"/>
+  <rect x="410" y="224" width="160" height="52" rx="8" fill="#ffffff" stroke="#c9c8c3"/>
+  <text x="490" y="244" text-anchor="middle" font-weight="600" fill="#0b0b0b">first step</text>
+  <text x="490" y="264" text-anchor="middle" fill="#52514e">MatMul</text>
+  <rect x="590" y="224" width="150" height="52" rx="8" fill="#ffffff" stroke="#c9c8c3"/>
+  <text x="665" y="244" text-anchor="middle" font-weight="600" fill="#0b0b0b">later steps</text>
+  <text x="665" y="264" text-anchor="middle" fill="#52514e">MatMul</text>
+</svg>

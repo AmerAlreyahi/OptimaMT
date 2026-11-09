@@ -15,8 +15,11 @@ tags:
 
 # $name $src → $tgt ($src_name to $tgt_name)
 
-Drop-in copy of $origin with a lighter merged decoder: same weights, same tokens, less memory.
-Part of [$name](https://github.com/$github) ($count pairs, `$scheme`).
+Drop-in copy of $origin with a lighter merged decoder: ONNX Runtime's fast mode (`disable_quant_qdq = 1`, $speedup× faster) at half the memory. Same weights, same tokens.
+Part of [$name](https://github.com/$github): [all $count pairs]($collection_url), named `$scheme`.
+
+**Used in production:**
+$used_in
 
 $memory_table
 

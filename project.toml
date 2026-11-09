@@ -5,8 +5,8 @@
 name = "OptimaMT"
 long_name = "Optima Machine Translation"
 slug = "optimamt"
-tagline = "same translations, {saving} less memory."
-# {saving} is filled in from the measured data (lowest to highest saving over all pairs and both settings).
+tagline = "ONNX Runtime's fast mode at half the memory: {speedup}× faster than the default, same translations."
+# {speedup} and {saving} are filled in from the measured data (ranges over every operating system measured).
 
 # Hugging Face owner of the model repos: a user ("AmerAlreyahi") or an organization ("OptimaMT").
 # Repo names follow from it: under a user  -> <namespace>/<slug>-<src>-<tgt>  (AmerAlreyahi/optimamt-en-ar)
@@ -14,6 +14,9 @@ tagline = "same translations, {saving} less memory."
 hf_namespace = "OptimaMT"
 # Optional: force a repo-name pattern, e.g. "{slug}-{src}-{tgt}" or "opus-mt-{src}-{tgt}". Empty = the rule above.
 hf_repo_pattern = ""
+
+# The Hugging Face Collection of all repos (set after it is created; empty = the namespace's page).
+hf_collection = "https://huggingface.co/collections/OptimaMT/optimamt-lighter-opus-mt-onnx-models-6af228dc9cd91f015e56e869"
 
 # The interactive results page: a static Space <hf_namespace>/<results_space>.
 results_space = "results"
@@ -23,3 +26,10 @@ author = "Amer Alreyahi"
 
 # Downloads, builds and the Hugging Face folders (relative to this file; ignored by git).
 work_dir = "work"
+
+# Applications that ship these models (README, organization card and every model card).
+[[used_in]]
+name = "OpenCircle"
+url = "https://github.com/AmerAlreyahi/OpenCircle"
+what = "a desktop screen translator for Windows and Linux"
+since = "v0.1.4"

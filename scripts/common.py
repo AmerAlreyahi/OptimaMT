@@ -42,20 +42,44 @@ def repo_id(pair: str) -> str:
 OSES = {"Linux": "", "Windows": "_windows"}  # results file suffix per operating system
 
 
-def tagline() -> str:
-    """The tagline of project.toml with {saving} filled in from the measured data: the lowest to the highest
-    saving over all pairs, both session settings and every operating system measured."""
+def _rows(name: str) -> list[dict]:
     import csv
-    cut = []
+    p = RESULTS / name
+    return list(csv.DictReader(p.open(encoding="utf-8"))) if p.exists() else []
+
+
+def headline() -> dict:
+    """Ranges over every operating system measured: speedup of disable_quant_qdq = 1 (rebuilt) over the
+    defaults (original), median of the reference pairs; memory saved in that mode, per pair."""
+    import statistics
+    speed, saving = [], []
     for suffix in OSES.values():
-        p = RESULTS / f"memory_all{suffix}.csv"
-        if p.exists():
-            val = {(r["pair"], r["config"]): float(r["load_mib"]) for r in csv.DictReader(p.open(encoding="utf-8"))}
-            cut += [100 * (1 - val[(pr, "v2-" + s)] / val[(pr, "v1-" + s)]) for pr, _ in val
-                    for s in ("default", "qdq_off")]
-    if not cut:
-        return CFG["tagline"].replace("{saving} ", "")
-    return CFG["tagline"].format(saving=f"{min(cut):.0f}\u2013{max(cut):.0f} %")
+        ref = {(r["pair"], r["config"]): float(r["ms_per_step"]) for r in _rows(f"reference{suffix}.csv")}
+        if ref:
+            pairs = sorted({p for p, _ in ref})
+            speed.append(statistics.median(ref[(p, "v1-default")] for p in pairs)
+                         / statistics.median(ref[(p, "v2-qdq_off")] for p in pairs))
+        mem = {(r["pair"], r["config"]): float(r["load_mib"]) for r in _rows(f"memory_all{suffix}.csv")}
+        saving += [100 * (1 - mem[(p, "v2-qdq_off")] / mem[(p, "v1-qdq_off")]) for p, c in mem if c == "v1-qdq_off"]
+
+    def span(xs, d, unit=""):
+        lo, hi = f"{min(xs):.{d}f}", f"{max(xs):.{d}f}"
+        return lo + unit if lo == hi else f"{lo}\u2013{hi}{unit}"
+    return {"speedup": span(speed, 1) if speed else "?", "saving": span(saving, 0, " %") if saving else "?"}
+
+
+def tagline() -> str:
+    return CFG["tagline"].format(**headline())
+
+
+def used_in() -> str:
+    """One markdown line per application of project.toml's [[used_in]]."""
+    return "\n".join(f"- [{u['name']}]({u['url']}), {u['what']}, ships these models since {u['since']}."
+                      for u in CFG.get("used_in", []))
+
+
+def collection_url() -> str:
+    return CFG.get("hf_collection") or f"https://huggingface.co/{CFG['hf_namespace']}"
 
 
 def results_url() -> str:

@@ -17,8 +17,8 @@ import os
 import shutil
 from string import Template
 
-from common import (CACHE, CFG, DEC, HF, OSES, RESULTS, ROOT, download, repo_id, repo_name, results_url, sentences,
-                    sha256, sources, tagline, v1_dir, v2_decoder, write_json)
+from common import (CACHE, CFG, DEC, HF, OSES, RESULTS, ROOT, collection_url, download, headline, repo_id, repo_name,
+                    results_url, sentences, sha256, sources, tagline, used_in, v1_dir, v2_decoder, write_json)
 
 LANGS = {"ar": "Arabic", "de": "German", "en": "English", "es": "Spanish", "fr": "French", "hi": "Hindi",
          "id": "Indonesian", "it": "Italian", "ja": "Japanese", "ko": "Korean", "nl": "Dutch", "pl": "Polish",
@@ -123,6 +123,12 @@ def card(e: dict, files: list[dict]) -> str:
         cells = [f"{m['v1-' + setting]:.0f} → {m['v2-' + setting]:.0f} MiB "
                  f"({100 * (m['v2-' + setting] / m['v1-' + setting] - 1):+.0f} %)" for m in mems.values()]
         lines.append(f"| {label} | {' | '.join(cells)} | {same.get(setting, '?')} |")
+    fl = next((r for r in rows("flores.csv") if r["pair"] == pair and r["setting"] == "qdq_off"), None)
+    if fl:
+        same_out = fl["identical_sentences"] == fl["sentences"]
+        lines.append(f"\nFLORES-200 devtest ({int(fl['sentences']):,} sentences): "
+                     + ("the same translations as the original" if same_out else "translations differ")
+                     + f", BLEU {fl['bleu_rebuilt']}, chrF {fl['chrf_rebuilt']} (greedy).")
     token = e["lang_token"]
     example = sentences(s)[0]
     js_text = (token + " " if token else "") + example
@@ -140,7 +146,8 @@ def card(e: dict, files: list[dict]) -> str:
         results_url=results_url(), results_name=results_url().split("spaces/")[1],
         py_lang=f' --lang "{token}"' if token else "", py_text=example,
         ort=json.loads((RESULTS / "environment.json").read_text(encoding="utf-8"))["onnxruntime"], lang_note=lang_note,
-        github=CFG["github_repo"], count=len(sources()), scheme=scheme(),
+        github=CFG["github_repo"], count=len(sources()), scheme=scheme(), used_in=used_in(),
+        collection_url=collection_url(), speedup=headline()["speedup"],
         files_note="Only `onnx/decoder_model_merged_quantized.onnx` is rebuilt; every other file is the original, byte "
         "for byte." if e["onnx_export"] else "`onnx/decoder_model_merged_quantized.onnx` is rebuilt; `tokenizer.json`, "
         "`special_tokens_map.json` and `tokenizer_config.json` were written in the Xenova layout; every other file "
@@ -166,7 +173,8 @@ def org_card() -> None:
             sub[f"{pre}{key}_pct"] = f"{-cut:.0f}"
     text = Template((ROOT / "templates" / "org_card.md").read_text(encoding="utf-8")).substitute(
         name=CFG["name"], long_name=CFG["long_name"], tagline=tagline(), count=len(sources()),
-        results=results_url(), github=CFG["github_repo"], example=repo_id("en-ar"), scheme=scheme(), **sub)
+        results=results_url(), github=CFG["github_repo"], example=repo_id("en-ar"), scheme=scheme(),
+        used_in=used_in(), collection=collection_url(), **sub)
     (HF / "_org_card").mkdir(parents=True, exist_ok=True)
     (HF / "_org_card" / "README.md").write_text(text, encoding="utf-8")
 
