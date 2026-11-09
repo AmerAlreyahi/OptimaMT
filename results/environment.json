@@ -1,0 +1,9 @@
+{
+ "os": "Linux-6.6.87.2-microsoft-standard-WSL2-x86_64-with-glibc2.39",
+ "python": "3.12.3",
+ "onnxruntime": "1.31.1",
+ "cpu": "Intel(R) Core(TM) Ultra 7 265KF",
+ "logical_cpus": 20,
+ "ram_gb": 31.1,
+ "threads": 4
+}

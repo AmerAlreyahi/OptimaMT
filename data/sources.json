@@ -1,0 +1,1864 @@
+[
+ {
+  "pair": "en-ar",
+  "source": "en",
+  "target": "ar",
+  "upstream": "Helsinki-NLP/opus-mt-en-ar",
+  "upstream_revision": null,
+  "onnx_export": "Xenova/opus-mt-en-ar",
+  "onnx_revision": "034a684356c19021a187cda4d7f823298b913921",
+  "lang_token": ">>ara<<",
+  "pad": 62801,
+  "v1": {
+   "encoder_model_quantized.onnx": {
+    "size": 51773854,
+    "sha256": "53c354d87ced44b39085fe8a46a25f09ea4578d442dbce9663f3977228f8a04e",
+    "url": "https://huggingface.co/Xenova/opus-mt-en-ar/resolve/034a684356c19021a187cda4d7f823298b913921/onnx/encoder_model_quantized.onnx"
+   },
+   "decoder_model_merged_quantized.onnx": {
+    "size": 59078120,
+    "sha256": "c0e553b0c26611780c70417c9b4c1ca7169e9cdb18ba9e649197efb017af9f02",
+    "url": "https://huggingface.co/Xenova/opus-mt-en-ar/resolve/034a684356c19021a187cda4d7f823298b913921/onnx/decoder_model_merged_quantized.onnx"
+   },
+   "source.spm": {
+    "size": 801074,
+    "sha256": "81ac8f4d4ee271f4109eac67560a31f9c2d555463ba5eb95c32c6deee8ae819d",
+    "url": "https://huggingface.co/Xenova/opus-mt-en-ar/resolve/034a684356c19021a187cda4d7f823298b913921/source.spm"
+   },
+   "vocab.json": {
+    "size": 2243581,
+    "sha256": "8b74af9e4c1ec122b8d06362db6c38795e10ca2b0156b2110cf08d4716744b76",
+    "url": "https://huggingface.co/Xenova/opus-mt-en-ar/resolve/034a684356c19021a187cda4d7f823298b913921/vocab.json"
+   }
+  },
+  "v2_decoder": {
+   "size": 59077788,
+   "sha256": "59308c4ec1a61954badad066c7b85a7876549ec91d0a9b22fa218afd872fb48d",
+   "url": "https://github.com/AmerAlreyahi/OpenCircle-models/releases/download/models-v2/opus-mt-en-ar-decoder_model_merged_quantized.onnx"
+  }
+ },
+ {
+  "pair": "en-fr",
+  "source": "en",
+  "target": "fr",
+  "upstream": "Helsinki-NLP/opus-mt-en-fr",
+  "upstream_revision": null,
+  "onnx_export": "Xenova/opus-mt-en-fr",
+  "onnx_revision": "28726206f80896b90035bd99cccd5cc1e151f916",
+  "lang_token": null,
+  "pad": 59513,
+  "v1": {
+   "encoder_model_quantized.onnx": {
+    "size": 50090398,
+    "sha256": "0a81bdba62f53223740a8c6c6f58e716eba8ea1f92dfa569caf27ed5e3b6a0f7",
+    "url": "https://huggingface.co/Xenova/opus-mt-en-fr/resolve/28726206f80896b90035bd99cccd5cc1e151f916/onnx/encoder_model_quantized.onnx"
+   },
+   "decoder_model_merged_quantized.onnx": {
+    "size": 57381512,
+    "sha256": "333b244bce16023df04541c8cf9fd60aec9b0569da393c4b831d561897b0bda8",
+    "url": "https://huggingface.co/Xenova/opus-mt-en-fr/resolve/28726206f80896b90035bd99cccd5cc1e151f916/onnx/decoder_model_merged_quantized.onnx"
+   },
+   "source.spm": {
+    "size": 778395,
+    "sha256": "173e9f493a668fe396d599e28d414a201193094e6ffd7a4678e5aab0f6d3d838",
+    "url": "https://huggingface.co/Xenova/opus-mt-en-fr/resolve/28726206f80896b90035bd99cccd5cc1e151f916/source.spm"
+   },
+   "vocab.json": {
+    "size": 1458196,
+    "sha256": "f2ba9c69ae20f96b8bd821239a9152be422394f980350b77907cffc183db5f2d",
+    "url": "https://huggingface.co/Xenova/opus-mt-en-fr/resolve/28726206f80896b90035bd99cccd5cc1e151f916/vocab.json"
+   }
+  },
+  "v2_decoder": {
+   "size": 57381180,
+   "sha256": "96a6477026fdc00bd14f63e54ad02320cbf14ecec67ada79281e193c11a55167",
+   "url": "https://github.com/AmerAlreyahi/OpenCircle-models/releases/download/models-v2/opus-mt-en-fr-decoder_model_merged_quantized.onnx"
+  }
+ },
+ {
+  "pair": "en-es",
+  "source": "en",
+  "target": "es",
+  "upstream": "Helsinki-NLP/opus-mt-en-es",
+  "upstream_revision": null,
+  "onnx_export": "Xenova/opus-mt-en-es",
+  "onnx_revision": "4b002a4c7edd54a7ced58877258b87f7efd3f892",
+  "lang_token": null,
+  "pad": 65000,
+  "v1": {
+   "encoder_model_quantized.onnx": {
+    "size": 52899742,
+    "sha256": "03434edd1147e6c49e22066e9dc5888235e99cc35a6711d1c4ea5b06455d5da9",
+    "url": "https://huggingface.co/Xenova/opus-mt-en-es/resolve/4b002a4c7edd54a7ced58877258b87f7efd3f892/onnx/encoder_model_quantized.onnx"
+   },
+   "decoder_model_merged_quantized.onnx": {
+    "size": 60212804,
+    "sha256": "58ee5ddd6e22d1693d8722b90c1486afb93700a4376cf28fd74175052ad530ae",
+    "url": "https://huggingface.co/Xenova/opus-mt-en-es/resolve/4b002a4c7edd54a7ced58877258b87f7efd3f892/onnx/decoder_model_merged_quantized.onnx"
+   },
+   "source.spm": {
+    "size": 801636,
+    "sha256": "4dd547c24816a335e7b0b2e63376a8f1b3cbfc671eda5ab808dd44fdadaa8791",
+    "url": "https://huggingface.co/Xenova/opus-mt-en-es/resolve/4b002a4c7edd54a7ced58877258b87f7efd3f892/source.spm"
+   },
+   "vocab.json": {
+    "size": 1720044,
+    "sha256": "b074b4cca0036ade5a39ea97faabd534e1015482c480fc2cb02c6481983eb163",
+    "url": "https://huggingface.co/Xenova/opus-mt-en-es/resolve/4b002a4c7edd54a7ced58877258b87f7efd3f892/vocab.json"
+   }
+  },
+  "v2_decoder": {
+   "size": 60212472,
+   "sha256": "4c9caf323108bc916b608b023ffd8cdf9ccd49ce1c0e62e63d931c81b9bc5084",
+   "url": "https://github.com/AmerAlreyahi/OpenCircle-models/releases/download/models-v2/opus-mt-en-es-decoder_model_merged_quantized.onnx"
+  }
+ },
+ {
+  "pair": "en-de",
+  "source": "en",
+  "target": "de",
+  "upstream": "Helsinki-NLP/opus-mt-en-de",
+  "upstream_revision": null,
+  "onnx_export": "Xenova/opus-mt-en-de",
+  "onnx_revision": "1ca130c44c4c5441ef16d48aae521a424ab644f7",
+  "lang_token": null,
+  "pad": 58100,
+  "v1": {
+   "encoder_model_quantized.onnx": {
+    "size": 49366942,
+    "sha256": "15834b45fabd2dfb8c6c029b3ca3e7289aeefd90ece798ce42bcf548d1bd3b8d",
+    "url": "https://huggingface.co/Xenova/opus-mt-en-de/resolve/1ca130c44c4c5441ef16d48aae521a424ab644f7/onnx/encoder_model_quantized.onnx"
+   },
+   "decoder_model_merged_quantized.onnx": {
+    "size": 56652404,
+    "sha256": "8b46a825964cdd182fe47cc780f0fb87d357eae1f47cf20aa63c1c09be5b510c",
+    "url": "https://huggingface.co/Xenova/opus-mt-en-de/resolve/1ca130c44c4c5441ef16d48aae521a424ab644f7/onnx/decoder_model_merged_quantized.onnx"
+   },
+   "source.spm": {
+    "size": 768489,
+    "sha256": "678f2a1177d8389f67b66299762dcc4fc567e89b07e212ba91b0c56daecf47ce",
+    "url": "https://huggingface.co/Xenova/opus-mt-en-de/resolve/1ca130c44c4c5441ef16d48aae521a424ab644f7/source.spm"
+   },
+   "vocab.json": {
+    "size": 1389436,
+    "sha256": "d5acea957b265a78554999144459c5e391e0df525864edc8287bc090290baa44",
+    "url": "https://huggingface.co/Xenova/opus-mt-en-de/resolve/1ca130c44c4c5441ef16d48aae521a424ab644f7/vocab.json"
+   }
+  },
+  "v2_decoder": {
+   "size": 56652072,
+   "sha256": "ab0ae18ee7fca5ed4093c37d47aa8ccd03aca3074c1c15fafbb59ce49de49780",
+   "url": "https://github.com/AmerAlreyahi/OpenCircle-models/releases/download/models-v2/opus-mt-en-de-decoder_model_merged_quantized.onnx"
+  }
+ },
+ {
+  "pair": "en-ru",
+  "source": "en",
+  "target": "ru",
+  "upstream": "Helsinki-NLP/opus-mt-en-ru",
+  "upstream_revision": null,
+  "onnx_export": "Xenova/opus-mt-en-ru",
+  "onnx_revision": "e050376e960175e8ddc5cff85025dc8436cddd68",
+  "lang_token": null,
+  "pad": 62517,
+  "v1": {
+   "encoder_model_quantized.onnx": {
+    "size": 51628446,
+    "sha256": "97f28d8295d231b7da721ded06fa8c034787df2122cd8f85b904abdc4d15bd53",
+    "url": "https://huggingface.co/Xenova/opus-mt-en-ru/resolve/e050376e960175e8ddc5cff85025dc8436cddd68/onnx/encoder_model_quantized.onnx"
+   },
+   "decoder_model_merged_quantized.onnx": {
+    "size": 58931576,
+    "sha256": "7efefcd793a5663bc204224a92a123524f3dfe2ffad59e5f73d6734d1b11ad04",
+    "url": "https://huggingface.co/Xenova/opus-mt-en-ru/resolve/e050376e960175e8ddc5cff85025dc8436cddd68/onnx/decoder_model_merged_quantized.onnx"
+   },
+   "source.spm": {
+    "size": 802781,
+    "sha256": "16bebef1389a0b8ab452772c4e35b9e605e5713f8ac7baa71ca701394eaa086d",
+    "url": "https://huggingface.co/Xenova/opus-mt-en-ru/resolve/e050376e960175e8ddc5cff85025dc8436cddd68/source.spm"
+   },
+   "vocab.json": {
+    "size": 2726796,
+    "sha256": "5cf0d95d930d8d3e783c9e2f46a72f08b43a18060dab4ddefbcb66a733efedcb",
+    "url": "https://huggingface.co/Xenova/opus-mt-en-ru/resolve/e050376e960175e8ddc5cff85025dc8436cddd68/vocab.json"
+   }
+  },
+  "v2_decoder": {
+   "size": 58931244,
+   "sha256": "0f61b4ecd26e232bf0084a51ce104cd6933830bee65393492756b4b4929670a2",
+   "url": "https://github.com/AmerAlreyahi/OpenCircle-models/releases/download/models-v2/opus-mt-en-ru-decoder_model_merged_quantized.onnx"
+  }
+ },
+ {
+  "pair": "en-zh",
+  "source": "en",
+  "target": "zh",
+  "upstream": "Helsinki-NLP/opus-mt-en-zh",
+  "upstream_revision": null,
+  "onnx_export": "Xenova/opus-mt-en-zh",
+  "onnx_revision": "046f55aec303cdee3e0318604406d4df20f1e8ea",
+  "lang_token": ">>cmn_Hans<<",
+  "pad": 65000,
+  "v1": {
+   "encoder_model_quantized.onnx": {
+    "size": 52899742,
+    "sha256": "d3b7912bf6a9bd27e4c074c2df91d4ff3d5b4bc5f7f6c8d7cc9c805c98fbafee",
+    "url": "https://huggingface.co/Xenova/opus-mt-en-zh/resolve/046f55aec303cdee3e0318604406d4df20f1e8ea/onnx/encoder_model_quantized.onnx"
+   },
+   "decoder_model_merged_quantized.onnx": {
+    "size": 60212804,
+    "sha256": "023be4f841f4c47cd65fffcbaa81c0d99d7f7e0138f7ba0e03fa220a4e688aff",
+    "url": "https://huggingface.co/Xenova/opus-mt-en-zh/resolve/046f55aec303cdee3e0318604406d4df20f1e8ea/onnx/decoder_model_merged_quantized.onnx"
+   },
+   "source.spm": {
+    "size": 806435,
+    "sha256": "5775ddc9e3ff2fae91554da56468ad35ff56edaba870fea74447bc7234bfdaa8",
+    "url": "https://huggingface.co/Xenova/opus-mt-en-zh/resolve/046f55aec303cdee3e0318604406d4df20f1e8ea/source.spm"
+   },
+   "vocab.json": {
+    "size": 1747795,
+    "sha256": "22c957348eed495ee925afc40a36da3e387c8a34a734c8486967c2dca271613e",
+    "url": "https://huggingface.co/Xenova/opus-mt-en-zh/resolve/046f55aec303cdee3e0318604406d4df20f1e8ea/vocab.json"
+   }
+  },
+  "v2_decoder": {
+   "size": 60212472,
+   "sha256": "47ab6181e8b241c54dd17c9ec088e122d671c49425627e82bee7080d2de07eba",
+   "url": "https://github.com/AmerAlreyahi/OpenCircle-models/releases/download/models-v2/opus-mt-en-zh-decoder_model_merged_quantized.onnx"
+  }
+ },
+ {
+  "pair": "ar-en",
+  "source": "ar",
+  "target": "en",
+  "upstream": "Helsinki-NLP/opus-mt-ar-en",
+  "upstream_revision": null,
+  "onnx_export": "Xenova/opus-mt-ar-en",
+  "onnx_revision": "09c7556866400dcc53562ba8d7035119e7d9a2c1",
+  "lang_token": null,
+  "pad": 62833,
+  "v1": {
+   "encoder_model_quantized.onnx": {
+    "size": 51790238,
+    "sha256": "d9b0d612acff86cf87634b49bda566d1ef39b312837de549786ea18fecefc708",
+    "url": "https://huggingface.co/Xenova/opus-mt-ar-en/resolve/09c7556866400dcc53562ba8d7035119e7d9a2c1/onnx/encoder_model_quantized.onnx"
+   },
+   "decoder_model_merged_quantized.onnx": {
+    "size": 59094632,
+    "sha256": "cdb25ae736afe9d48035b0ea311ab4b25f315810fab7f3c6f6cb0d8d87af35fa",
+    "url": "https://huggingface.co/Xenova/opus-mt-ar-en/resolve/09c7556866400dcc53562ba8d7035119e7d9a2c1/onnx/decoder_model_merged_quantized.onnx"
+   },
+   "source.spm": {
+    "size": 917407,
+    "sha256": "484f7210e5f4466f7e5b99b660717c6ef2a6f90746196daba507795b69dc02a2",
+    "url": "https://huggingface.co/Xenova/opus-mt-ar-en/resolve/09c7556866400dcc53562ba8d7035119e7d9a2c1/source.spm"
+   },
+   "vocab.json": {
+    "size": 2257246,
+    "sha256": "87b78c097c331672ca22a522c3ba24c5dc2cdff90495dcb52cf742635439a3a0",
+    "url": "https://huggingface.co/Xenova/opus-mt-ar-en/resolve/09c7556866400dcc53562ba8d7035119e7d9a2c1/vocab.json"
+   }
+  },
+  "v2_decoder": {
+   "size": 59094300,
+   "sha256": "3b580f8bb33683fe3f4552a21646f0d6a492ee1bb2d56780fdd720de31651945",
+   "url": "https://github.com/AmerAlreyahi/OpenCircle-models/releases/download/models-v2/opus-mt-ar-en-decoder_model_merged_quantized.onnx"
+  }
+ },
+ {
+  "pair": "fr-en",
+  "source": "fr",
+  "target": "en",
+  "upstream": "Helsinki-NLP/opus-mt-fr-en",
+  "upstream_revision": null,
+  "onnx_export": "Xenova/opus-mt-fr-en",
+  "onnx_revision": "6b166a182780e118c997879d0ad5be4b53671644",
+  "lang_token": null,
+  "pad": 59513,
+  "v1": {
+   "encoder_model_quantized.onnx": {
+    "size": 50090398,
+    "sha256": "e727cb26ac6bf816394c49671af69c9ae5798868fed1e40849872415dffc1772",
+    "url": "https://huggingface.co/Xenova/opus-mt-fr-en/resolve/6b166a182780e118c997879d0ad5be4b53671644/onnx/encoder_model_quantized.onnx"
+   },
+   "decoder_model_merged_quantized.onnx": {
+    "size": 57381512,
+    "sha256": "73bc7ac8e29c42e6f212ebcc29a2991d3646a04aabb642c0036aa54b40e4e1a9",
+    "url": "https://huggingface.co/Xenova/opus-mt-fr-en/resolve/6b166a182780e118c997879d0ad5be4b53671644/onnx/decoder_model_merged_quantized.onnx"
+   },
+   "source.spm": {
+    "size": 802397,
+    "sha256": "78d0e717c77053f1c4b856d8661d9cb87c64f083a35418c087b9146300e4f585",
+    "url": "https://huggingface.co/Xenova/opus-mt-fr-en/resolve/6b166a182780e118c997879d0ad5be4b53671644/source.spm"
+   },
+   "vocab.json": {
+    "size": 1458196,
+    "sha256": "f2ba9c69ae20f96b8bd821239a9152be422394f980350b77907cffc183db5f2d",
+    "url": "https://huggingface.co/Xenova/opus-mt-fr-en/resolve/6b166a182780e118c997879d0ad5be4b53671644/vocab.json"
+   }
+  },
+  "v2_decoder": {
+   "size": 57381180,
+   "sha256": "bbbb96e87399efc2a1d9e878ccb9e56dccd481b9a082d1860d5cb9d71b878401",
+   "url": "https://github.com/AmerAlreyahi/OpenCircle-models/releases/download/models-v2/opus-mt-fr-en-decoder_model_merged_quantized.onnx"
+  }
+ },
+ {
+  "pair": "zh-en",
+  "source": "zh",
+  "target": "en",
+  "upstream": "Helsinki-NLP/opus-mt-zh-en",
+  "upstream_revision": null,
+  "onnx_export": "Xenova/opus-mt-zh-en",
+  "onnx_revision": "39d480d52a9ea3065a1f117adfe4dbc55de10e6f",
+  "lang_token": null,
+  "pad": 65000,
+  "v1": {
+   "encoder_model_quantized.onnx": {
+    "size": 52899742,
+    "sha256": "84d5e171b626bc8b6b220d022ac58696e9528c25deeacca62b5cbf4364547a99",
+    "url": "https://huggingface.co/Xenova/opus-mt-zh-en/resolve/39d480d52a9ea3065a1f117adfe4dbc55de10e6f/onnx/encoder_model_quantized.onnx"
+   },
+   "decoder_model_merged_quantized.onnx": {
+    "size": 60212804,
+    "sha256": "c6b7f04ff1ba0fbd1bf6852599b4c0cad6fe512d57cd887f44ef36cf705424cb",
+    "url": "https://huggingface.co/Xenova/opus-mt-zh-en/resolve/39d480d52a9ea3065a1f117adfe4dbc55de10e6f/onnx/decoder_model_merged_quantized.onnx"
+   },
+   "source.spm": {
+    "size": 804677,
+    "sha256": "e27a3a1b539f4959ec72ea60e453f49156289f95d4e6000b29332efc45616203",
+    "url": "https://huggingface.co/Xenova/opus-mt-zh-en/resolve/39d480d52a9ea3065a1f117adfe4dbc55de10e6f/source.spm"
+   },
+   "vocab.json": {
+    "size": 1747906,
+    "sha256": "08a119a1defd522fa047cb5e3bfe3e89633e96caa38ced0dc9cee7ef1021a011",
+    "url": "https://huggingface.co/Xenova/opus-mt-zh-en/resolve/39d480d52a9ea3065a1f117adfe4dbc55de10e6f/vocab.json"
+   }
+  },
+  "v2_decoder": {
+   "size": 60212472,
+   "sha256": "ef9bbdba03642c9db4be12107329c6e567167692641d0fe5fc7f668839cee614",
+   "url": "https://github.com/AmerAlreyahi/OpenCircle-models/releases/download/models-v2/opus-mt-zh-en-decoder_model_merged_quantized.onnx"
+  }
+ },
+ {
+  "pair": "ja-en",
+  "source": "ja",
+  "target": "en",
+  "upstream": "Helsinki-NLP/opus-mt-ja-en",
+  "upstream_revision": null,
+  "onnx_export": "Xenova/opus-mt-ja-en",
+  "onnx_revision": "1a906cfaaf7c8f4193f67f5885c082aa6dbd9d16",
+  "lang_token": null,
+  "pad": 60715,
+  "v1": {
+   "encoder_model_quantized.onnx": {
+    "size": 50705822,
+    "sha256": "345262b16bcdda1468b0f3380c112b7ce79f731176b4b1d21f6edd5b2ae0d25c",
+    "url": "https://huggingface.co/Xenova/opus-mt-ja-en/resolve/1a906cfaaf7c8f4193f67f5885c082aa6dbd9d16/onnx/encoder_model_quantized.onnx"
+   },
+   "decoder_model_merged_quantized.onnx": {
+    "size": 58001744,
+    "sha256": "b304d0014e4e1575437b6af95467b6cb54405d923732d8359113bd6dbbee93c0",
+    "url": "https://huggingface.co/Xenova/opus-mt-ja-en/resolve/1a906cfaaf7c8f4193f67f5885c082aa6dbd9d16/onnx/decoder_model_merged_quantized.onnx"
+   },
+   "source.spm": {
+    "size": 781853,
+    "sha256": "d0b5c3b10b5959f056ff2c86e2f2356129242ff1fc72d3a4a34d6a8c0eee4e57",
+    "url": "https://huggingface.co/Xenova/opus-mt-ja-en/resolve/1a906cfaaf7c8f4193f67f5885c082aa6dbd9d16/source.spm"
+   },
+   "vocab.json": {
+    "size": 1622775,
+    "sha256": "a1667b43d021e09c76f385101bd473f20b5691a12cdca7dda43e4a8daff20021",
+    "url": "https://huggingface.co/Xenova/opus-mt-ja-en/resolve/1a906cfaaf7c8f4193f67f5885c082aa6dbd9d16/vocab.json"
+   }
+  },
+  "v2_decoder": {
+   "size": 58001412,
+   "sha256": "6366a67461afcd7f966f5b8b05f6050a9c74e5b6490f0d2f9ea25f8be29bae57",
+   "url": "https://github.com/AmerAlreyahi/OpenCircle-models/releases/download/models-v2/opus-mt-ja-en-decoder_model_merged_quantized.onnx"
+  }
+ },
+ {
+  "pair": "es-en",
+  "source": "es",
+  "target": "en",
+  "upstream": "Helsinki-NLP/opus-mt-es-en",
+  "upstream_revision": null,
+  "onnx_export": "Xenova/opus-mt-es-en",
+  "onnx_revision": "eadfd7c658a9d8929ac3b8e996b68a68e2c7d480",
+  "lang_token": null,
+  "pad": 65000,
+  "v1": {
+   "encoder_model_quantized.onnx": {
+    "size": 52899742,
+    "sha256": "c01e70f8455efc350831aa2af7ed187b16829241f0018ba07d1ba643a391bc18",
+    "url": "https://huggingface.co/Xenova/opus-mt-es-en/resolve/eadfd7c658a9d8929ac3b8e996b68a68e2c7d480/onnx/encoder_model_quantized.onnx"
+   },
+   "decoder_model_merged_quantized.onnx": {
+    "size": 60212804,
+    "sha256": "4cd91ab30240d295ce907b5100826031838c672005e57e524d711122d75605fa",
+    "url": "https://huggingface.co/Xenova/opus-mt-es-en/resolve/eadfd7c658a9d8929ac3b8e996b68a68e2c7d480/onnx/decoder_model_merged_quantized.onnx"
+   },
+   "source.spm": {
+    "size": 825924,
+    "sha256": "e236ee6d866b635c0142114f8647f39831f9d92534aa2aad75c942f6a78ad0e3",
+    "url": "https://huggingface.co/Xenova/opus-mt-es-en/resolve/eadfd7c658a9d8929ac3b8e996b68a68e2c7d480/source.spm"
+   },
+   "vocab.json": {
+    "size": 1720044,
+    "sha256": "b074b4cca0036ade5a39ea97faabd534e1015482c480fc2cb02c6481983eb163",
+    "url": "https://huggingface.co/Xenova/opus-mt-es-en/resolve/eadfd7c658a9d8929ac3b8e996b68a68e2c7d480/vocab.json"
+   }
+  },
+  "v2_decoder": {
+   "size": 60212472,
+   "sha256": "218b6fc3896b585876698f84d37eb309339d6f2b497e36e890e1cc93be5e3832",
+   "url": "https://github.com/AmerAlreyahi/OpenCircle-models/releases/download/models-v2/opus-mt-es-en-decoder_model_merged_quantized.onnx"
+  }
+ },
+ {
+  "pair": "de-en",
+  "source": "de",
+  "target": "en",
+  "upstream": "Helsinki-NLP/opus-mt-de-en",
+  "upstream_revision": null,
+  "onnx_export": "Xenova/opus-mt-de-en",
+  "onnx_revision": "399dfd68706739fffd503f876093e455ae268a06",
+  "lang_token": null,
+  "pad": 58100,
+  "v1": {
+   "encoder_model_quantized.onnx": {
+    "size": 49366942,
+    "sha256": "4cedda8f8c89b72a42b3c6cd1e7a27f2de24457093e3bf80cb3e46829641fcd8",
+    "url": "https://huggingface.co/Xenova/opus-mt-de-en/resolve/399dfd68706739fffd503f876093e455ae268a06/onnx/encoder_model_quantized.onnx"
+   },
+   "decoder_model_merged_quantized.onnx": {
+    "size": 56652404,
+    "sha256": "4712800584b2d77c2f9e620bf29523e2b20b62f65ade5011ee01780e2b0ea5d3",
+    "url": "https://huggingface.co/Xenova/opus-mt-de-en/resolve/399dfd68706739fffd503f876093e455ae268a06/onnx/decoder_model_merged_quantized.onnx"
+   },
+   "source.spm": {
+    "size": 796845,
+    "sha256": "bbd1f495eea99c8e21ae086d9146e0fa7b096c3dfdd9ba07ab8b631889df5c9b",
+    "url": "https://huggingface.co/Xenova/opus-mt-de-en/resolve/399dfd68706739fffd503f876093e455ae268a06/source.spm"
+   },
+   "vocab.json": {
+    "size": 1389436,
+    "sha256": "d5acea957b265a78554999144459c5e391e0df525864edc8287bc090290baa44",
+    "url": "https://huggingface.co/Xenova/opus-mt-de-en/resolve/399dfd68706739fffd503f876093e455ae268a06/vocab.json"
+   }
+  },
+  "v2_decoder": {
+   "size": 56652072,
+   "sha256": "d9218390aec5c4588090dfa32d98bb796d7e89c4fe38f15611bf34e84669169b",
+   "url": "https://github.com/AmerAlreyahi/OpenCircle-models/releases/download/models-v2/opus-mt-de-en-decoder_model_merged_quantized.onnx"
+  }
+ },
+ {
+  "pair": "ru-en",
+  "source": "ru",
+  "target": "en",
+  "upstream": "Helsinki-NLP/opus-mt-ru-en",
+  "upstream_revision": null,
+  "onnx_export": "Xenova/opus-mt-ru-en",
+  "onnx_revision": "afe8c6c738ec81b6d033fd8f44f9678a639a7c67",
+  "lang_token": null,
+  "pad": 62517,
+  "v1": {
+   "encoder_model_quantized.onnx": {
+    "size": 51628446,
+    "sha256": "c10df0466540534bb70c4402d539c349b8bfa9968184cad89f51408cf13e7eb7",
+    "url": "https://huggingface.co/Xenova/opus-mt-ru-en/resolve/afe8c6c738ec81b6d033fd8f44f9678a639a7c67/onnx/encoder_model_quantized.onnx"
+   },
+   "decoder_model_merged_quantized.onnx": {
+    "size": 58931576,
+    "sha256": "25e7ff97b201bce64ab9c39749761d657b70b8602bcbc1ce01c67f713e90ffdf",
+    "url": "https://huggingface.co/Xenova/opus-mt-ru-en/resolve/afe8c6c738ec81b6d033fd8f44f9678a639a7c67/onnx/decoder_model_merged_quantized.onnx"
+   },
+   "source.spm": {
+    "size": 1080169,
+    "sha256": "745998e51ba5b058e38b7ac7765c25c43ed5c1c39cc92b27163b9b2e323c9d7c",
+    "url": "https://huggingface.co/Xenova/opus-mt-ru-en/resolve/afe8c6c738ec81b6d033fd8f44f9678a639a7c67/source.spm"
+   },
+   "vocab.json": {
+    "size": 2726796,
+    "sha256": "5cf0d95d930d8d3e783c9e2f46a72f08b43a18060dab4ddefbcb66a733efedcb",
+    "url": "https://huggingface.co/Xenova/opus-mt-ru-en/resolve/afe8c6c738ec81b6d033fd8f44f9678a639a7c67/vocab.json"
+   }
+  },
+  "v2_decoder": {
+   "size": 58931244,
+   "sha256": "a4fcff5376935b15833ac213965e27c47e6490a1c33de42ba95224237874bde3",
+   "url": "https://github.com/AmerAlreyahi/OpenCircle-models/releases/download/models-v2/opus-mt-ru-en-decoder_model_merged_quantized.onnx"
+  }
+ },
+ {
+  "pair": "it-en",
+  "source": "it",
+  "target": "en",
+  "upstream": "Helsinki-NLP/opus-mt-it-en",
+  "upstream_revision": null,
+  "onnx_export": "Xenova/opus-mt-it-en",
+  "onnx_revision": "fd0b89b9c052adc1f2f64152f555aa17353728be",
+  "lang_token": null,
+  "pad": 80378,
+  "v1": {
+   "encoder_model_quantized.onnx": {
+    "size": 60773278,
+    "sha256": "a025d2d85c90da23880116b67175e43e71921d8d2bf446b9f1eacdc86015aa4c",
+    "url": "https://huggingface.co/Xenova/opus-mt-it-en/resolve/fd0b89b9c052adc1f2f64152f555aa17353728be/onnx/encoder_model_quantized.onnx"
+   },
+   "decoder_model_merged_quantized.onnx": {
+    "size": 68147852,
+    "sha256": "aebc2789cd2ef8062fbda020bac90b61e68458ba98a4c43cea63c1d2310ba2b8",
+    "url": "https://huggingface.co/Xenova/opus-mt-it-en/resolve/fd0b89b9c052adc1f2f64152f555aa17353728be/onnx/decoder_model_merged_quantized.onnx"
+   },
+   "source.spm": {
+    "size": 813709,
+    "sha256": "1bd307e2756991d470e4b40172147f7889b46a323b1a9a2150e66274825b1f21",
+    "url": "https://huggingface.co/Xenova/opus-mt-it-en/resolve/fd0b89b9c052adc1f2f64152f555aa17353728be/source.spm"
+   },
+   "vocab.json": {
+    "size": 2530593,
+    "sha256": "08e5b03ab20b2b9b85d41aed1b36dce2650afcb6e96274a06b7869b2e06884d5",
+    "url": "https://huggingface.co/Xenova/opus-mt-it-en/resolve/fd0b89b9c052adc1f2f64152f555aa17353728be/vocab.json"
+   }
+  },
+  "v2_decoder": {
+   "size": 68147520,
+   "sha256": "a7a46ab70be9b525ef7d8a1370e6752ad6cdb9af5819650fc378db8a4b7e7e60",
+   "url": "https://github.com/AmerAlreyahi/OpenCircle-models/releases/download/models-v2/opus-mt-it-en-decoder_model_merged_quantized.onnx"
+  }
+ },
+ {
+  "pair": "nl-en",
+  "source": "nl",
+  "target": "en",
+  "upstream": "Helsinki-NLP/opus-mt-nl-en",
+  "upstream_revision": null,
+  "onnx_export": "Xenova/opus-mt-nl-en",
+  "onnx_revision": "82c42d95d1508037cbe7172d85fd4e940a2f3584",
+  "lang_token": null,
+  "pad": 67027,
+  "v1": {
+   "encoder_model_quantized.onnx": {
+    "size": 53937566,
+    "sha256": "7b8b1e9071bed8e2394e3bd2f65b952700b1dd1293d087141134c8bac018653b",
+    "url": "https://huggingface.co/Xenova/opus-mt-nl-en/resolve/82c42d95d1508037cbe7172d85fd4e940a2f3584/onnx/encoder_model_quantized.onnx"
+   },
+   "decoder_model_merged_quantized.onnx": {
+    "size": 61258736,
+    "sha256": "ad4df9a08f16952c0d9ee06807f54d62fcd07a9109c2c0b8ea05a4422d7bf4d7",
+    "url": "https://huggingface.co/Xenova/opus-mt-nl-en/resolve/82c42d95d1508037cbe7172d85fd4e940a2f3584/onnx/decoder_model_merged_quantized.onnx"
+   },
+   "source.spm": {
+    "size": 813866,
+    "sha256": "f538d23d4b30641cd97c608d2a83890d503aa1286a5560f19ef949404a786e94",
+    "url": "https://huggingface.co/Xenova/opus-mt-nl-en/resolve/82c42d95d1508037cbe7172d85fd4e940a2f3584/source.spm"
+   },
+   "vocab.json": {
+    "size": 1794274,
+    "sha256": "b1fba91c620564d90848c5f77b03f13d17949790f8e7c7741e4a8ea13b8b0d91",
+    "url": "https://huggingface.co/Xenova/opus-mt-nl-en/resolve/82c42d95d1508037cbe7172d85fd4e940a2f3584/vocab.json"
+   }
+  },
+  "v2_decoder": {
+   "size": 61258404,
+   "sha256": "94dd7329eaa3644b3110efcd97e55f1046b94ee3f81213360cd4fc8fd08d872b",
+   "url": "https://github.com/AmerAlreyahi/OpenCircle-models/releases/download/models-v2/opus-mt-nl-en-decoder_model_merged_quantized.onnx"
+  }
+ },
+ {
+  "pair": "uk-en",
+  "source": "uk",
+  "target": "en",
+  "upstream": "Helsinki-NLP/opus-mt-uk-en",
+  "upstream_revision": null,
+  "onnx_export": "Xenova/opus-mt-uk-en",
+  "onnx_revision": "b2ad6afa424aaeff8913ff350860b7a7b7c0a607",
+  "lang_token": null,
+  "pad": 61586,
+  "v1": {
+   "encoder_model_quantized.onnx": {
+    "size": 51151774,
+    "sha256": "5e8c4c7e88742efa0a8e013f3897f17e29357d54b8c86a13472669546d6ed561",
+    "url": "https://huggingface.co/Xenova/opus-mt-uk-en/resolve/b2ad6afa424aaeff8913ff350860b7a7b7c0a607/onnx/encoder_model_quantized.onnx"
+   },
+   "decoder_model_merged_quantized.onnx": {
+    "size": 58451180,
+    "sha256": "ffa6d28d5fa0ff4ed930969d9ca4bac2d80ff11172198e93dc6332db49ddb36b",
+    "url": "https://huggingface.co/Xenova/opus-mt-uk-en/resolve/b2ad6afa424aaeff8913ff350860b7a7b7c0a607/onnx/decoder_model_merged_quantized.onnx"
+   },
+   "source.spm": {
+    "size": 1007605,
+    "sha256": "7abd810b2df512e6fe177f8732f6a0b3107614c84cc52aba20d805b4cb0d7b6b",
+    "url": "https://huggingface.co/Xenova/opus-mt-uk-en/resolve/b2ad6afa424aaeff8913ff350860b7a7b7c0a607/source.spm"
+   },
+   "vocab.json": {
+    "size": 2490886,
+    "sha256": "e8b45188b1db6a4e0f960813e1bd493948ab0bc4d57b069ea03e77a78b7567d4",
+    "url": "https://huggingface.co/Xenova/opus-mt-uk-en/resolve/b2ad6afa424aaeff8913ff350860b7a7b7c0a607/vocab.json"
+   }
+  },
+  "v2_decoder": {
+   "size": 58450848,
+   "sha256": "450c899d01b3e4114c06d4a794d264f796ac6e0f231b9ae37126fd25c4aa41f8",
+   "url": "https://github.com/AmerAlreyahi/OpenCircle-models/releases/download/models-v2/opus-mt-uk-en-decoder_model_merged_quantized.onnx"
+  }
+ },
+ {
+  "pair": "pl-en",
+  "source": "pl",
+  "target": "en",
+  "upstream": "Helsinki-NLP/opus-mt-pl-en",
+  "upstream_revision": null,
+  "onnx_export": "Xenova/opus-mt-pl-en",
+  "onnx_revision": "aeaf0e003b045248c28a559a5ce6027b54ebdaba",
+  "lang_token": null,
+  "pad": 63429,
+  "v1": {
+   "encoder_model_quantized.onnx": {
+    "size": 52095390,
+    "sha256": "2416eb3c6db52a2d116539bf673b596e6a3d1453153b17778e85c9f55249c832",
+    "url": "https://huggingface.co/Xenova/opus-mt-pl-en/resolve/aeaf0e003b045248c28a559a5ce6027b54ebdaba/onnx/encoder_model_quantized.onnx"
+   },
+   "decoder_model_merged_quantized.onnx": {
+    "size": 59402168,
+    "sha256": "9ad9da5bce473ca06a9b0a3dbf0793675827e5668ab501e5dc65dac8cecd93ba",
+    "url": "https://huggingface.co/Xenova/opus-mt-pl-en/resolve/aeaf0e003b045248c28a559a5ce6027b54ebdaba/onnx/decoder_model_merged_quantized.onnx"
+   },
+   "source.spm": {
+    "size": 834921,
+    "sha256": "86b3b5f9de4f5ed9c46321bab1f865e3aa9ddf63094e89b49dd515aeafa79ce4",
+    "url": "https://huggingface.co/Xenova/opus-mt-pl-en/resolve/aeaf0e003b045248c28a559a5ce6027b54ebdaba/source.spm"
+   },
+   "vocab.json": {
+    "size": 1642111,
+    "sha256": "bd1a4fc17902ffffd8266b1b734c67ce64ce2d9e37a9da8c1f160d1edef69794",
+    "url": "https://huggingface.co/Xenova/opus-mt-pl-en/resolve/aeaf0e003b045248c28a559a5ce6027b54ebdaba/vocab.json"
+   }
+  },
+  "v2_decoder": {
+   "size": 59401836,
+   "sha256": "12ef8c518a6fc1dfd5ef3f771c01917df858ecffb07357b3ffc0629e8ff2bdd9",
+   "url": "https://github.com/AmerAlreyahi/OpenCircle-models/releases/download/models-v2/opus-mt-pl-en-decoder_model_merged_quantized.onnx"
+  }
+ },
+ {
+  "pair": "hi-en",
+  "source": "hi",
+  "target": "en",
+  "upstream": "Helsinki-NLP/opus-mt-hi-en",
+  "upstream_revision": null,
+  "onnx_export": "Xenova/opus-mt-hi-en",
+  "onnx_revision": "99853100ed9d932987a6816e8cf7b1b6742a6116",
+  "lang_token": null,
+  "pad": 61126,
+  "v1": {
+   "encoder_model_quantized.onnx": {
+    "size": 50916254,
+    "sha256": "dc5a1b084a83019bbb9798809dea5f2d16cc30a9a257238ec93120b3c2892ebf",
+    "url": "https://huggingface.co/Xenova/opus-mt-hi-en/resolve/99853100ed9d932987a6816e8cf7b1b6742a6116/onnx/encoder_model_quantized.onnx"
+   },
+   "decoder_model_merged_quantized.onnx": {
+    "size": 58213820,
+    "sha256": "52655659006c8ce742cc761282d49b3be4e73bfbf080f1b6a546aa96170d5813",
+    "url": "https://huggingface.co/Xenova/opus-mt-hi-en/resolve/99853100ed9d932987a6816e8cf7b1b6742a6116/onnx/decoder_model_merged_quantized.onnx"
+   },
+   "source.spm": {
+    "size": 1057690,
+    "sha256": "dd20c408ec4568361d32b41080e3f6fa5b82895135bd25c2747b2c145e42d07b",
+    "url": "https://huggingface.co/Xenova/opus-mt-hi-en/resolve/99853100ed9d932987a6816e8cf7b1b6742a6116/source.spm"
+   },
+   "vocab.json": {
+    "size": 2179709,
+    "sha256": "83bf3ef5541c374f1796405a135ffa24d50665f1fcfdb5825f603c70166b4740",
+    "url": "https://huggingface.co/Xenova/opus-mt-hi-en/resolve/99853100ed9d932987a6816e8cf7b1b6742a6116/vocab.json"
+   }
+  },
+  "v2_decoder": {
+   "size": 58213488,
+   "sha256": "607895853fccd0fa894b1c3fb68c30f235e2d0fb7f7854b3541ee72f52915ee0",
+   "url": "https://github.com/AmerAlreyahi/OpenCircle-models/releases/download/models-v2/opus-mt-hi-en-decoder_model_merged_quantized.onnx"
+  }
+ },
+ {
+  "pair": "id-en",
+  "source": "id",
+  "target": "en",
+  "upstream": "Helsinki-NLP/opus-mt-id-en",
+  "upstream_revision": null,
+  "onnx_export": "Xenova/opus-mt-id-en",
+  "onnx_revision": "c38ef36c843b71177da903442835c3c870975fd6",
+  "lang_token": null,
+  "pad": 54795,
+  "v1": {
+   "encoder_model_quantized.onnx": {
+    "size": 47674782,
+    "sha256": "c5ab889ecf81e120e53f0f39800c0609d8d77b6c4a32212d73a85e3cfeb66293",
+    "url": "https://huggingface.co/Xenova/opus-mt-id-en/resolve/c38ef36c843b71177da903442835c3c870975fd6/onnx/encoder_model_quantized.onnx"
+   },
+   "decoder_model_merged_quantized.onnx": {
+    "size": 54947024,
+    "sha256": "d65eeab370c2873bdf22a7b2b311f0f636aa693b8edd55c60b6b1db8473268dd",
+    "url": "https://huggingface.co/Xenova/opus-mt-id-en/resolve/c38ef36c843b71177da903442835c3c870975fd6/onnx/decoder_model_merged_quantized.onnx"
+   },
+   "source.spm": {
+    "size": 800687,
+    "sha256": "2a8fefe71c7f26cb0c6aa1b9f0cc0f8d18006b20fe41c547af7f25b9c8333465",
+    "url": "https://huggingface.co/Xenova/opus-mt-id-en/resolve/c38ef36c843b71177da903442835c3c870975fd6/source.spm"
+   },
+   "vocab.json": {
+    "size": 1366984,
+    "sha256": "cda834905a5d478c54a73abc98cc9155dc58217baa130cdf165411265b760d6b",
+    "url": "https://huggingface.co/Xenova/opus-mt-id-en/resolve/c38ef36c843b71177da903442835c3c870975fd6/vocab.json"
+   }
+  },
+  "v2_decoder": {
+   "size": 54946692,
+   "sha256": "ed7c0c6aa53da96d0633aabf223ba164afb0394a6c5646b9070b903940473132",
+   "url": "https://github.com/AmerAlreyahi/OpenCircle-models/releases/download/models-v2/opus-mt-id-en-decoder_model_merged_quantized.onnx"
+  }
+ },
+ {
+  "pair": "vi-en",
+  "source": "vi",
+  "target": "en",
+  "upstream": "Helsinki-NLP/opus-mt-vi-en",
+  "upstream_revision": null,
+  "onnx_export": "Xenova/opus-mt-vi-en",
+  "onnx_revision": "541dfd72ec07e8f1563795e0224408ad8d729e80",
+  "lang_token": null,
+  "pad": 53738,
+  "v1": {
+   "encoder_model_quantized.onnx": {
+    "size": 47133597,
+    "sha256": "fa7bd78e8bed6bdc03728f62f1592c4bb52d9e12795496604c1e990e102abdb2",
+    "url": "https://huggingface.co/Xenova/opus-mt-vi-en/resolve/541dfd72ec07e8f1563795e0224408ad8d729e80/onnx/encoder_model_quantized.onnx"
+   },
+   "decoder_model_merged_quantized.onnx": {
+    "size": 54401611,
+    "sha256": "540edbcc08bab0b42c03576a759fd9b4d5fc99996ac3178630733916dc2325cb",
+    "url": "https://huggingface.co/Xenova/opus-mt-vi-en/resolve/541dfd72ec07e8f1563795e0224408ad8d729e80/onnx/decoder_model_merged_quantized.onnx"
+   },
+   "source.spm": {
+    "size": 756168,
+    "sha256": "9deb4f9e7bebd3876f4bf238a9eb52f2f95a1fba2210a4a8239167c55c15e67d",
+    "url": "https://huggingface.co/Xenova/opus-mt-vi-en/resolve/541dfd72ec07e8f1563795e0224408ad8d729e80/source.spm"
+   },
+   "vocab.json": {
+    "size": 1301077,
+    "sha256": "f84f995b939f2411294d0723df4aaf7853d0bd07143b530edec0697c7d75aa5d",
+    "url": "https://huggingface.co/Xenova/opus-mt-vi-en/resolve/541dfd72ec07e8f1563795e0224408ad8d729e80/vocab.json"
+   }
+  },
+  "v2_decoder": {
+   "size": 54401279,
+   "sha256": "699ef5a7a2c6ba1d9fa05879dd13adaccbc496454b08e3fb6919ecf70744a51a",
+   "url": "https://github.com/AmerAlreyahi/OpenCircle-models/releases/download/models-v2/opus-mt-vi-en-decoder_model_merged_quantized.onnx"
+  }
+ },
+ {
+  "pair": "th-en",
+  "source": "th",
+  "target": "en",
+  "upstream": "Helsinki-NLP/opus-mt-th-en",
+  "upstream_revision": null,
+  "onnx_export": "Xenova/opus-mt-th-en",
+  "onnx_revision": "7f0406b972f742985cfbe3be8f61dead9f1bc0e3",
+  "lang_token": null,
+  "pad": 62306,
+  "v1": {
+   "encoder_model_quantized.onnx": {
+    "size": 51520414,
+    "sha256": "37e31edabcadfca300cf13d4dd20087aa1a920cba7b20c738cba8ff44f320bbf",
+    "url": "https://huggingface.co/Xenova/opus-mt-th-en/resolve/7f0406b972f742985cfbe3be8f61dead9f1bc0e3/onnx/encoder_model_quantized.onnx"
+   },
+   "decoder_model_merged_quantized.onnx": {
+    "size": 58822700,
+    "sha256": "65b9ea697b1b3fc318ab8376d321dcba21b389c61939d13c21bf8b9044300082",
+    "url": "https://huggingface.co/Xenova/opus-mt-th-en/resolve/7f0406b972f742985cfbe3be8f61dead9f1bc0e3/onnx/decoder_model_merged_quantized.onnx"
+   },
+   "source.spm": {
+    "size": 1213743,
+    "sha256": "01ecb88d0f92bbb20c21257b92e93e301a10971ecd60971e8e637bc3eacd9124",
+    "url": "https://huggingface.co/Xenova/opus-mt-th-en/resolve/7f0406b972f742985cfbe3be8f61dead9f1bc0e3/source.spm"
+   },
+   "vocab.json": {
+    "size": 2528379,
+    "sha256": "0c199f23b384bedb69a496cd8d901d5d298d05a676cde5db15219a60cd2f5847",
+    "url": "https://huggingface.co/Xenova/opus-mt-th-en/resolve/7f0406b972f742985cfbe3be8f61dead9f1bc0e3/vocab.json"
+   }
+  },
+  "v2_decoder": {
+   "size": 58822368,
+   "sha256": "d47e46270210fdb53dcb98f14d5b9ebea3e297145f9604924de44e5bda2613fb",
+   "url": "https://github.com/AmerAlreyahi/OpenCircle-models/releases/download/models-v2/opus-mt-th-en-decoder_model_merged_quantized.onnx"
+  }
+ },
+ {
+  "pair": "ko-en",
+  "source": "ko",
+  "target": "en",
+  "upstream": "Helsinki-NLP/opus-mt-ko-en",
+  "upstream_revision": null,
+  "onnx_export": "Xenova/opus-mt-ko-en",
+  "onnx_revision": "d9fa1ac6008242100fecb4fff9b0a5917a1be81f",
+  "lang_token": null,
+  "pad": 65000,
+  "v1": {
+   "encoder_model_quantized.onnx": {
+    "size": 52899741,
+    "sha256": "210e1d2cb5b457cdeeffe288099cc9d1df9f13c35dc3d39fde4ba252af877380",
+    "url": "https://huggingface.co/Xenova/opus-mt-ko-en/resolve/d9fa1ac6008242100fecb4fff9b0a5917a1be81f/onnx/encoder_model_quantized.onnx"
+   },
+   "decoder_model_merged_quantized.onnx": {
+    "size": 60212803,
+    "sha256": "e131732653a6d3cec42a8b65f8844980042b036bdaca931446bc4b3530bc3506",
+    "url": "https://huggingface.co/Xenova/opus-mt-ko-en/resolve/d9fa1ac6008242100fecb4fff9b0a5917a1be81f/onnx/decoder_model_merged_quantized.onnx"
+   },
+   "source.spm": {
+    "size": 841805,
+    "sha256": "c9496f7c2be9aecb84c751ae9f35a875915dde8e3892f652a5c76811ab2a0f49",
+    "url": "https://huggingface.co/Xenova/opus-mt-ko-en/resolve/d9fa1ac6008242100fecb4fff9b0a5917a1be81f/source.spm"
+   },
+   "vocab.json": {
+    "size": 1849870,
+    "sha256": "97197044d4803c664a37f8ca2ced9c3405b8a3df6b262a12da22d990b0d756cd",
+    "url": "https://huggingface.co/Xenova/opus-mt-ko-en/resolve/d9fa1ac6008242100fecb4fff9b0a5917a1be81f/vocab.json"
+   }
+  },
+  "v2_decoder": {
+   "size": 60212471,
+   "sha256": "3a8bd3efa1e0d79cb74552b08ff8b204ee9a564aa680fc0f32b37677306231b4",
+   "url": "https://github.com/AmerAlreyahi/OpenCircle-models/releases/download/models-v2/opus-mt-ko-en-decoder_model_merged_quantized.onnx"
+  }
+ },
+ {
+  "pair": "en-it",
+  "source": "en",
+  "target": "it",
+  "upstream": "Helsinki-NLP/opus-mt-en-it",
+  "upstream_revision": null,
+  "onnx_export": "Xenova/opus-mt-en-it",
+  "onnx_revision": "075406e3c8c2c30634d4a1bd8f00c21d9e162011",
+  "lang_token": null,
+  "pad": 80034,
+  "v1": {
+   "encoder_model_quantized.onnx": {
+    "size": 60597150,
+    "sha256": "b51c5110c7ba356ef01ee400d427afe162e657de1d7a2e9a40deedd811b49e6f",
+    "url": "https://huggingface.co/Xenova/opus-mt-en-it/resolve/075406e3c8c2c30634d4a1bd8f00c21d9e162011/onnx/encoder_model_quantized.onnx"
+   },
+   "decoder_model_merged_quantized.onnx": {
+    "size": 67970348,
+    "sha256": "f9db146ed7665ea7d437dc4df564e3af5df923366de4d52aaf2c4b4e3e4ae4f1",
+    "url": "https://huggingface.co/Xenova/opus-mt-en-it/resolve/075406e3c8c2c30634d4a1bd8f00c21d9e162011/onnx/decoder_model_merged_quantized.onnx"
+   },
+   "source.spm": {
+    "size": 789468,
+    "sha256": "2efff2c37e51842c2817a6770280979b5dd803cebbe2928e576d42a888f89537",
+    "url": "https://huggingface.co/Xenova/opus-mt-en-it/resolve/075406e3c8c2c30634d4a1bd8f00c21d9e162011/source.spm"
+   },
+   "vocab.json": {
+    "size": 2511647,
+    "sha256": "40c98ffc0013f2f09ed9127418131738ad9c2de4d8f7f52d52532332bb2bf78c",
+    "url": "https://huggingface.co/Xenova/opus-mt-en-it/resolve/075406e3c8c2c30634d4a1bd8f00c21d9e162011/vocab.json"
+   }
+  },
+  "v2_decoder": {
+   "size": 67970016,
+   "sha256": "eb870c207294754cf62b743d75a2b81994c9fecb7c0955f1d601c16674bb2c9f",
+   "url": "https://github.com/AmerAlreyahi/OpenCircle-models/releases/download/models-v2/opus-mt-en-it-decoder_model_merged_quantized.onnx"
+  }
+ },
+ {
+  "pair": "en-nl",
+  "source": "en",
+  "target": "nl",
+  "upstream": "Helsinki-NLP/opus-mt-en-nl",
+  "upstream_revision": null,
+  "onnx_export": "Xenova/opus-mt-en-nl",
+  "onnx_revision": "c3a0541231a7329b4492809fc2bd7ab7d2ceb0bc",
+  "lang_token": null,
+  "pad": 67027,
+  "v1": {
+   "encoder_model_quantized.onnx": {
+    "size": 53937565,
+    "sha256": "0febb990f8ca8ed9fd3e0017dfcb55ec5293999f20ead81d2bb4370e9e3120ff",
+    "url": "https://huggingface.co/Xenova/opus-mt-en-nl/resolve/c3a0541231a7329b4492809fc2bd7ab7d2ceb0bc/onnx/encoder_model_quantized.onnx"
+   },
+   "decoder_model_merged_quantized.onnx": {
+    "size": 61258735,
+    "sha256": "5f8034fddc4cdcb6fa6c3b64a06e1cd9b1955c0c6dcd13e0e47610ab99ac4a99",
+    "url": "https://huggingface.co/Xenova/opus-mt-en-nl/resolve/c3a0541231a7329b4492809fc2bd7ab7d2ceb0bc/onnx/decoder_model_merged_quantized.onnx"
+   },
+   "source.spm": {
+    "size": 789525,
+    "sha256": "d05781fde84b8793191528a7a176e1b17f96265388f602379ee6ae3139f59141",
+    "url": "https://huggingface.co/Xenova/opus-mt-en-nl/resolve/c3a0541231a7329b4492809fc2bd7ab7d2ceb0bc/source.spm"
+   },
+   "vocab.json": {
+    "size": 1794274,
+    "sha256": "b1fba91c620564d90848c5f77b03f13d17949790f8e7c7741e4a8ea13b8b0d91",
+    "url": "https://huggingface.co/Xenova/opus-mt-en-nl/resolve/c3a0541231a7329b4492809fc2bd7ab7d2ceb0bc/vocab.json"
+   }
+  },
+  "v2_decoder": {
+   "size": 61258403,
+   "sha256": "c41791e07e4995f06c719eb8917140d8150f3404d8fecbdaee2287a74bcdd5f8",
+   "url": "https://github.com/AmerAlreyahi/OpenCircle-models/releases/download/models-v2/opus-mt-en-nl-decoder_model_merged_quantized.onnx"
+  }
+ },
+ {
+  "pair": "en-uk",
+  "source": "en",
+  "target": "uk",
+  "upstream": "Helsinki-NLP/opus-mt-en-uk",
+  "upstream_revision": null,
+  "onnx_export": "Xenova/opus-mt-en-uk",
+  "onnx_revision": "e6ca587292984b343fd829b6430ed55858496525",
+  "lang_token": null,
+  "pad": 61586,
+  "v1": {
+   "encoder_model_quantized.onnx": {
+    "size": 51151774,
+    "sha256": "234c3738c258b3b7c913452a4ab6203b1a24f459355af8ef563dd4d94792d087",
+    "url": "https://huggingface.co/Xenova/opus-mt-en-uk/resolve/e6ca587292984b343fd829b6430ed55858496525/onnx/encoder_model_quantized.onnx"
+   },
+   "decoder_model_merged_quantized.onnx": {
+    "size": 58451180,
+    "sha256": "0892312ea1d359fb749b16deb5005246eb17974bd2b5424344b0e9ae83e0a142",
+    "url": "https://huggingface.co/Xenova/opus-mt-en-uk/resolve/e6ca587292984b343fd829b6430ed55858496525/onnx/decoder_model_merged_quantized.onnx"
+   },
+   "source.spm": {
+    "size": 808645,
+    "sha256": "4dc9157e60a15b157c2f3d5f892379b03aed111c9fe8ac7cecba5f2aa56379ef",
+    "url": "https://huggingface.co/Xenova/opus-mt-en-uk/resolve/e6ca587292984b343fd829b6430ed55858496525/source.spm"
+   },
+   "vocab.json": {
+    "size": 2490886,
+    "sha256": "e8b45188b1db6a4e0f960813e1bd493948ab0bc4d57b069ea03e77a78b7567d4",
+    "url": "https://huggingface.co/Xenova/opus-mt-en-uk/resolve/e6ca587292984b343fd829b6430ed55858496525/vocab.json"
+   }
+  },
+  "v2_decoder": {
+   "size": 58450848,
+   "sha256": "ec57db15ca5e7466242367332b56840f36ee33319d6ffb34297b52bcd71f2e9a",
+   "url": "https://github.com/AmerAlreyahi/OpenCircle-models/releases/download/models-v2/opus-mt-en-uk-decoder_model_merged_quantized.onnx"
+  }
+ },
+ {
+  "pair": "en-hi",
+  "source": "en",
+  "target": "hi",
+  "upstream": "Helsinki-NLP/opus-mt-en-hi",
+  "upstream_revision": null,
+  "onnx_export": "Xenova/opus-mt-en-hi",
+  "onnx_revision": "7aad72006a1588a9c3485ed6203aed99eebbc872",
+  "lang_token": null,
+  "pad": 61949,
+  "v1": {
+   "encoder_model_quantized.onnx": {
+    "size": 51337630,
+    "sha256": "3045cd6eaf06db96cff853204d6f0ffeb0c5af238a4f5a87a19fcaa94f7493c4",
+    "url": "https://huggingface.co/Xenova/opus-mt-en-hi/resolve/7aad72006a1588a9c3485ed6203aed99eebbc872/onnx/encoder_model_quantized.onnx"
+   },
+   "decoder_model_merged_quantized.onnx": {
+    "size": 58638488,
+    "sha256": "8baba43a14b15ca4543d30ab36e7d34f2e516fb9af7e0b83b77a5e6a6f66d198",
+    "url": "https://huggingface.co/Xenova/opus-mt-en-hi/resolve/7aad72006a1588a9c3485ed6203aed99eebbc872/onnx/decoder_model_merged_quantized.onnx"
+   },
+   "source.spm": {
+    "size": 812240,
+    "sha256": "fd4e951487aed00bae6a6c2ee4ef5d8d1db05fd098b19b608046c9334b58d24d",
+    "url": "https://huggingface.co/Xenova/opus-mt-en-hi/resolve/7aad72006a1588a9c3485ed6203aed99eebbc872/source.spm"
+   },
+   "vocab.json": {
+    "size": 2221738,
+    "sha256": "be02f5dfb85054d4f25089f6b347b69d32e98ed4c3d181ed0c789904eb1e3d3b",
+    "url": "https://huggingface.co/Xenova/opus-mt-en-hi/resolve/7aad72006a1588a9c3485ed6203aed99eebbc872/vocab.json"
+   }
+  },
+  "v2_decoder": {
+   "size": 58638156,
+   "sha256": "f50e7418ea2bd0856a591e857bdb1dccfc0c411cab27aa8587b621f4fd610a94",
+   "url": "https://github.com/AmerAlreyahi/OpenCircle-models/releases/download/models-v2/opus-mt-en-hi-decoder_model_merged_quantized.onnx"
+  }
+ },
+ {
+  "pair": "en-id",
+  "source": "en",
+  "target": "id",
+  "upstream": "Helsinki-NLP/opus-mt-en-id",
+  "upstream_revision": null,
+  "onnx_export": "Xenova/opus-mt-en-id",
+  "onnx_revision": "b3b41f654c2fb3286d007dee1da7b0f47fd27d82",
+  "lang_token": null,
+  "pad": 54795,
+  "v1": {
+   "encoder_model_quantized.onnx": {
+    "size": 47674781,
+    "sha256": "9bfc9cf0f400f86ec11da24b2f56380fcfabab17fb2dbcf7bb4c1754b7076e24",
+    "url": "https://huggingface.co/Xenova/opus-mt-en-id/resolve/b3b41f654c2fb3286d007dee1da7b0f47fd27d82/onnx/encoder_model_quantized.onnx"
+   },
+   "decoder_model_merged_quantized.onnx": {
+    "size": 54947023,
+    "sha256": "0a59ebfe85137a21055d9f73d9f83a59487f0cff31db452c7db3b6cdeca8e7c2",
+    "url": "https://huggingface.co/Xenova/opus-mt-en-id/resolve/b3b41f654c2fb3286d007dee1da7b0f47fd27d82/onnx/decoder_model_merged_quantized.onnx"
+   },
+   "source.spm": {
+    "size": 795925,
+    "sha256": "e88300911c2c573ec5526777a1e84bae698d20925b82dcef9c7248bb0e537ed0",
+    "url": "https://huggingface.co/Xenova/opus-mt-en-id/resolve/b3b41f654c2fb3286d007dee1da7b0f47fd27d82/source.spm"
+   },
+   "vocab.json": {
+    "size": 1366984,
+    "sha256": "cda834905a5d478c54a73abc98cc9155dc58217baa130cdf165411265b760d6b",
+    "url": "https://huggingface.co/Xenova/opus-mt-en-id/resolve/b3b41f654c2fb3286d007dee1da7b0f47fd27d82/vocab.json"
+   }
+  },
+  "v2_decoder": {
+   "size": 54946691,
+   "sha256": "2067ad87ac34662df919d750f3417f976592577d68b2d21aef7dc0f298673613",
+   "url": "https://github.com/AmerAlreyahi/OpenCircle-models/releases/download/models-v2/opus-mt-en-id-decoder_model_merged_quantized.onnx"
+  }
+ },
+ {
+  "pair": "en-vi",
+  "source": "en",
+  "target": "vi",
+  "upstream": "Helsinki-NLP/opus-mt-en-vi",
+  "upstream_revision": null,
+  "onnx_export": "Xenova/opus-mt-en-vi",
+  "onnx_revision": "30bcd461c0d7338ad106b36314d3eedc2d4e998c",
+  "lang_token": null,
+  "pad": 53684,
+  "v1": {
+   "encoder_model_quantized.onnx": {
+    "size": 47105950,
+    "sha256": "dfcd7a32be3fdd21cbcf5d354520d626f1768fd6e205ca62a6a11a4641d31f36",
+    "url": "https://huggingface.co/Xenova/opus-mt-en-vi/resolve/30bcd461c0d7338ad106b36314d3eedc2d4e998c/onnx/encoder_model_quantized.onnx"
+   },
+   "decoder_model_merged_quantized.onnx": {
+    "size": 54373748,
+    "sha256": "1cfc6a84f9c189e6928c9710b281fae3f1f42d4ffbba109e7b4ec8e31ceb06dd",
+    "url": "https://huggingface.co/Xenova/opus-mt-en-vi/resolve/30bcd461c0d7338ad106b36314d3eedc2d4e998c/onnx/decoder_model_merged_quantized.onnx"
+   },
+   "source.spm": {
+    "size": 808612,
+    "sha256": "fdd9ab486ca8ea060967105e30db7d8928729c78a67448711d2dd7c3153b37cd",
+    "url": "https://huggingface.co/Xenova/opus-mt-en-vi/resolve/30bcd461c0d7338ad106b36314d3eedc2d4e998c/source.spm"
+   },
+   "vocab.json": {
+    "size": 1299764,
+    "sha256": "bcc8bbafeb0b6b58fecf244f8da996da9aa45dbea7871164f9c8ce480507f9fe",
+    "url": "https://huggingface.co/Xenova/opus-mt-en-vi/resolve/30bcd461c0d7338ad106b36314d3eedc2d4e998c/vocab.json"
+   }
+  },
+  "v2_decoder": {
+   "size": 54373416,
+   "sha256": "0a294c7468ce910fec5018b96245210a5863b7c7de49bf081d633a95e22b83aa",
+   "url": "https://github.com/AmerAlreyahi/OpenCircle-models/releases/download/models-v2/opus-mt-en-vi-decoder_model_merged_quantized.onnx"
+  }
+ },
+ {
+  "pair": "de-es",
+  "source": "de",
+  "target": "es",
+  "upstream": "Helsinki-NLP/opus-mt-de-es",
+  "upstream_revision": null,
+  "onnx_export": "Xenova/opus-mt-de-es",
+  "onnx_revision": "d339419ee3bda301bdcd00249d4436b74664ee7e",
+  "lang_token": null,
+  "pad": 61300,
+  "v1": {
+   "encoder_model_quantized.onnx": {
+    "size": 51005342,
+    "sha256": "54a64cdcdef126647fe4922b33744f6643982084ee0a58b6d441bec5d17f7deb",
+    "url": "https://huggingface.co/Xenova/opus-mt-de-es/resolve/d339419ee3bda301bdcd00249d4436b74664ee7e/onnx/encoder_model_quantized.onnx"
+   },
+   "decoder_model_merged_quantized.onnx": {
+    "size": 58303604,
+    "sha256": "8b426d5cafcc60359eeb3577d4becd021be84c4a9eefabef811a6b0dd10e0082",
+    "url": "https://huggingface.co/Xenova/opus-mt-de-es/resolve/d339419ee3bda301bdcd00249d4436b74664ee7e/onnx/decoder_model_merged_quantized.onnx"
+   },
+   "source.spm": {
+    "size": 828663,
+    "sha256": "4c6cf9cacbfbf82db361e3e07df76172cce7d1ef683d4e7d090349c84246caf0",
+    "url": "https://huggingface.co/Xenova/opus-mt-de-es/resolve/d339419ee3bda301bdcd00249d4436b74664ee7e/source.spm"
+   },
+   "vocab.json": {
+    "size": 1588376,
+    "sha256": "d5789816a8a925181ad70fd1c452cd48d6658040e74208512ce18eee55e8e1f9",
+    "url": "https://huggingface.co/Xenova/opus-mt-de-es/resolve/d339419ee3bda301bdcd00249d4436b74664ee7e/vocab.json"
+   }
+  },
+  "v2_decoder": {
+   "size": 58303272,
+   "sha256": "c91ebc9b40c62d542c6c7dc3005911fb08581a054f374c762c8ffe4927fb0615",
+   "url": "https://github.com/AmerAlreyahi/OpenCircle-models/releases/download/models-v2/opus-mt-de-es-decoder_model_merged_quantized.onnx"
+  }
+ },
+ {
+  "pair": "de-fr",
+  "source": "de",
+  "target": "fr",
+  "upstream": "Helsinki-NLP/opus-mt-de-fr",
+  "upstream_revision": null,
+  "onnx_export": "Xenova/opus-mt-de-fr",
+  "onnx_revision": "e783da03d247c4d16778e938530e9b5d7bd1523d",
+  "lang_token": null,
+  "pad": 61152,
+  "v1": {
+   "encoder_model_quantized.onnx": {
+    "size": 50929565,
+    "sha256": "90cba5278e60ad6be15594760e718135640185b041d5706cba7762ece724d489",
+    "url": "https://huggingface.co/Xenova/opus-mt-de-fr/resolve/e783da03d247c4d16778e938530e9b5d7bd1523d/onnx/encoder_model_quantized.onnx"
+   },
+   "decoder_model_merged_quantized.onnx": {
+    "size": 58227235,
+    "sha256": "2b834e8f8fc9c5159c36127fca1126224299848e04b8aa1f2936255ba339f435",
+    "url": "https://huggingface.co/Xenova/opus-mt-de-fr/resolve/e783da03d247c4d16778e938530e9b5d7bd1523d/onnx/decoder_model_merged_quantized.onnx"
+   },
+   "source.spm": {
+    "size": 827737,
+    "sha256": "965802053f4a59f81d48283bd1160ed49950124891f8f532d98945de4f5e58eb",
+    "url": "https://huggingface.co/Xenova/opus-mt-de-fr/resolve/e783da03d247c4d16778e938530e9b5d7bd1523d/source.spm"
+   },
+   "vocab.json": {
+    "size": 1586444,
+    "sha256": "d17e2f6f5ab525264096f440f74a0a4656af422b8617e58bd2202ea0c283e3f9",
+    "url": "https://huggingface.co/Xenova/opus-mt-de-fr/resolve/e783da03d247c4d16778e938530e9b5d7bd1523d/vocab.json"
+   }
+  },
+  "v2_decoder": {
+   "size": 58226903,
+   "sha256": "3fec3907056b8d37d383d309b131111e80ea8dc751606d68edd7f5d0d2797383",
+   "url": "https://github.com/AmerAlreyahi/OpenCircle-models/releases/download/models-v2/opus-mt-de-fr-decoder_model_merged_quantized.onnx"
+  }
+ },
+ {
+  "pair": "es-de",
+  "source": "es",
+  "target": "de",
+  "upstream": "Helsinki-NLP/opus-mt-es-de",
+  "upstream_revision": null,
+  "onnx_export": "Xenova/opus-mt-es-de",
+  "onnx_revision": "7f493e4b81b684478396f37de4c1ebc28ecd5855",
+  "lang_token": null,
+  "pad": 61300,
+  "v1": {
+   "encoder_model_quantized.onnx": {
+    "size": 51005342,
+    "sha256": "bb5765b2b22eb48c2865c65098558cfd7e45a45f2f20aafb1cdc85a1f65c4de3",
+    "url": "https://huggingface.co/Xenova/opus-mt-es-de/resolve/7f493e4b81b684478396f37de4c1ebc28ecd5855/onnx/encoder_model_quantized.onnx"
+   },
+   "decoder_model_merged_quantized.onnx": {
+    "size": 58303604,
+    "sha256": "cb6d365ceaefd8141ec6cc3dfa4e2c332d03ffc891ea732efb714e230a94cc2b",
+    "url": "https://huggingface.co/Xenova/opus-mt-es-de/resolve/7f493e4b81b684478396f37de4c1ebc28ecd5855/onnx/decoder_model_merged_quantized.onnx"
+   },
+   "source.spm": {
+    "size": 818345,
+    "sha256": "d15fb47311fe1d385213350041a25dcb2f2b0ceb7d7102b7853b1405b33fd794",
+    "url": "https://huggingface.co/Xenova/opus-mt-es-de/resolve/7f493e4b81b684478396f37de4c1ebc28ecd5855/source.spm"
+   },
+   "vocab.json": {
+    "size": 1588376,
+    "sha256": "d5789816a8a925181ad70fd1c452cd48d6658040e74208512ce18eee55e8e1f9",
+    "url": "https://huggingface.co/Xenova/opus-mt-es-de/resolve/7f493e4b81b684478396f37de4c1ebc28ecd5855/vocab.json"
+   }
+  },
+  "v2_decoder": {
+   "size": 58303272,
+   "sha256": "c0a41b0291d1faf1ecdc73b5270a46d6bb6d1e9f82f8d5a684c85a80655f0978",
+   "url": "https://github.com/AmerAlreyahi/OpenCircle-models/releases/download/models-v2/opus-mt-es-de-decoder_model_merged_quantized.onnx"
+  }
+ },
+ {
+  "pair": "es-fr",
+  "source": "es",
+  "target": "fr",
+  "upstream": "Helsinki-NLP/opus-mt-es-fr",
+  "upstream_revision": null,
+  "onnx_export": "Xenova/opus-mt-es-fr",
+  "onnx_revision": "3bef5f612825d503f6fb85e0527a1fe30f2578c2",
+  "lang_token": null,
+  "pad": 74821,
+  "v1": {
+   "encoder_model_quantized.onnx": {
+    "size": 57928094,
+    "sha256": "f2c497ebe1c3eadb329b8f36b250e7f87f9a327f46615dc5637492702cd0d2af",
+    "url": "https://huggingface.co/Xenova/opus-mt-es-fr/resolve/3bef5f612825d503f6fb85e0527a1fe30f2578c2/onnx/encoder_model_quantized.onnx"
+   },
+   "decoder_model_merged_quantized.onnx": {
+    "size": 65280440,
+    "sha256": "f6e43796a68566c95ab387277c223726ac988b307e875c239b340424eb057a92",
+    "url": "https://huggingface.co/Xenova/opus-mt-es-fr/resolve/3bef5f612825d503f6fb85e0527a1fe30f2578c2/onnx/decoder_model_merged_quantized.onnx"
+   },
+   "source.spm": {
+    "size": 818689,
+    "sha256": "0807c7b3dabe387a083700920a4b406c7656db09922bf934c25c2fab24706c4d",
+    "url": "https://huggingface.co/Xenova/opus-mt-es-fr/resolve/3bef5f612825d503f6fb85e0527a1fe30f2578c2/source.spm"
+   },
+   "vocab.json": {
+    "size": 2487351,
+    "sha256": "00298f6b835a284fc55779eb3af674807e71984169682d5156ed92184b3b0f0a",
+    "url": "https://huggingface.co/Xenova/opus-mt-es-fr/resolve/3bef5f612825d503f6fb85e0527a1fe30f2578c2/vocab.json"
+   }
+  },
+  "v2_decoder": {
+   "size": 65280108,
+   "sha256": "230ee7786e0277e48941514ae946d192fa5325af9a26cb5229c1ad0c0be779d7",
+   "url": "https://github.com/AmerAlreyahi/OpenCircle-models/releases/download/models-v2/opus-mt-es-fr-decoder_model_merged_quantized.onnx"
+  }
+ },
+ {
+  "pair": "es-it",
+  "source": "es",
+  "target": "it",
+  "upstream": "Helsinki-NLP/opus-mt-es-it",
+  "upstream_revision": null,
+  "onnx_export": "Xenova/opus-mt-es-it",
+  "onnx_revision": "596c67cda7cb919f0d67221f3a31bd7df79f19d0",
+  "lang_token": null,
+  "pad": 59030,
+  "v1": {
+   "encoder_model_quantized.onnx": {
+    "size": 49843102,
+    "sha256": "9e4ba8017de817880e4ad24712015e5935147479d01c25af757af24d61e3fab0",
+    "url": "https://huggingface.co/Xenova/opus-mt-es-it/resolve/596c67cda7cb919f0d67221f3a31bd7df79f19d0/onnx/encoder_model_quantized.onnx"
+   },
+   "decoder_model_merged_quantized.onnx": {
+    "size": 57132284,
+    "sha256": "11ac94f23d5c31305d1ff16a8018292eec9b61d5514dd365de856bc6a744ef3f",
+    "url": "https://huggingface.co/Xenova/opus-mt-es-it/resolve/596c67cda7cb919f0d67221f3a31bd7df79f19d0/onnx/decoder_model_merged_quantized.onnx"
+   },
+   "source.spm": {
+    "size": 818750,
+    "sha256": "65513650404974598f0fb0a3156a243c12ad57c38fcc3367c2c6aef7ed4d3865",
+    "url": "https://huggingface.co/Xenova/opus-mt-es-it/resolve/596c67cda7cb919f0d67221f3a31bd7df79f19d0/source.spm"
+   },
+   "vocab.json": {
+    "size": 1534392,
+    "sha256": "38a184f18ecef75da7e18105aeaeb0e3286cbfc66ab4c03a5238938c3fd1ee86",
+    "url": "https://huggingface.co/Xenova/opus-mt-es-it/resolve/596c67cda7cb919f0d67221f3a31bd7df79f19d0/vocab.json"
+   }
+  },
+  "v2_decoder": {
+   "size": 57131952,
+   "sha256": "c578aee5f9213e61187b93eceed72e8ba97f8beec1dbbea90e48b3ea8ce5118e",
+   "url": "https://github.com/AmerAlreyahi/OpenCircle-models/releases/download/models-v2/opus-mt-es-it-decoder_model_merged_quantized.onnx"
+  }
+ },
+ {
+  "pair": "es-ru",
+  "source": "es",
+  "target": "ru",
+  "upstream": "Helsinki-NLP/opus-mt-es-ru",
+  "upstream_revision": null,
+  "onnx_export": "Xenova/opus-mt-es-ru",
+  "onnx_revision": "268ccd60bde3cabde17068d482ca6930512f1a85",
+  "lang_token": null,
+  "pad": 63429,
+  "v1": {
+   "encoder_model_quantized.onnx": {
+    "size": 52095390,
+    "sha256": "04702c95f2380c074b9458735fffe44b095ef1a7632f0e13a7f7c7440d995241",
+    "url": "https://huggingface.co/Xenova/opus-mt-es-ru/resolve/268ccd60bde3cabde17068d482ca6930512f1a85/onnx/encoder_model_quantized.onnx"
+   },
+   "decoder_model_merged_quantized.onnx": {
+    "size": 59402168,
+    "sha256": "70fed4fafbc55053da784680b37745224210da4678fbaf69d92c1f6dec3f4e00",
+    "url": "https://huggingface.co/Xenova/opus-mt-es-ru/resolve/268ccd60bde3cabde17068d482ca6930512f1a85/onnx/decoder_model_merged_quantized.onnx"
+   },
+   "source.spm": {
+    "size": 829382,
+    "sha256": "b309d8a58c506172b66c39fdd552a89792f3fb256f09e0e9a3dbfc0faefa636f",
+    "url": "https://huggingface.co/Xenova/opus-mt-es-ru/resolve/268ccd60bde3cabde17068d482ca6930512f1a85/source.spm"
+   },
+   "vocab.json": {
+    "size": 2746317,
+    "sha256": "d81cea81bca9898107f3eb07dfaed23252d4f922dec7552af7039a821a756db1",
+    "url": "https://huggingface.co/Xenova/opus-mt-es-ru/resolve/268ccd60bde3cabde17068d482ca6930512f1a85/vocab.json"
+   }
+  },
+  "v2_decoder": {
+   "size": 59401836,
+   "sha256": "a711177ea202844be123724adc3c177f78b640a07cc656d943af2e2959e0aa49",
+   "url": "https://github.com/AmerAlreyahi/OpenCircle-models/releases/download/models-v2/opus-mt-es-ru-decoder_model_merged_quantized.onnx"
+  }
+ },
+ {
+  "pair": "fr-de",
+  "source": "fr",
+  "target": "de",
+  "upstream": "Helsinki-NLP/opus-mt-fr-de",
+  "upstream_revision": null,
+  "onnx_export": "Xenova/opus-mt-fr-de",
+  "onnx_revision": "7eea1996b4480d073cf560fcba6d4480aaf9a2bb",
+  "lang_token": null,
+  "pad": 61152,
+  "v1": {
+   "encoder_model_quantized.onnx": {
+    "size": 50929566,
+    "sha256": "76e81a715482c10d25fe3cbfe1129b236adcdc75bac4d9cee37bc97dc61ee8dd",
+    "url": "https://huggingface.co/Xenova/opus-mt-fr-de/resolve/7eea1996b4480d073cf560fcba6d4480aaf9a2bb/onnx/encoder_model_quantized.onnx"
+   },
+   "decoder_model_merged_quantized.onnx": {
+    "size": 58227236,
+    "sha256": "d3f4dbe5fbdeae2668a189edfc17edd87876f6df7ff5282803d535c5980bd4a4",
+    "url": "https://huggingface.co/Xenova/opus-mt-fr-de/resolve/7eea1996b4480d073cf560fcba6d4480aaf9a2bb/onnx/decoder_model_merged_quantized.onnx"
+   },
+   "source.spm": {
+    "size": 812399,
+    "sha256": "e9a9acb44b4f88235ca6cc9f0b4546f942ba34fb1b27937b11386cc8db63ee83",
+    "url": "https://huggingface.co/Xenova/opus-mt-fr-de/resolve/7eea1996b4480d073cf560fcba6d4480aaf9a2bb/source.spm"
+   },
+   "vocab.json": {
+    "size": 1586444,
+    "sha256": "d17e2f6f5ab525264096f440f74a0a4656af422b8617e58bd2202ea0c283e3f9",
+    "url": "https://huggingface.co/Xenova/opus-mt-fr-de/resolve/7eea1996b4480d073cf560fcba6d4480aaf9a2bb/vocab.json"
+   }
+  },
+  "v2_decoder": {
+   "size": 58226904,
+   "sha256": "26ada70f131c8fffbea44462c190dede181fc4e6411ace33278ef50d71a0122f",
+   "url": "https://github.com/AmerAlreyahi/OpenCircle-models/releases/download/models-v2/opus-mt-fr-de-decoder_model_merged_quantized.onnx"
+  }
+ },
+ {
+  "pair": "fr-es",
+  "source": "fr",
+  "target": "es",
+  "upstream": "Helsinki-NLP/opus-mt-fr-es",
+  "upstream_revision": null,
+  "onnx_export": "Xenova/opus-mt-fr-es",
+  "onnx_revision": "962338be51033b548c13dbb6f4da3ddb8c8aba0e",
+  "lang_token": null,
+  "pad": 74821,
+  "v1": {
+   "encoder_model_quantized.onnx": {
+    "size": 57928094,
+    "sha256": "946954149b0179a0fb60145a3ed85da2f58868ef2e6a442a1cb4301563b70ac3",
+    "url": "https://huggingface.co/Xenova/opus-mt-fr-es/resolve/962338be51033b548c13dbb6f4da3ddb8c8aba0e/onnx/encoder_model_quantized.onnx"
+   },
+   "decoder_model_merged_quantized.onnx": {
+    "size": 65280440,
+    "sha256": "ff991f24d534a62db615697ed9555db80be28fbf9e5677d8ebb1f78c6aabc2c6",
+    "url": "https://huggingface.co/Xenova/opus-mt-fr-es/resolve/962338be51033b548c13dbb6f4da3ddb8c8aba0e/onnx/decoder_model_merged_quantized.onnx"
+   },
+   "source.spm": {
+    "size": 811963,
+    "sha256": "74ffc930c4af87e3bdec6dde479eb36f05152e1a657ec65dfb923baf4b5d27a9",
+    "url": "https://huggingface.co/Xenova/opus-mt-fr-es/resolve/962338be51033b548c13dbb6f4da3ddb8c8aba0e/source.spm"
+   },
+   "vocab.json": {
+    "size": 2487351,
+    "sha256": "00298f6b835a284fc55779eb3af674807e71984169682d5156ed92184b3b0f0a",
+    "url": "https://huggingface.co/Xenova/opus-mt-fr-es/resolve/962338be51033b548c13dbb6f4da3ddb8c8aba0e/vocab.json"
+   }
+  },
+  "v2_decoder": {
+   "size": 65280108,
+   "sha256": "2ad44e9c44b09f738ae2d8412f276b93d1adb0b51f24c1caa0cf5c084b3417f9",
+   "url": "https://github.com/AmerAlreyahi/OpenCircle-models/releases/download/models-v2/opus-mt-fr-es-decoder_model_merged_quantized.onnx"
+  }
+ },
+ {
+  "pair": "fr-ru",
+  "source": "fr",
+  "target": "ru",
+  "upstream": "Helsinki-NLP/opus-mt-fr-ru",
+  "upstream_revision": null,
+  "onnx_export": "Xenova/opus-mt-fr-ru",
+  "onnx_revision": "c2ec732b045ae9f0e1ae1ea9267840145a8c03fe",
+  "lang_token": null,
+  "pad": 64376,
+  "v1": {
+   "encoder_model_quantized.onnx": {
+    "size": 52580253,
+    "sha256": "058326a2132a61b250d117ca78b4b3b6f53e81479c3d3b6bebf3c58850618743",
+    "url": "https://huggingface.co/Xenova/opus-mt-fr-ru/resolve/c2ec732b045ae9f0e1ae1ea9267840145a8c03fe/onnx/encoder_model_quantized.onnx"
+   },
+   "decoder_model_merged_quantized.onnx": {
+    "size": 59890819,
+    "sha256": "6f2c1c7baf1c3d7ceed89708bfeabecb4c9987047b6046b85aa71c55580f4512",
+    "url": "https://huggingface.co/Xenova/opus-mt-fr-ru/resolve/c2ec732b045ae9f0e1ae1ea9267840145a8c03fe/onnx/decoder_model_merged_quantized.onnx"
+   },
+   "source.spm": {
+    "size": 820963,
+    "sha256": "e852342099cfac79243a4ee0184eeb426814a84bb44b0cdf50516795d696e373",
+    "url": "https://huggingface.co/Xenova/opus-mt-fr-ru/resolve/c2ec732b045ae9f0e1ae1ea9267840145a8c03fe/source.spm"
+   },
+   "vocab.json": {
+    "size": 2787675,
+    "sha256": "1b9868de182074d2fc6d606d935b1c80bb18539a2dfc62670ef977571e44651c",
+    "url": "https://huggingface.co/Xenova/opus-mt-fr-ru/resolve/c2ec732b045ae9f0e1ae1ea9267840145a8c03fe/vocab.json"
+   }
+  },
+  "v2_decoder": {
+   "size": 59890487,
+   "sha256": "f76aaff1e74e9e0314a72a0707ef236e7e5b9a6c0b99138bf390a899f7248434",
+   "url": "https://github.com/AmerAlreyahi/OpenCircle-models/releases/download/models-v2/opus-mt-fr-ru-decoder_model_merged_quantized.onnx"
+  }
+ },
+ {
+  "pair": "it-es",
+  "source": "it",
+  "target": "es",
+  "upstream": "Helsinki-NLP/opus-mt-it-es",
+  "upstream_revision": null,
+  "onnx_export": "Xenova/opus-mt-it-es",
+  "onnx_revision": "0eba27fe6da2208231ea5e7047b0f62241ffc2bb",
+  "lang_token": null,
+  "pad": 59030,
+  "v1": {
+   "encoder_model_quantized.onnx": {
+    "size": 49843102,
+    "sha256": "3e0ef961235dc192d99555fe015ac0c28c0a93d006e98e6050a13dc45f45bb88",
+    "url": "https://huggingface.co/Xenova/opus-mt-it-es/resolve/0eba27fe6da2208231ea5e7047b0f62241ffc2bb/onnx/encoder_model_quantized.onnx"
+   },
+   "decoder_model_merged_quantized.onnx": {
+    "size": 57132284,
+    "sha256": "147aa9f62b543cb7a7a119aabc89ce26b7defab212fb2486b2bff94e09986dce",
+    "url": "https://huggingface.co/Xenova/opus-mt-it-es/resolve/0eba27fe6da2208231ea5e7047b0f62241ffc2bb/onnx/decoder_model_merged_quantized.onnx"
+   },
+   "source.spm": {
+    "size": 813114,
+    "sha256": "03264679b2a1831b20d3ef2cc946ac99e3acab74ad965d77c637e8253ea30cd3",
+    "url": "https://huggingface.co/Xenova/opus-mt-it-es/resolve/0eba27fe6da2208231ea5e7047b0f62241ffc2bb/source.spm"
+   },
+   "vocab.json": {
+    "size": 1534392,
+    "sha256": "38a184f18ecef75da7e18105aeaeb0e3286cbfc66ab4c03a5238938c3fd1ee86",
+    "url": "https://huggingface.co/Xenova/opus-mt-it-es/resolve/0eba27fe6da2208231ea5e7047b0f62241ffc2bb/vocab.json"
+   }
+  },
+  "v2_decoder": {
+   "size": 57131952,
+   "sha256": "935a8b889645360b605451a96c92ade40be45584496fb377e2d342ea69421376",
+   "url": "https://github.com/AmerAlreyahi/OpenCircle-models/releases/download/models-v2/opus-mt-it-es-decoder_model_merged_quantized.onnx"
+  }
+ },
+ {
+  "pair": "it-fr",
+  "source": "it",
+  "target": "fr",
+  "upstream": "Helsinki-NLP/opus-mt-it-fr",
+  "upstream_revision": null,
+  "onnx_export": "Xenova/opus-mt-it-fr",
+  "onnx_revision": "7843e3b7137d19face19cb32e27256888d26fe84",
+  "lang_token": null,
+  "pad": 59350,
+  "v1": {
+   "encoder_model_quantized.onnx": {
+    "size": 50006942,
+    "sha256": "02efa49882a03300453fa6816ebc965baff791b280b2d03ac93316739768dd19",
+    "url": "https://huggingface.co/Xenova/opus-mt-it-fr/resolve/7843e3b7137d19face19cb32e27256888d26fe84/onnx/encoder_model_quantized.onnx"
+   },
+   "decoder_model_merged_quantized.onnx": {
+    "size": 57297404,
+    "sha256": "062ee6c4f6c2318114239a681849667492667e21b5617458e73a27b1d2db23b7",
+    "url": "https://huggingface.co/Xenova/opus-mt-it-fr/resolve/7843e3b7137d19face19cb32e27256888d26fe84/onnx/decoder_model_merged_quantized.onnx"
+   },
+   "source.spm": {
+    "size": 813967,
+    "sha256": "7bdce190b91dcd93a386b7f584dbed229fa78a89d16ed0742ad1f348d9082005",
+    "url": "https://huggingface.co/Xenova/opus-mt-it-fr/resolve/7843e3b7137d19face19cb32e27256888d26fe84/source.spm"
+   },
+   "vocab.json": {
+    "size": 1535967,
+    "sha256": "0929e03c27b4b39c41e97ed11c677aa076433d5d46684df53324a1d20198178f",
+    "url": "https://huggingface.co/Xenova/opus-mt-it-fr/resolve/7843e3b7137d19face19cb32e27256888d26fe84/vocab.json"
+   }
+  },
+  "v2_decoder": {
+   "size": 57297072,
+   "sha256": "fe60a7e329f527bb4f0c1ac904355356a7881ba194a59b4c66c50dabac182ff1",
+   "url": "https://github.com/AmerAlreyahi/OpenCircle-models/releases/download/models-v2/opus-mt-it-fr-decoder_model_merged_quantized.onnx"
+  }
+ },
+ {
+  "pair": "ru-es",
+  "source": "ru",
+  "target": "es",
+  "upstream": "Helsinki-NLP/opus-mt-ru-es",
+  "upstream_revision": null,
+  "onnx_export": "Xenova/opus-mt-ru-es",
+  "onnx_revision": "9cb5fb9fae4d5c0c731dcc3ba74c4e0a87f15eb0",
+  "lang_token": null,
+  "pad": 63429,
+  "v1": {
+   "encoder_model_quantized.onnx": {
+    "size": 52095390,
+    "sha256": "0e48e0ea0f45b967a2994b992027915e1a3983086c40bd11c01c762c0bd36718",
+    "url": "https://huggingface.co/Xenova/opus-mt-ru-es/resolve/9cb5fb9fae4d5c0c731dcc3ba74c4e0a87f15eb0/onnx/encoder_model_quantized.onnx"
+   },
+   "decoder_model_merged_quantized.onnx": {
+    "size": 59402168,
+    "sha256": "c16a3a885622460e9654ba5c22e09768c0165c1a564935ed0de20520df36ac1d",
+    "url": "https://huggingface.co/Xenova/opus-mt-ru-es/resolve/9cb5fb9fae4d5c0c731dcc3ba74c4e0a87f15eb0/onnx/decoder_model_merged_quantized.onnx"
+   },
+   "source.spm": {
+    "size": 1060731,
+    "sha256": "581d0ce357f10ff41e4ab32b5771068257470676ec0d555ba73f36e7e7a1c99c",
+    "url": "https://huggingface.co/Xenova/opus-mt-ru-es/resolve/9cb5fb9fae4d5c0c731dcc3ba74c4e0a87f15eb0/source.spm"
+   },
+   "vocab.json": {
+    "size": 2746317,
+    "sha256": "d81cea81bca9898107f3eb07dfaed23252d4f922dec7552af7039a821a756db1",
+    "url": "https://huggingface.co/Xenova/opus-mt-ru-es/resolve/9cb5fb9fae4d5c0c731dcc3ba74c4e0a87f15eb0/vocab.json"
+   }
+  },
+  "v2_decoder": {
+   "size": 59401836,
+   "sha256": "de5aca8325d90629fd63c7fd5a9f40307182407982535069248183bc6afa4500",
+   "url": "https://github.com/AmerAlreyahi/OpenCircle-models/releases/download/models-v2/opus-mt-ru-es-decoder_model_merged_quantized.onnx"
+  }
+ },
+ {
+  "pair": "ru-fr",
+  "source": "ru",
+  "target": "fr",
+  "upstream": "Helsinki-NLP/opus-mt-ru-fr",
+  "upstream_revision": null,
+  "onnx_export": "Xenova/opus-mt-ru-fr",
+  "onnx_revision": "c7275f468246036d24bfe14ce8465e94e1037af9",
+  "lang_token": null,
+  "pad": 64376,
+  "v1": {
+   "encoder_model_quantized.onnx": {
+    "size": 52580253,
+    "sha256": "2b2801424d0f56825cee08950e945189444d08773131c2e3386a71ce1f87fc72",
+    "url": "https://huggingface.co/Xenova/opus-mt-ru-fr/resolve/c7275f468246036d24bfe14ce8465e94e1037af9/onnx/encoder_model_quantized.onnx"
+   },
+   "decoder_model_merged_quantized.onnx": {
+    "size": 59890819,
+    "sha256": "3d25927b7b8f58d46b69782193a55663f5738af397734c834249840c835d51eb",
+    "url": "https://huggingface.co/Xenova/opus-mt-ru-fr/resolve/c7275f468246036d24bfe14ce8465e94e1037af9/onnx/decoder_model_merged_quantized.onnx"
+   },
+   "source.spm": {
+    "size": 1063848,
+    "sha256": "50a16a6e7a21936d7a5cd1764c61364660353e2cebb2ed78e55b97bd74e85771",
+    "url": "https://huggingface.co/Xenova/opus-mt-ru-fr/resolve/c7275f468246036d24bfe14ce8465e94e1037af9/source.spm"
+   },
+   "vocab.json": {
+    "size": 2787675,
+    "sha256": "1b9868de182074d2fc6d606d935b1c80bb18539a2dfc62670ef977571e44651c",
+    "url": "https://huggingface.co/Xenova/opus-mt-ru-fr/resolve/c7275f468246036d24bfe14ce8465e94e1037af9/vocab.json"
+   }
+  },
+  "v2_decoder": {
+   "size": 59890487,
+   "sha256": "fe803a860bdcfa0aab2cefa3e9095c867e8ca51c91e1824d7ab7219f96c62b16",
+   "url": "https://github.com/AmerAlreyahi/OpenCircle-models/releases/download/models-v2/opus-mt-ru-fr-decoder_model_merged_quantized.onnx"
+  }
+ },
+ {
+  "pair": "ru-uk",
+  "source": "ru",
+  "target": "uk",
+  "upstream": "Helsinki-NLP/opus-mt-ru-uk",
+  "upstream_revision": null,
+  "onnx_export": "Xenova/opus-mt-ru-uk",
+  "onnx_revision": "6d8a744ed6eafd9003bcc2b052c4575de0485e1e",
+  "lang_token": null,
+  "pad": 57776,
+  "v1": {
+   "encoder_model_quantized.onnx": {
+    "size": 49201054,
+    "sha256": "5d1531b6d1bad2a7168f82d2c74acbf9a625e4f2913fe7ff476b61b6c7ec4d9a",
+    "url": "https://huggingface.co/Xenova/opus-mt-ru-uk/resolve/6d8a744ed6eafd9003bcc2b052c4575de0485e1e/onnx/encoder_model_quantized.onnx"
+   },
+   "decoder_model_merged_quantized.onnx": {
+    "size": 56485220,
+    "sha256": "7b28ef096a0f4dc8eb989ebe6e3ab0b56095f812e7b86258087a8cc6aa8b100b",
+    "url": "https://huggingface.co/Xenova/opus-mt-ru-uk/resolve/6d8a744ed6eafd9003bcc2b052c4575de0485e1e/onnx/decoder_model_merged_quantized.onnx"
+   },
+   "source.spm": {
+    "size": 1049819,
+    "sha256": "d989ee1653a22aa05280110ca2abaccb8a77b397a64f14576984f0a9f9a8d2ec",
+    "url": "https://huggingface.co/Xenova/opus-mt-ru-uk/resolve/6d8a744ed6eafd9003bcc2b052c4575de0485e1e/source.spm"
+   },
+   "vocab.json": {
+    "size": 3474975,
+    "sha256": "e0350396e721f2863a8182e93cad07ba19166ca1cc5ed7d08acfde89003ffea1",
+    "url": "https://huggingface.co/Xenova/opus-mt-ru-uk/resolve/6d8a744ed6eafd9003bcc2b052c4575de0485e1e/vocab.json"
+   }
+  },
+  "v2_decoder": {
+   "size": 56484888,
+   "sha256": "198db0b935a13776ee0b6d2282eb9ddba90166a664517ce9e9d8011791b821d0",
+   "url": "https://github.com/AmerAlreyahi/OpenCircle-models/releases/download/models-v2/opus-mt-ru-uk-decoder_model_merged_quantized.onnx"
+  }
+ },
+ {
+  "pair": "uk-ru",
+  "source": "uk",
+  "target": "ru",
+  "upstream": "Helsinki-NLP/opus-mt-uk-ru",
+  "upstream_revision": null,
+  "onnx_export": "Xenova/opus-mt-uk-ru",
+  "onnx_revision": "cfb76ccd207734d7847679664fa4538cda5ed597",
+  "lang_token": null,
+  "pad": 57776,
+  "v1": {
+   "encoder_model_quantized.onnx": {
+    "size": 49201054,
+    "sha256": "6b599e2f4fbf1ea36cf983f1c0f40fcb2bb0ad8f6e0d1a7591da46b5ca9bf48a",
+    "url": "https://huggingface.co/Xenova/opus-mt-uk-ru/resolve/cfb76ccd207734d7847679664fa4538cda5ed597/onnx/encoder_model_quantized.onnx"
+   },
+   "decoder_model_merged_quantized.onnx": {
+    "size": 56485220,
+    "sha256": "2a99fed7dd89b22fee3752b8f6c7ac5e81d563635cf8198f49ca551f498daf76",
+    "url": "https://huggingface.co/Xenova/opus-mt-uk-ru/resolve/cfb76ccd207734d7847679664fa4538cda5ed597/onnx/decoder_model_merged_quantized.onnx"
+   },
+   "source.spm": {
+    "size": 1031670,
+    "sha256": "1d8d0a245c07efca75da76f0c68e9d61bc9667af1ee81d230faf14869653b234",
+    "url": "https://huggingface.co/Xenova/opus-mt-uk-ru/resolve/cfb76ccd207734d7847679664fa4538cda5ed597/source.spm"
+   },
+   "vocab.json": {
+    "size": 3474975,
+    "sha256": "e0350396e721f2863a8182e93cad07ba19166ca1cc5ed7d08acfde89003ffea1",
+    "url": "https://huggingface.co/Xenova/opus-mt-uk-ru/resolve/cfb76ccd207734d7847679664fa4538cda5ed597/vocab.json"
+   }
+  },
+  "v2_decoder": {
+   "size": 56484888,
+   "sha256": "a52c00a861b44955850227f06db554d1d853dc922df960f3bfd9c809e14147ca",
+   "url": "https://github.com/AmerAlreyahi/OpenCircle-models/releases/download/models-v2/opus-mt-uk-ru-decoder_model_merged_quantized.onnx"
+  }
+ },
+ {
+  "pair": "nl-fr",
+  "source": "nl",
+  "target": "fr",
+  "upstream": "Helsinki-NLP/opus-mt-nl-fr",
+  "upstream_revision": null,
+  "onnx_export": "Xenova/opus-mt-nl-fr",
+  "onnx_revision": "6c8ebb68522ffd80cf3474b2dc44f4b5f741e9cd",
+  "lang_token": null,
+  "pad": 57641,
+  "v1": {
+   "encoder_model_quantized.onnx": {
+    "size": 49131934,
+    "sha256": "357de84fa0df0fe4b8e95adb9d0061118a2a9a4602863390e5e7c2ff505b1b7c",
+    "url": "https://huggingface.co/Xenova/opus-mt-nl-fr/resolve/6c8ebb68522ffd80cf3474b2dc44f4b5f741e9cd/onnx/encoder_model_quantized.onnx"
+   },
+   "decoder_model_merged_quantized.onnx": {
+    "size": 56415560,
+    "sha256": "7915cb6d03674552b6f7a3bcd4fe04e4dedd2a16fc120b4bcab39a03c6e6ecb4",
+    "url": "https://huggingface.co/Xenova/opus-mt-nl-fr/resolve/6c8ebb68522ffd80cf3474b2dc44f4b5f741e9cd/onnx/decoder_model_merged_quantized.onnx"
+   },
+   "source.spm": {
+    "size": 814095,
+    "sha256": "a2452ac5c28605107318ee5369f7a46b63692f2dcb584397a89fbb876a5e321d",
+    "url": "https://huggingface.co/Xenova/opus-mt-nl-fr/resolve/6c8ebb68522ffd80cf3474b2dc44f4b5f741e9cd/source.spm"
+   },
+   "vocab.json": {
+    "size": 1462960,
+    "sha256": "fcdfbeacc62d75c9d235b0882e74409561bee894fdb0336e83a0a1d357c9fa25",
+    "url": "https://huggingface.co/Xenova/opus-mt-nl-fr/resolve/6c8ebb68522ffd80cf3474b2dc44f4b5f741e9cd/vocab.json"
+   }
+  },
+  "v2_decoder": {
+   "size": 56415228,
+   "sha256": "5acf1e46d4b6e216e6692fb66f2ad35ecfca6432c31ecd7c6c2767cbb054e2bb",
+   "url": "https://github.com/AmerAlreyahi/OpenCircle-models/releases/download/models-v2/opus-mt-nl-fr-decoder_model_merged_quantized.onnx"
+  }
+ },
+ {
+  "pair": "fr-ar",
+  "source": "fr",
+  "target": "ar",
+  "upstream": "Helsinki-NLP/opus-mt-fr-ar",
+  "upstream_revision": "5469dc759cd9fd856e45b0a916001efe44d1e700",
+  "onnx_export": null,
+  "onnx_revision": null,
+  "lang_token": ">>ara<<",
+  "pad": 62418,
+  "v1": {
+   "encoder_model_quantized.onnx": {
+    "size": 51577879,
+    "sha256": "f7c318194076e252bcd028a91f7534bc05e65181842ceda203fc56f8f6d9b3f0",
+    "url": "https://github.com/AmerAlreyahi/OpenCircle-models/releases/download/models-v1/opus-mt-fr-ar-encoder_model_quantized.onnx"
+   },
+   "decoder_model_merged_quantized.onnx": {
+    "size": 58881020,
+    "sha256": "58c62d87c8827fc1e58f6cb511b916d7ac43dfa6937bd3a5d0fe020d746f01ba",
+    "url": "https://github.com/AmerAlreyahi/OpenCircle-models/releases/download/models-v1/opus-mt-fr-ar-decoder_model_merged_quantized.onnx"
+   },
+   "source.spm": {
+    "size": 826663,
+    "sha256": "f32f818f2a89130ada3ab6b09a69cae104ae20ca5c9f1c309c41dae86a7dcc4e",
+    "url": "https://github.com/AmerAlreyahi/OpenCircle-models/releases/download/models-v1/opus-mt-fr-ar-source.spm"
+   },
+   "vocab.json": {
+    "size": 2188546,
+    "sha256": "2223539759870b832c9389e623bcbfefe8606c6ee6fedbce03a46c1add6e3ae3",
+    "url": "https://github.com/AmerAlreyahi/OpenCircle-models/releases/download/models-v1/opus-mt-fr-ar-vocab.json"
+   }
+  },
+  "v2_decoder": {
+   "size": 58880688,
+   "sha256": "83e0d1115910d4830bc98bc28da5b3dadacc993de130f72c74c812d2740573f3",
+   "url": "https://github.com/AmerAlreyahi/OpenCircle-models/releases/download/models-v2/opus-mt-fr-ar-decoder_model_merged_quantized.onnx"
+  }
+ },
+ {
+  "pair": "es-ar",
+  "source": "es",
+  "target": "ar",
+  "upstream": "Helsinki-NLP/opus-mt-es-ar",
+  "upstream_revision": "76efb7da47ad1ad8169635a847c1bd9d1c1815a7",
+  "onnx_export": null,
+  "onnx_revision": null,
+  "lang_token": ">>ara<<",
+  "pad": 62517,
+  "v1": {
+   "encoder_model_quantized.onnx": {
+    "size": 51628567,
+    "sha256": "c21a425be06db48edc6c633f016e327801d2682ce224e93c98ab531ecb858a56",
+    "url": "https://github.com/AmerAlreyahi/OpenCircle-models/releases/download/models-v1/opus-mt-es-ar-encoder_model_quantized.onnx"
+   },
+   "decoder_model_merged_quantized.onnx": {
+    "size": 58932104,
+    "sha256": "928ba379dd657b283045f4835b3244c2552597ffc1f227e8d600779b731f8ec3",
+    "url": "https://github.com/AmerAlreyahi/OpenCircle-models/releases/download/models-v1/opus-mt-es-ar-decoder_model_merged_quantized.onnx"
+   },
+   "source.spm": {
+    "size": 831392,
+    "sha256": "d3e1ec508e9f334e1e5285ff6ac31ae92f139d2e6b4121169b7cc61b8f270667",
+    "url": "https://github.com/AmerAlreyahi/OpenCircle-models/releases/download/models-v1/opus-mt-es-ar-source.spm"
+   },
+   "vocab.json": {
+    "size": 2180565,
+    "sha256": "632bac6ab53069e30188fb40389fe6246789b46a30e01796df3780056921005f",
+    "url": "https://github.com/AmerAlreyahi/OpenCircle-models/releases/download/models-v1/opus-mt-es-ar-vocab.json"
+   }
+  },
+  "v2_decoder": {
+   "size": 58931772,
+   "sha256": "68a89aa78cbff2afaf70b8d86262ffc23b296c6a74b34c316b716648390b12c6",
+   "url": "https://github.com/AmerAlreyahi/OpenCircle-models/releases/download/models-v2/opus-mt-es-ar-decoder_model_merged_quantized.onnx"
+  }
+ },
+ {
+  "pair": "ar-fr",
+  "source": "ar",
+  "target": "fr",
+  "upstream": "Helsinki-NLP/opus-mt-ar-fr",
+  "upstream_revision": "e507d7bc850855f060e6bbe4751bb03141b99b7d",
+  "onnx_export": null,
+  "onnx_revision": null,
+  "lang_token": null,
+  "pad": 64504,
+  "v1": {
+   "encoder_model_quantized.onnx": {
+    "size": 52645910,
+    "sha256": "0ea1bb14d25530cd3d7a16da7570c94312cf79de8f42f6ff4eebfc1a47b3a154",
+    "url": "https://github.com/AmerAlreyahi/OpenCircle-models/releases/download/models-v1/opus-mt-ar-fr-encoder_model_quantized.onnx"
+   },
+   "decoder_model_merged_quantized.onnx": {
+    "size": 59957395,
+    "sha256": "b7ae3aeb3918ecccb829da241eea01ae4d6e82ac5c453de8ac31c57845d8222c",
+    "url": "https://github.com/AmerAlreyahi/OpenCircle-models/releases/download/models-v1/opus-mt-ar-fr-decoder_model_merged_quantized.onnx"
+   },
+   "source.spm": {
+    "size": 918273,
+    "sha256": "562fad8433a217ccafb56a30bad44a8d976fde802ee09e8b237f9cb281d1dcc7",
+    "url": "https://github.com/AmerAlreyahi/OpenCircle-models/releases/download/models-v1/opus-mt-ar-fr-source.spm"
+   },
+   "vocab.json": {
+    "size": 2227927,
+    "sha256": "f9e204a0b757316d939a4b332a83b2ab5ca31bb88fd3915787cb23bb25357c57",
+    "url": "https://github.com/AmerAlreyahi/OpenCircle-models/releases/download/models-v1/opus-mt-ar-fr-vocab.json"
+   }
+  },
+  "v2_decoder": {
+   "size": 59957063,
+   "sha256": "704cebff0f82550db204ac2d0be9c514d0d7dcbfbf3dfeccb5a04b3aeabc8bca",
+   "url": "https://github.com/AmerAlreyahi/OpenCircle-models/releases/download/models-v2/opus-mt-ar-fr-decoder_model_merged_quantized.onnx"
+  }
+ },
+ {
+  "pair": "ar-es",
+  "source": "ar",
+  "target": "es",
+  "upstream": "Helsinki-NLP/opus-mt-ar-es",
+  "upstream_revision": "da86e973e723a8196adc90ed17119da2e096c776",
+  "onnx_export": null,
+  "onnx_revision": null,
+  "lang_token": null,
+  "pad": 62525,
+  "v1": {
+   "encoder_model_quantized.onnx": {
+    "size": 51632662,
+    "sha256": "b9239b444b07047f189aba81bbda97f91f499ba991cfb5f1c62e48fa047419d1",
+    "url": "https://github.com/AmerAlreyahi/OpenCircle-models/releases/download/models-v1/opus-mt-ar-es-encoder_model_quantized.onnx"
+   },
+   "decoder_model_merged_quantized.onnx": {
+    "size": 58936231,
+    "sha256": "fa2983e9b9284a68c37805ad47f4fee38e48d396e374f120dd21766a6acc9ef5",
+    "url": "https://github.com/AmerAlreyahi/OpenCircle-models/releases/download/models-v1/opus-mt-ar-es-decoder_model_merged_quantized.onnx"
+   },
+   "source.spm": {
+    "size": 923345,
+    "sha256": "faf17ff693fa03d84e690faeb2cd2374587a125c732c612c0f0cdc6bb0ae4a06",
+    "url": "https://github.com/AmerAlreyahi/OpenCircle-models/releases/download/models-v1/opus-mt-ar-es-source.spm"
+   },
+   "vocab.json": {
+    "size": 2182313,
+    "sha256": "e90e6b186669b0d5f8e921adc0d348e52705e4aa8c8c625b466e0cdec17ad975",
+    "url": "https://github.com/AmerAlreyahi/OpenCircle-models/releases/download/models-v1/opus-mt-ar-es-vocab.json"
+   }
+  },
+  "v2_decoder": {
+   "size": 58935899,
+   "sha256": "843298b031f231baabdf2912a53e72acec769c170f8129fbb65cdc696ebb6a9d",
+   "url": "https://github.com/AmerAlreyahi/OpenCircle-models/releases/download/models-v2/opus-mt-ar-es-decoder_model_merged_quantized.onnx"
+  }
+ },
+ {
+  "pair": "ar-de",
+  "source": "ar",
+  "target": "de",
+  "upstream": "Helsinki-NLP/opus-mt-ar-de",
+  "upstream_revision": "8e6cbcce68feaf4eed2b926eccd31bfca97fab05",
+  "onnx_export": null,
+  "onnx_revision": null,
+  "lang_token": null,
+  "pad": 63078,
+  "v1": {
+   "encoder_model_quantized.onnx": {
+    "size": 51915799,
+    "sha256": "d113e37d62a817df8859c9d7d7826277e9eaeab1ad7bee5b205d624e04fe536c",
+    "url": "https://github.com/AmerAlreyahi/OpenCircle-models/releases/download/models-v1/opus-mt-ar-de-encoder_model_quantized.onnx"
+   },
+   "decoder_model_merged_quantized.onnx": {
+    "size": 59221580,
+    "sha256": "450b83f72b7cfc71f6ee4480bfa4dd11bc95db80f493ee4f98418d7ae78f09f1",
+    "url": "https://github.com/AmerAlreyahi/OpenCircle-models/releases/download/models-v1/opus-mt-ar-de-decoder_model_merged_quantized.onnx"
+   },
+   "source.spm": {
+    "size": 902787,
+    "sha256": "4ce7a1936b414ccb43fd8d411c556c9ea57ebe1eb50fd963b9eecaf1813eaad1",
+    "url": "https://github.com/AmerAlreyahi/OpenCircle-models/releases/download/models-v1/opus-mt-ar-de-source.spm"
+   },
+   "vocab.json": {
+    "size": 2128799,
+    "sha256": "af08b451ddd621880b739d077f05044e991dfe11ca49f0435cc03edff0e90146",
+    "url": "https://github.com/AmerAlreyahi/OpenCircle-models/releases/download/models-v1/opus-mt-ar-de-vocab.json"
+   }
+  },
+  "v2_decoder": {
+   "size": 59221248,
+   "sha256": "8f3fe121b9d05be779238cf65d0449057ba751d6e7dcc4578ec9f380873d4f27",
+   "url": "https://github.com/AmerAlreyahi/OpenCircle-models/releases/download/models-v2/opus-mt-ar-de-decoder_model_merged_quantized.onnx"
+  }
+ }
+]

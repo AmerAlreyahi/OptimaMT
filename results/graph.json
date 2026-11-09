@@ -1,0 +1,227 @@
+{
+ "pair": "en-ar",
+ "original": {
+  "if_node": "optimum::if",
+  "if_input": "use_cache_branch",
+  "branches": [
+   "no_past",
+   "with_past"
+  ],
+  "projection_nodes": [
+   {
+    "graph": "no_past",
+    "op": "Transpose",
+    "name": "Transpose_1370",
+    "inputs": [
+     "model.shared.weight_merged_0_quantized"
+    ],
+    "outputs": [
+     "model.shared.weight_transposed_quantized"
+    ]
+   },
+   {
+    "graph": "no_past",
+    "op": "DequantizeLinear",
+    "name": "model.shared.weight_transposed_DequantizeLinear",
+    "inputs": [
+     "model.shared.weight_transposed_quantized",
+     "model.shared.weight_merged_0_scale",
+     "model.shared.weight_merged_0_zero_point"
+    ],
+    "outputs": [
+     "model.shared.weight_transposed"
+    ]
+   },
+   {
+    "graph": "with_past",
+    "op": "Transpose",
+    "name": "Transpose_1138",
+    "inputs": [
+     "model.shared.weight_merged_0_quantized"
+    ],
+    "outputs": [
+     "model.shared.weight_transposed_quantized"
+    ]
+   },
+   {
+    "graph": "with_past",
+    "op": "DequantizeLinear",
+    "name": "model.shared.weight_transposed_DequantizeLinear",
+    "inputs": [
+     "model.shared.weight_transposed_quantized",
+     "model.shared.weight_merged_0_scale",
+     "model.shared.weight_merged_0_zero_point"
+    ],
+    "outputs": [
+     "model.shared.weight_transposed"
+    ]
+   }
+  ],
+  "large_initializers": [
+   {
+    "graph": "main",
+    "name": "model.shared.weight_merged_0_quantized",
+    "shape": [
+     62802,
+     512
+    ],
+    "dtype": "uint8",
+    "mib": 30.7
+   }
+  ],
+  "after_ort_default": [
+   {
+    "graph": "main",
+    "name": "model.shared.weight_merged_0_quantized",
+    "shape": [
+     62802,
+     512
+    ],
+    "dtype": "uint8",
+    "mib": 30.7
+   },
+   {
+    "graph": "with_past",
+    "name": "model.shared.weight_transposed_quantized",
+    "shape": [
+     512,
+     62802
+    ],
+    "dtype": "uint8",
+    "mib": 30.7
+   },
+   {
+    "graph": "no_past",
+    "name": "model.shared.weight_transposed_quantized",
+    "shape": [
+     512,
+     62802
+    ],
+    "dtype": "uint8",
+    "mib": 30.7
+   }
+  ],
+  "after_ort_qdq_off": [
+   {
+    "graph": "main",
+    "name": "model.shared.weight_merged_0_quantized",
+    "shape": [
+     62802,
+     512
+    ],
+    "dtype": "uint8",
+    "mib": 30.7
+   },
+   {
+    "graph": "with_past",
+    "name": "model.shared.weight_transposed",
+    "shape": [
+     512,
+     62802
+    ],
+    "dtype": "float",
+    "mib": 122.7
+   },
+   {
+    "graph": "no_past",
+    "name": "model.shared.weight_transposed",
+    "shape": [
+     512,
+     62802
+    ],
+    "dtype": "float",
+    "mib": 122.7
+   }
+  ]
+ },
+ "rebuilt": {
+  "if_node": "optimum::if",
+  "if_input": "use_cache_branch",
+  "branches": [
+   "no_past",
+   "with_past"
+  ],
+  "projection_nodes": [
+   {
+    "graph": "main",
+    "op": "Transpose",
+    "name": "Transpose_1370",
+    "inputs": [
+     "model.shared.weight_merged_0_quantized"
+    ],
+    "outputs": [
+     "model.shared.weight_transposed_quantized"
+    ]
+   },
+   {
+    "graph": "main",
+    "op": "DequantizeLinear",
+    "name": "model.shared.weight_transposed_DequantizeLinear",
+    "inputs": [
+     "model.shared.weight_transposed_quantized",
+     "model.shared.weight_merged_0_scale",
+     "model.shared.weight_merged_0_zero_point"
+    ],
+    "outputs": [
+     "model.shared.weight_transposed"
+    ]
+   }
+  ],
+  "large_initializers": [
+   {
+    "graph": "main",
+    "name": "model.shared.weight_merged_0_quantized",
+    "shape": [
+     62802,
+     512
+    ],
+    "dtype": "uint8",
+    "mib": 30.7
+   }
+  ],
+  "after_ort_default": [
+   {
+    "graph": "main",
+    "name": "model.shared.weight_merged_0_quantized",
+    "shape": [
+     62802,
+     512
+    ],
+    "dtype": "uint8",
+    "mib": 30.7
+   },
+   {
+    "graph": "main",
+    "name": "model.shared.weight_transposed_quantized",
+    "shape": [
+     512,
+     62802
+    ],
+    "dtype": "uint8",
+    "mib": 30.7
+   }
+  ],
+  "after_ort_qdq_off": [
+   {
+    "graph": "main",
+    "name": "model.shared.weight_merged_0_quantized",
+    "shape": [
+     62802,
+     512
+    ],
+    "dtype": "uint8",
+    "mib": 30.7
+   },
+   {
+    "graph": "main",
+    "name": "model.shared.weight_transposed",
+    "shape": [
+     512,
+     62802
+    ],
+    "dtype": "float",
+    "mib": 122.7
+   }
+  ]
+ }
+}

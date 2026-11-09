@@ -1,0 +1,248 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>__TITLE__</title>
+<style>
+  :root {
+    color-scheme: light;
+    --surface: #fcfcfb; --card: #ffffff; --line: #e4e3df; --text: #0b0b0b; --muted: #52514e;
+    --original: #eb6834; --ours: #2a78d6; --link: #1c5cab;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) {
+      color-scheme: dark;
+      --surface: #1a1a19; --card: #222220; --line: #383835; --text: #f0efec; --muted: #c3c2b7;
+      --original: #d95926; --ours: #3987e5; --link: #86b6ef;
+    }
+  }
+  :root[data-theme="dark"] {
+    color-scheme: dark;
+    --surface: #1a1a19; --card: #222220; --line: #383835; --text: #f0efec; --muted: #c3c2b7;
+    --original: #d95926; --ours: #3987e5; --link: #86b6ef;
+  }
+  * { box-sizing: border-box; }
+  body { margin: 0; background: var(--surface); color: var(--text);
+         font: 15px/1.5 system-ui, -apple-system, "Segoe UI", Roboto, sans-serif; }
+  main { max-width: 880px; margin: 0 auto; padding: 32px 16px 48px; }
+  h1 { font-size: 28px; margin: 0; letter-spacing: -0.01em; }
+  h2 { font-size: 17px; margin: 0 0 4px; }
+  p { margin: 4px 0; }
+  a { color: var(--link); }
+  .muted { color: var(--muted); }
+  .links { display: flex; gap: 16px; flex-wrap: wrap; margin-top: 8px; font-size: 14px; }
+  .controls { display: flex; gap: 12px; flex-wrap: wrap; align-items: center; margin: 24px 0 16px; }
+  .seg { display: inline-flex; border: 1px solid var(--line); border-radius: 8px; overflow: hidden; }
+  .seg button { border: 0; background: transparent; color: var(--text); font: inherit; font-size: 14px;
+                padding: 6px 12px; cursor: pointer; }
+  .seg button[aria-pressed="true"] { background: var(--text); color: var(--surface); }
+  .seg button:focus-visible, select:focus-visible { outline: 2px solid var(--ours); outline-offset: 2px; }
+  select { font: inherit; font-size: 14px; padding: 6px 8px; border-radius: 8px; border: 1px solid var(--line);
+           background: var(--card); color: var(--text); }
+  .tiles { display: grid; grid-template-columns: repeat(4, 1fr); gap: 12px; margin-bottom: 16px; }
+  .tile { background: var(--card); border: 1px solid var(--line); border-radius: 12px; padding: 12px 14px; }
+  .tile b { display: block; font-size: 24px; font-variant-numeric: tabular-nums; }
+  .tile span { font-size: 13px; color: var(--muted); }
+  .card { background: var(--card); border: 1px solid var(--line); border-radius: 12px; padding: 16px;
+          margin-bottom: 16px; }
+  .head { display: flex; justify-content: space-between; align-items: baseline; gap: 12px; flex-wrap: wrap;
+          margin-bottom: 8px; }
+  .legend { display: flex; gap: 16px; font-size: 13px; color: var(--muted); }
+  .legend i { display: inline-block; width: 10px; height: 10px; border-radius: 50%; margin-right: 6px;
+              vertical-align: -1px; }
+  svg { display: block; width: 100%; height: auto; overflow: visible; }
+  svg text { fill: var(--muted); font-size: 12px; font-variant-numeric: tabular-nums; }
+  svg .label { fill: var(--text); }
+  svg .row:hover .band, svg .row:focus .band { fill: var(--line); opacity: 0.5; }
+  svg .row:focus { outline: none; }
+  #tip { position: fixed; pointer-events: none; background: var(--card); color: var(--text);
+         border: 1px solid var(--line); border-radius: 8px; padding: 8px 10px; font-size: 13px;
+         box-shadow: 0 4px 16px rgba(0,0,0,0.12); display: none; z-index: 10; min-width: 180px; }
+  #tip .v { font-weight: 600; font-variant-numeric: tabular-nums; }
+  #tip .k { display: inline-block; width: 12px; height: 2px; margin-right: 6px; vertical-align: 4px; }
+  details { margin-top: 8px; font-size: 14px; }
+  table { border-collapse: collapse; width: 100%; margin-top: 8px; font-variant-numeric: tabular-nums; }
+  th, td { text-align: right; padding: 4px 8px; border-bottom: 1px solid var(--line); }
+  th:first-child, td:first-child { text-align: left; }
+  footer { font-size: 13px; color: var(--muted); margin-top: 24px; }
+  @media (max-width: 640px) { .tiles { grid-template-columns: repeat(2, 1fr); } h1 { font-size: 24px; } }
+</style>
+</head>
+<body>
+<main>
+  <h1 id="name"></h1>
+  <p id="tagline" class="muted"></p>
+  <div class="links" id="links"></div>
+
+  <div class="controls" role="group" aria-label="Chart options">
+    <div class="seg" id="os" aria-label="Operating system"></div>
+    <div class="seg" id="setting" aria-label="ONNX Runtime session options">
+      <button data-v="qdq_off" aria-pressed="true">disable_quant_qdq = 1</button>
+      <button data-v="default" aria-pressed="false">Defaults</button>
+    </div>
+    <label class="muted" for="sort">Sort</label>
+    <select id="sort">
+      <option value="saved">Memory saved</option>
+      <option value="pair">Pair A–Z</option>
+      <option value="orig">Original size</option>
+    </select>
+  </div>
+
+  <div class="tiles" id="tiles"></div>
+
+  <section class="card">
+    <div class="head">
+      <h2 id="allTitle"></h2>
+      <div class="legend"><span><i style="background:var(--original)"></i>Original</span>
+        <span><i style="background:var(--ours)"></i><span class="nm"></span></span></div>
+    </div>
+    <p class="muted" style="font-size:13px">Memory after loading encoder + decoder, MiB. Hover a row for the numbers.</p>
+    <svg id="all" role="list" aria-label="Memory after load for every pair"></svg>
+    <details><summary>Table</summary><table id="allTable"></table></details>
+  </section>
+
+  <section class="card">
+    <div class="head">
+      <h2>Five reference pairs</h2>
+      <div class="seg" id="metric" aria-label="Metric">
+        <button data-v="load" aria-pressed="true">After load</button>
+        <button data-v="peak" aria-pressed="false">Peak, 20 lines</button>
+        <button data-v="ms" aria-pressed="false">ms per step</button>
+      </div>
+    </div>
+    <svg id="ref" role="list" aria-label="Reference pairs"></svg>
+  </section>
+
+  <footer id="foot"></footer>
+</main>
+<div id="tip" role="tooltip"></div>
+<script>
+const D = __DATA__;
+const NS = "http://www.w3.org/2000/svg";
+const $ = (id) => document.getElementById(id);
+const OSES = Object.keys(D.os);
+const state = { os: OSES[0], setting: "qdq_off", sort: "saved", metric: "load" };
+const UNIT = { load: "MiB", peak: "MiB", ms: "ms" };
+const SET = { qdq_off: "disable_quant_qdq = 1", default: "ONNX Runtime defaults" };
+
+function el(tag, attrs, parent, text) {
+  const n = document.createElementNS(NS, tag);
+  for (const k in attrs) n.setAttribute(k, attrs[k]);
+  if (text !== undefined) n.textContent = text;
+  if (parent) parent.appendChild(n);
+  return n;
+}
+const median = (xs) => { const s = [...xs].sort((a, b) => a - b), m = s.length >> 1;
+  return s.length % 2 ? s[m] : (s[m - 1] + s[m]) / 2; };
+const fmt = (x, d = 0) => x.toLocaleString("en-US", { maximumFractionDigits: d, minimumFractionDigits: d });
+const pct = (a, b) => (100 * (b - a) / a);
+
+const tip = $("tip");
+function showTip(ev, title, rows) {
+  tip.replaceChildren();
+  const h = document.createElement("div"); h.textContent = title; h.style.marginBottom = "4px"; tip.appendChild(h);
+  for (const [color, label, value] of rows) {
+    const r = document.createElement("div");
+    if (color) { const k = document.createElement("span"); k.className = "k"; k.style.background = color; r.appendChild(k); }
+    const v = document.createElement("span"); v.className = "v"; v.textContent = value; r.appendChild(v);
+    r.appendChild(document.createTextNode(" " + label)); tip.appendChild(r);
+  }
+  tip.style.display = "block";
+  const box = ev.currentTarget.getBoundingClientRect ? ev.currentTarget.getBoundingClientRect() : null;
+  const x = ev.clientX ?? (box.left + box.width / 2), y = ev.clientY ?? box.top;
+  tip.style.left = Math.min(x + 14, innerWidth - tip.offsetWidth - 8) + "px";
+  tip.style.top = Math.max(8, y - tip.offsetHeight - 10) + "px";
+}
+const hideTip = () => { tip.style.display = "none"; };
+
+// Dumbbell rows: [{label, a (original), b (ours), title, extra}]
+function dumbbell(svg, rows, unit, digits) {
+  svg.replaceChildren();
+  const W = 840, left = 64, right = 72, rowH = 22, top = 8, axisH = 28;
+  const H = top + rows.length * rowH + axisH;
+  svg.setAttribute("viewBox", `0 0 ${W} ${H}`);
+  const max = Math.max(...rows.map((r) => Math.max(r.a, r.b))) * 1.05;
+  const step = max > 400 ? 100 : max > 100 ? 50 : max > 40 ? 10 : 5;
+  const X = (v) => left + (W - left - right) * v / max;
+  for (let t = 0; t <= max; t += step) {
+    el("line", { x1: X(t), x2: X(t), y1: top, y2: H - axisH + 4, stroke: "var(--line)", "stroke-width": 1 }, svg);
+    el("text", { x: X(t), y: H - 8, "text-anchor": "middle" }, svg, fmt(t));
+  }
+  const css = getComputedStyle(document.documentElement);
+  const cO = css.getPropertyValue("--original").trim(), cU = css.getPropertyValue("--ours").trim();
+  rows.forEach((r, i) => {
+    const y = top + i * rowH + rowH / 2;
+    const g = el("g", { class: "row", tabindex: 0, role: "listitem",
+      "aria-label": `${r.label}: original ${fmt(r.a, digits)} ${unit}, ${D.name} ${fmt(r.b, digits)} ${unit}` }, svg);
+    el("rect", { class: "band", x: 0, y: y - rowH / 2, width: W, height: rowH, fill: "transparent" }, g);
+    el("text", { class: "label", x: left - 10, y: y + 4, "text-anchor": "end" }, g, r.label);
+    el("line", { x1: X(r.a), x2: X(r.b), y1: y, y2: y, stroke: "var(--line)", "stroke-width": 3, "stroke-linecap": "round" }, g);
+    el("circle", { cx: X(r.a), cy: y, r: 5, fill: "var(--original)", stroke: "var(--card)", "stroke-width": 2 }, g);
+    el("circle", { cx: X(r.b), cy: y, r: 5, fill: "var(--ours)", stroke: "var(--card)", "stroke-width": 2 }, g);
+    el("text", { x: X(Math.max(r.a, r.b)) + 10, y: y + 4 }, g, `${pct(r.a, r.b) > 0 ? "+" : ""}${fmt(pct(r.a, r.b))} %`);
+    const show = (ev) => showTip(ev, r.title, [[cO, "original", `${fmt(r.a, digits)} ${unit}`],
+      [cU, D.name, `${fmt(r.b, digits)} ${unit}`], [null, "change", `${fmt(r.b - r.a, digits)} ${unit} (${fmt(pct(r.a, r.b))} %)`],
+      ...(r.extra || [])]);
+    g.addEventListener("pointermove", show); g.addEventListener("focus", show);
+    g.addEventListener("pointerleave", hideTip); g.addEventListener("blur", hideTip);
+  });
+}
+
+function render() {
+  const O = D.os[state.os];
+  const s = state.setting, a = "v1-" + s, b = "v2-" + s;
+  const P = O.pairs.map((p) => ({ ...p, a: p[a], b: p[b], saved: p[a] - p[b] }));
+  const sorters = { saved: (x, y) => y.saved - x.saved, pair: (x, y) => x.pair.localeCompare(y.pair),
+                    orig: (x, y) => y.a - x.a };
+  P.sort(sorters[state.sort]);
+  // tiles
+  const tiles = [[fmt(median(P.map((p) => p.a))) + " MiB", "original, median"],
+    [fmt(median(P.map((p) => p.b))) + " MiB", D.name + ", median"],
+    [fmt(median(P.map((p) => -pct(p.a, p.b)))) + " %", "less memory, median"],
+    [`${O.pairs.filter((p) => p.identical).length} / ${O.pairs.length}`, "pairs with identical tokens"]];
+  $("tiles").replaceChildren(...tiles.map(([v, l]) => { const d = document.createElement("div"); d.className = "tile";
+    const bb = document.createElement("b"); bb.textContent = v; const sp = document.createElement("span"); sp.textContent = l;
+    d.append(bb, sp); return d; }));
+  $("allTitle").textContent = `All ${P.length} pairs · ${state.os} · ${SET[s]}`;
+  dumbbell($("all"), P.map((p) => ({ label: p.pair, a: p.a, b: p.b, title: `${p.pair} · ${p.repo}`,
+    extra: [[null, "", p.identical ? "identical tokens" : "tokens differ"]] })), "MiB", 0);
+  // table
+  const t = $("allTable"); t.replaceChildren();
+  const hr = t.insertRow(); for (const h of ["Pair", "Original (MiB)", D.name + " (MiB)", "Change"]) {
+    const th = document.createElement("th"); th.textContent = h; hr.appendChild(th); }
+  for (const p of P) { const r = t.insertRow();
+    for (const v of [p.pair, fmt(p.a), fmt(p.b), fmt(pct(p.a, p.b)) + " %"]) r.insertCell().textContent = v; }
+  // reference
+  const m = state.metric, R = (pair, c) => O.reference.find((r) => r.pair === pair && r.config === c)[m];
+  const pairs = [...new Set(O.reference.map((r) => r.pair))];
+  dumbbell($("ref"), pairs.map((p) => ({ label: p, a: R(p, a), b: R(p, b), title: `${p} · ${SET[s]}` })),
+           UNIT[m], m === "ms" ? 1 : 0);
+  $("foot").textContent = `${state.os}: ${O.cpu}, ${O.platform}, ONNX Runtime ${O.ort} (CPU, ${O.threads} threads). ` +
+    "Memory: resident set (Windows: working set) added by loading the encoder and decoder sessions. " +
+    "Reference pairs: 20-line batch, greedy, median of 5 runs.";
+}
+
+function seg(id, key) {
+  $(id).addEventListener("click", (e) => {
+    const btn = e.target.closest("button"); if (!btn) return;
+    state[key] = btn.dataset.v;
+    for (const x of $(id).querySelectorAll("button")) x.setAttribute("aria-pressed", x === btn ? "true" : "false");
+    render();
+  });
+}
+$("name").textContent = D.name;
+$("tagline").textContent = D.tagline;
+for (const n of document.querySelectorAll(".nm")) n.textContent = D.name;
+for (const [label, href] of [["Models on Hugging Face", `https://huggingface.co/${D.namespace}`],
+     ["Method and code", `https://github.com/${D.github}`], ["Technical report", `https://github.com/${D.github}/blob/main/REPORT.md`]]) {
+  const a = document.createElement("a"); a.href = href; a.textContent = label; $("links").appendChild(a); }
+for (const o of OSES) { const btn = document.createElement("button"); btn.dataset.v = o; btn.textContent = o;
+  btn.setAttribute("aria-pressed", o === state.os ? "true" : "false"); $("os").appendChild(btn); }
+seg("os", "os"); seg("setting", "setting"); seg("metric", "metric");
+$("sort").addEventListener("change", (e) => { state.sort = e.target.value; render(); });
+matchMedia("(prefers-color-scheme: dark)").addEventListener("change", render);
+render();
+</script>
+</body>
+</html>

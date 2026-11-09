@@ -1,0 +1,118 @@
+{
+ "transformers_js": "4.3.2",
+ "onnxruntime_node": "1.30.0",
+ "rows": [
+  {
+   "pair": "en-ar",
+   "original": "Xenova/opus-mt-en-ar@034a684356c1",
+   "sentences": [
+    "The lighthouse stands on the coast.",
+    "Press E to interact",
+    "Are you sure you want to quit? Unsaved progress will be lost."
+   ],
+   "transformers_js": [
+    ">>ara<<الناورة تقف على الساحل.",
+    "<>اللاطار <>>",
+    "<>ar>> هل أنت متأكد أنك تريد أن تترك؟ التقدم غير المطمئن سوف يخسر."
+   ],
+   "transformers_js_identical": true,
+   "onnxruntime_python": [
+    "المنارة تقف على الساحل",
+    "اضغط E للتفاعل",
+    "هل أنت متأكد أنك تريد أن تستقيل؟ التقدم الغير منقذ سيضيع"
+   ],
+   "onnxruntime_python_identical": true,
+   "transformers_js_qdq_off_identical": true,
+   "node_rss_loaded_mib": {
+    "original": 451.9,
+    "rebuilt": 400.5,
+    "original_qdq_off": 709.2,
+    "rebuilt_qdq_off": 462.5
+   }
+  },
+  {
+   "pair": "de-en",
+   "original": "Xenova/opus-mt-de-en@399dfd687067",
+   "sentences": [
+    "Der Leuchtturm steht an der Küste.",
+    "Drücke E, um zu interagieren",
+    "Willst du das Spiel wirklich beenden?"
+   ],
+   "transformers_js": [
+    "The lighthouse is on the coast.",
+    "Press E to interact",
+    "You really want to finish the game?"
+   ],
+   "transformers_js_identical": true,
+   "onnxruntime_python": [
+    "The lighthouse is on the coast.",
+    "Press E to interact",
+    "You really want to finish the game?"
+   ],
+   "onnxruntime_python_identical": true,
+   "transformers_js_qdq_off_identical": true,
+   "node_rss_loaded_mib": {
+    "original": 444.4,
+    "rebuilt": 386.6,
+    "original_qdq_off": 664.5,
+    "rebuilt_qdq_off": 430.9
+   }
+  },
+  {
+   "pair": "ja-en",
+   "original": "Xenova/opus-mt-ja-en@1a906cfaaf7c",
+   "sentences": [
+    "灯台は海岸に立っています。",
+    "Eキーで調べる",
+    "本当に終了しますか？"
+   ],
+   "transformers_js": [
+    "The lighthouse stands on the beach.",
+    "I'll check with the E-keys.",
+    "Are you sure you want to quit?"
+   ],
+   "transformers_js_identical": true,
+   "onnxruntime_python": [
+    "The lighthouse stands on the beach.",
+    "I'll check with the E-key.",
+    "Are you sure you want to quit?"
+   ],
+   "onnxruntime_python_identical": true,
+   "transformers_js_qdq_off_identical": true,
+   "node_rss_loaded_mib": {
+    "original": 448.4,
+    "rebuilt": 389.6,
+    "original_qdq_off": 697.6,
+    "rebuilt_qdq_off": 453.6
+   }
+  },
+  {
+   "pair": "ar-de",
+   "original": "Helsinki-NLP/opus-mt-ar-de@8e6cbcce68fe (ONNX export)",
+   "sentences": [
+    "المنارة تقف على الساحل.",
+    "اضغط على زر البدء",
+    "هل أنت متأكد أنك تريد الخروج؟"
+   ],
+   "transformers_js": [
+    "Der Leuchtturm steht an der Küste.",
+    "Drücken Sie den Startknopf.",
+    "Bist du sicher, dass du raus willst?"
+   ],
+   "transformers_js_identical": true,
+   "onnxruntime_python": [
+    "Der Leuchtturm steht an der Küste.",
+    "Drücken Sie den Startknopf.",
+    "Bist du sicher, dass du raus willst?"
+   ],
+   "onnxruntime_python_identical": true,
+   "transformers_js_qdq_off_identical": true,
+   "node_rss_loaded_mib": {
+    "original": 471.2,
+    "rebuilt": 404.7,
+    "original_qdq_off": 708.5,
+    "rebuilt_qdq_off": 465.1
+   }
+  }
+ ]
+}

@@ -1,0 +1,402 @@
+[
+ {
+  "pair": "en-ar",
+  "config": "v1-default",
+  "load_mib": 281.9,
+  "load_peak_mib": 281.9,
+  "batch_peak_mib": 528.6,
+  "after_batch_mib": 528.6,
+  "lines": 20,
+  "steps": 19,
+  "ms_per_step": 17.21,
+  "ms_per_step_runs": [
+   18.83,
+   17.21,
+   17.43,
+   17.12,
+   17.02
+  ],
+  "ids_md5": "7f8bc6f4b1f823dd1a8f0b674299027e",
+  "ids_identical_to_v1": true
+ },
+ {
+  "pair": "en-ar",
+  "config": "v1-qdq_off",
+  "load_mib": 528.1,
+  "load_peak_mib": 650.0,
+  "batch_peak_mib": 604.7,
+  "after_batch_mib": 604.7,
+  "lines": 20,
+  "steps": 19,
+  "ms_per_step": 7.16,
+  "ms_per_step_runs": [
+   6.99,
+   6.99,
+   7.27,
+   7.16,
+   7.17
+  ],
+  "ids_md5": "7f8bc6f4b1f823dd1a8f0b674299027e",
+  "ids_identical_to_v1": true
+ },
+ {
+  "pair": "en-ar",
+  "config": "v2-qdq_off",
+  "load_mib": 282.0,
+  "load_peak_mib": 527.3,
+  "batch_peak_mib": 358.3,
+  "after_batch_mib": 358.3,
+  "lines": 20,
+  "steps": 19,
+  "ms_per_step": 6.83,
+  "ms_per_step_runs": [
+   6.8,
+   6.79,
+   6.94,
+   6.83,
+   6.95
+  ],
+  "ids_md5": "7f8bc6f4b1f823dd1a8f0b674299027e",
+  "ids_identical_to_v1": true
+ },
+ {
+  "pair": "en-ar",
+  "config": "v2-default",
+  "load_mib": 220.5,
+  "load_peak_mib": 220.5,
+  "batch_peak_mib": 476.4,
+  "after_batch_mib": 476.4,
+  "lines": 20,
+  "steps": 19,
+  "ms_per_step": 17.27,
+  "ms_per_step_runs": [
+   18.98,
+   17.24,
+   16.84,
+   17.27,
+   18.63
+  ],
+  "ids_md5": "7f8bc6f4b1f823dd1a8f0b674299027e",
+  "ids_identical_to_v1": true
+ },
+ {
+  "pair": "ar-en",
+  "config": "v1-default",
+  "load_mib": 283.4,
+  "load_peak_mib": 283.4,
+  "batch_peak_mib": 529.9,
+  "after_batch_mib": 529.9,
+  "lines": 20,
+  "steps": 15,
+  "ms_per_step": 18.67,
+  "ms_per_step_runs": [
+   22.03,
+   18.74,
+   18.48,
+   18.6,
+   18.67
+  ],
+  "ids_md5": "4a4255f77df8b36823a2a478bef98fdb",
+  "ids_identical_to_v1": true
+ },
+ {
+  "pair": "ar-en",
+  "config": "v1-qdq_off",
+  "load_mib": 529.1,
+  "load_peak_mib": 651.8,
+  "batch_peak_mib": 594.6,
+  "after_batch_mib": 594.6,
+  "lines": 20,
+  "steps": 15,
+  "ms_per_step": 7.83,
+  "ms_per_step_runs": [
+   7.89,
+   7.93,
+   7.79,
+   7.79,
+   7.83
+  ],
+  "ids_md5": "4a4255f77df8b36823a2a478bef98fdb",
+  "ids_identical_to_v1": true
+ },
+ {
+  "pair": "ar-en",
+  "config": "v2-qdq_off",
+  "load_mib": 283.6,
+  "load_peak_mib": 529.1,
+  "batch_peak_mib": 349.1,
+  "after_batch_mib": 349.1,
+  "lines": 20,
+  "steps": 15,
+  "ms_per_step": 7.14,
+  "ms_per_step_runs": [
+   7.1,
+   7.22,
+   7.21,
+   7.14,
+   7.1
+  ],
+  "ids_md5": "4a4255f77df8b36823a2a478bef98fdb",
+  "ids_identical_to_v1": true
+ },
+ {
+  "pair": "ar-en",
+  "config": "v2-default",
+  "load_mib": 222.0,
+  "load_peak_mib": 222.0,
+  "batch_peak_mib": 478.7,
+  "after_batch_mib": 478.7,
+  "lines": 20,
+  "steps": 15,
+  "ms_per_step": 17.17,
+  "ms_per_step_runs": [
+   20.09,
+   16.99,
+   17.17,
+   17.0,
+   17.53
+  ],
+  "ids_md5": "4a4255f77df8b36823a2a478bef98fdb",
+  "ids_identical_to_v1": true
+ },
+ {
+  "pair": "en-de",
+  "config": "v1-default",
+  "load_mib": 265.3,
+  "load_peak_mib": 265.3,
+  "batch_peak_mib": 519.9,
+  "after_batch_mib": 519.9,
+  "lines": 20,
+  "steps": 20,
+  "ms_per_step": 17.43,
+  "ms_per_step_runs": [
+   17.78,
+   17.36,
+   17.38,
+   17.46,
+   17.43
+  ],
+  "ids_md5": "4598fb35145308e0dd6395ca19afc3e0",
+  "ids_identical_to_v1": true
+ },
+ {
+  "pair": "en-de",
+  "config": "v1-qdq_off",
+  "load_mib": 495.3,
+  "load_peak_mib": 607.7,
+  "batch_peak_mib": 560.8,
+  "after_batch_mib": 560.8,
+  "lines": 20,
+  "steps": 20,
+  "ms_per_step": 6.83,
+  "ms_per_step_runs": [
+   6.78,
+   6.82,
+   6.83,
+   6.91,
+   7.09
+  ],
+  "ids_md5": "4598fb35145308e0dd6395ca19afc3e0",
+  "ids_identical_to_v1": true
+ },
+ {
+  "pair": "en-de",
+  "config": "v2-qdq_off",
+  "load_mib": 268.4,
+  "load_peak_mib": 494.2,
+  "batch_peak_mib": 332.9,
+  "after_batch_mib": 332.9,
+  "lines": 20,
+  "steps": 20,
+  "ms_per_step": 6.94,
+  "ms_per_step_runs": [
+   7.1,
+   6.79,
+   6.95,
+   6.94,
+   6.84
+  ],
+  "ids_md5": "4598fb35145308e0dd6395ca19afc3e0",
+  "ids_identical_to_v1": true
+ },
+ {
+  "pair": "en-de",
+  "config": "v2-default",
+  "load_mib": 208.5,
+  "load_peak_mib": 208.5,
+  "batch_peak_mib": 444.9,
+  "after_batch_mib": 444.9,
+  "lines": 20,
+  "steps": 20,
+  "ms_per_step": 17.44,
+  "ms_per_step_runs": [
+   17.76,
+   17.06,
+   17.44,
+   17.38,
+   17.49
+  ],
+  "ids_md5": "4598fb35145308e0dd6395ca19afc3e0",
+  "ids_identical_to_v1": true
+ },
+ {
+  "pair": "de-en",
+  "config": "v1-default",
+  "load_mib": 265.3,
+  "load_peak_mib": 265.3,
+  "batch_peak_mib": 519.8,
+  "after_batch_mib": 519.8,
+  "lines": 20,
+  "steps": 16,
+  "ms_per_step": 17.27,
+  "ms_per_step_runs": [
+   17.95,
+   17.27,
+   17.68,
+   16.34,
+   16.04
+  ],
+  "ids_md5": "22d899568fd5218619bf3df86e6bb51d",
+  "ids_identical_to_v1": true
+ },
+ {
+  "pair": "de-en",
+  "config": "v1-qdq_off",
+  "load_mib": 494.5,
+  "load_peak_mib": 607.0,
+  "batch_peak_mib": 547.1,
+  "after_batch_mib": 547.1,
+  "lines": 20,
+  "steps": 16,
+  "ms_per_step": 6.87,
+  "ms_per_step_runs": [
+   6.8,
+   6.87,
+   6.98,
+   6.87,
+   7.13
+  ],
+  "ids_md5": "22d899568fd5218619bf3df86e6bb51d",
+  "ids_identical_to_v1": true
+ },
+ {
+  "pair": "de-en",
+  "config": "v2-qdq_off",
+  "load_mib": 268.4,
+  "load_peak_mib": 494.2,
+  "batch_peak_mib": 320.9,
+  "after_batch_mib": 320.9,
+  "lines": 20,
+  "steps": 16,
+  "ms_per_step": 6.92,
+  "ms_per_step_runs": [
+   6.94,
+   6.87,
+   6.99,
+   6.71,
+   6.92
+  ],
+  "ids_md5": "22d899568fd5218619bf3df86e6bb51d",
+  "ids_identical_to_v1": true
+ },
+ {
+  "pair": "de-en",
+  "config": "v2-default",
+  "load_mib": 208.4,
+  "load_peak_mib": 208.4,
+  "batch_peak_mib": 436.8,
+  "after_batch_mib": 436.8,
+  "lines": 20,
+  "steps": 16,
+  "ms_per_step": 15.08,
+  "ms_per_step_runs": [
+   16.87,
+   15.08,
+   14.99,
+   15.27,
+   14.68
+  ],
+  "ids_md5": "22d899568fd5218619bf3df86e6bb51d",
+  "ids_identical_to_v1": true
+ },
+ {
+  "pair": "ja-en",
+  "config": "v1-default",
+  "load_mib": 273.9,
+  "load_peak_mib": 273.9,
+  "batch_peak_mib": 530.6,
+  "after_batch_mib": 530.6,
+  "lines": 20,
+  "steps": 19,
+  "ms_per_step": 15.73,
+  "ms_per_step_runs": [
+   15.82,
+   15.73,
+   15.76,
+   15.51,
+   15.53
+  ],
+  "ids_md5": "9246913c32181dd2dcb7e4dbb45f80a1",
+  "ids_identical_to_v1": true
+ },
+ {
+  "pair": "ja-en",
+  "config": "v1-qdq_off",
+  "load_mib": 512.0,
+  "load_peak_mib": 629.8,
+  "batch_peak_mib": 579.3,
+  "after_batch_mib": 579.3,
+  "lines": 20,
+  "steps": 19,
+  "ms_per_step": 6.71,
+  "ms_per_step_runs": [
+   6.89,
+   6.7,
+   6.5,
+   6.73,
+   6.71
+  ],
+  "ids_md5": "9246913c32181dd2dcb7e4dbb45f80a1",
+  "ids_identical_to_v1": true
+ },
+ {
+  "pair": "ja-en",
+  "config": "v2-qdq_off",
+  "load_mib": 275.1,
+  "load_peak_mib": 511.4,
+  "batch_peak_mib": 342.4,
+  "after_batch_mib": 342.4,
+  "lines": 20,
+  "steps": 19,
+  "ms_per_step": 7.38,
+  "ms_per_step_runs": [
+   7.29,
+   7.61,
+   7.43,
+   7.27,
+   7.38
+  ],
+  "ids_md5": "9246913c32181dd2dcb7e4dbb45f80a1",
+  "ids_identical_to_v1": true
+ },
+ {
+  "pair": "ja-en",
+  "config": "v2-default",
+  "load_mib": 214.5,
+  "load_peak_mib": 214.5,
+  "batch_peak_mib": 463.6,
+  "after_batch_mib": 463.6,
+  "lines": 20,
+  "steps": 19,
+  "ms_per_step": 18.33,
+  "ms_per_step_runs": [
+   19.23,
+   17.91,
+   18.07,
+   18.49,
+   18.33
+  ],
+  "ids_md5": "9246913c32181dd2dcb7e4dbb45f80a1",
+  "ids_identical_to_v1": true
+ }
+]

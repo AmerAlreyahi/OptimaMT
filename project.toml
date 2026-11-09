@@ -1,0 +1,25 @@
+# The one place for the project's name and where the models are published.
+# Change a value, then re-run:  python scripts/build_hf_repos.py && python scripts/render_docs.py
+# (and python scripts/charts.py for the chart titles).
+
+name = "OptimaMT"
+long_name = "Optima Machine Translation"
+slug = "optimamt"
+tagline = "same translations, {saving} less memory."
+# {saving} is filled in from the measured data (lowest to highest saving over all pairs and both settings).
+
+# Hugging Face owner of the model repos: a user ("AmerAlreyahi") or an organization ("OptimaMT").
+# Repo names follow from it: under a user  -> <namespace>/<slug>-<src>-<tgt>  (AmerAlreyahi/optimamt-en-ar)
+#                            under an organization named like the project -> <namespace>/<src>-<tgt>  (OptimaMT/en-ar)
+hf_namespace = "OptimaMT"
+# Optional: force a repo-name pattern, e.g. "{slug}-{src}-{tgt}" or "opus-mt-{src}-{tgt}". Empty = the rule above.
+hf_repo_pattern = ""
+
+# The interactive results page: a static Space <hf_namespace>/<results_space>.
+results_space = "results"
+
+github_repo = "AmerAlreyahi/OptimaMT"
+author = "Amer Alreyahi"
+
+# Downloads, builds and the Hugging Face folders (relative to this file; ignored by git).
+work_dir = "work"

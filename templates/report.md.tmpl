@@ -1,0 +1,133 @@
+# $name: technical report
+
+All numbers come from the scripts in this repository; raw data in [results/](results/), interactive view at
+[$results_name]($results_url).
+
+## Summary
+
+| | Result |
+|---|---|
+| Change | Output projection (`Transpose` → `DequantizeLinear`) moved out of the merged decoder's two branches, in front of the `If` |
+| Pairs | $pairs |
+| Identical tokens | $identical_runs / $all_runs runs ($identical_tokens tokens; every pair, both session settings) |
+| Memory after load, `disable_quant_qdq = 1`, Linux | $qdq_off_v1_med → $qdq_off_v2_med MiB (median), $qdq_off_pct_min–$qdq_off_pct_max % less |
+| Memory after load, defaults, Linux | $default_v1_med → $default_v2_med MiB (median), $default_pct_min–$default_pct_max % less |
+| Memory after load, `disable_quant_qdq = 1`, Windows | $win_qdq_off_v1_med → $win_qdq_off_v2_med MiB (median), $win_qdq_off_pct_min–$win_qdq_off_pct_max % less |
+| Memory after load, defaults, Windows | $win_default_v1_med → $win_default_v2_med MiB (median), $win_default_pct_min–$win_default_pct_max % less |
+| Decoder speed (Linux) | unchanged: $ms_v1_qdq_off → $ms_v2_qdq_off ms/step (qdq off), $ms_v1_default → $ms_v2_default ms/step (defaults) |
+
+`disable_quant_qdq = 1` decodes $speedup× faster than the defaults on Linux, $win_speedup× on Windows. With $name it
+needs about the memory the original needs with the defaults (Linux: $load_v2_qdq_off vs $load_v1_default MiB).
+
+## 1. The finding
+
+The merged decoder (Hugging Face Optimum) is one `If` node on `$g_cond`: branch `$g_b2` runs the first step,
+`$g_b1` the later ones. Each branch builds the same output projection from the same initializer
+($g_pair shown):
+
+| Node | Inputs | Output |
+|---|---|---|
+| `Transpose` | `$g_tr_in` ($g_weight) | `$g_tr_out` |
+| `DequantizeLinear` | `$g_tr_out`, `$g_dq_scale`, `$g_dq_zp` | `$g_dq_out` |
+| `MatMul` | decoder state, `$g_dq_out` | logits |
+
+ONNX Runtime folds constant nodes at load, inside the subgraph where they live. What it keeps
+(`SessionOptions.optimized_model_filepath`, [scripts/inspect_graph.py](scripts/inspect_graph.py)):
+
+$g_held_table
+
+- `disable_quant_qdq = 1`: the dequantized float matrix is folded once per branch: two copies in the original,
+  one in $name.
+- Defaults: the `DequantizeLinear` stays; the transposed 8-bit matrix is folded per branch: two copies vs one.
+- This is constant folding of a duplicated subgraph, not `MatMulInteger` pre-packing.
+
+```mermaid
+flowchart LR
+  subgraph Original
+    W1["weight (8-bit)"] --> IF1{"If"}
+    IF1 --> A1["$g_b2: Transpose → DequantizeLinear → MatMul"]
+    IF1 --> B1["$g_b1: Transpose → DequantizeLinear → MatMul"]
+  end
+  subgraph $name
+    W2["weight (8-bit)"] --> T2["Transpose → DequantizeLinear"] --> IF2{"If"}
+    IF2 --> A2["$g_b2: MatMul"]
+    IF2 --> B2["$g_b1: MatMul"]
+  end
+```
+
+## 2. Method
+
+| Step | Script | What it does |
+|---|---|---|
+| Rebuild | [convert.py](scripts/convert.py) | Moves the two nodes before the `If`, checks both branches built the same value, runs `onnx.checker`. Output is byte-identical to the published files. |
+| Identical output | [verify.py](scripts/verify.py) | Greedy decoding of [fixed sentences](data/sentences.json), original vs rebuilt, token by token, both settings. |
+| Memory, speed | [measure.py](scripts/measure.py) | One fresh process per configuration; CPU, $threads threads, defaults or `disable_quant_qdq = 1`. |
+
+Measurements:
+
+- **After load:** RSS after creating both sessions minus RSS just before.
+- **Peak:** highest RSS on a 20-line batch (`VmHWM`, reset via `/proc/self/clear_refs`).
+- **ms/step:** decoder time per generated position, median of 5 runs after a warm-up.
+- **Linux:** $cpu, $cores logical CPUs, $ram GB, $os, Python $python, ONNX Runtime $ort.
+- **Windows:** virtual machine ($win_cpu), $win_cores logical CPUs, $win_ram GB, $win_os, Python $win_python,
+  ONNX Runtime $win_ort. Memory is the working set; peaks are sampled every 2 ms.
+
+## 3. Results
+
+### Linux, reference pairs ($ref_pairs)
+
+![Memory after load](assets/charts/memory.svg)
+
+$reference_table
+
+The load peak barely moves with `disable_quant_qdq = 1` (median $loadpeak_v1_qdq_off → $loadpeak_v2_qdq_off MiB):
+folding briefly holds intermediate copies either way. The batch peak drops $peak_pct.
+
+### Windows
+
+$win_reference_table
+
+All $pairs pairs: $win_qdq_off_pct_min–$win_qdq_off_pct_max % less with `disable_quant_qdq = 1`, $win_default_pct_min–$win_default_pct_max %
+less with the defaults ([results/memory_all_windows.csv](results/memory_all_windows.csv)). The token ids on the
+reference batch are the same on Windows and Linux (`ids_md5` in the reference files).
+
+### ONNX Runtime versions
+
+$versions_table
+
+With 1.31 the RSS saved is about twice the folded matrix; with 1.28 about once. We did not trace which
+buffers ONNX Runtime keeps.
+
+### All pairs
+
+![Memory saved, all pairs](assets/charts/saving.svg)
+
+<details><summary>Table: all $pairs pairs</summary>
+
+$all_table
+
+</details>
+
+### Drop-in check
+
+[tests/dropin_test.py](tests/dropin_test.py): local folders vs the original files (and the Xenova Hub repos at
+their pinned revisions), with transformers.js $tjs_versions and ONNX Runtime Python.
+
+$dropin_table
+
+- transformers.js 4.3.2 splits target tokens such as `>>ara<<` (the original exports too); 3.8.1 does not.
+- transformers.js tokenizes with `tokenizer.json`, the Python script with `source.spm`; outputs can differ
+  between the two (ja-en), never between original and $name.
+
+## 4. Limitations
+
+- CPU only; greedy decoding only; one host (Linux directly, Windows in a virtual machine).
+- RSS includes allocator effects (a few MiB of noise); the saving depends on the ONNX Runtime version.
+- Quality is the original models' (identical tokens on the test set); no corpus-level evaluation.
+- Token ids can differ between ONNX Runtime versions, for both decoders alike.
+
+## 5. Licences
+
+OPUS-MT (University of Helsinki) and the Xenova exports: CC BY 4.0. Five pairs (fr-ar, es-ar, ar-fr, ar-es,
+ar-de) were exported from the Helsinki-NLP weights in the same layout. Modified files: CC BY 4.0
+([NOTICE](NOTICE)). Code: MIT ([LICENSE](LICENSE)).

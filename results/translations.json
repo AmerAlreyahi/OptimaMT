@@ -1,0 +1,2048 @@
+{
+ "en-ar": [
+  {
+   "source": "The lighthouse stands on the coast.",
+   "v2": "المنارة تقف على الساحل"
+  },
+  {
+   "source": "Press E to interact",
+   "v2": "اضغط E للتفاعل"
+  },
+  {
+   "source": "Are you sure you want to quit? Unsaved progress will be lost.",
+   "v2": "هل أنت متأكد أنك تريد أن تستقيل؟ التقدم الغير منقذ سيضيع"
+  },
+  {
+   "source": "The train to the airport leaves every twenty minutes.",
+   "v2": "القطار إلى المطار يغادر كل 20 دقيقة"
+  },
+  {
+   "source": "Please restart the application to apply the update.",
+   "v2": "الرجاء إعادة تشغيل الطلب لتطبيق التحديث."
+  },
+  {
+   "source": "She bought fresh bread and a small jar of honey at the market.",
+   "v2": "لقد اشترت خبزاً طازجاً وجرة صغيرة من العسل في السوق"
+  },
+  {
+   "source": "Your password must contain at least eight characters.",
+   "v2": "كلمة السر الخاصة بك يجب أن تحتوي على الأقل ثمانية محارف."
+  },
+  {
+   "source": "The museum is closed on Mondays.",
+   "v2": "المتحف مغلق أيام الاثنين"
+  },
+  {
+   "source": "We will meet in front of the library at noon.",
+   "v2": "سنتقابل أمام المكتبة عند الظهيرة"
+  },
+  {
+   "source": "The weather will be sunny tomorrow, with light wind in the afternoon.",
+   "v2": "الطقس سيكون مشمساً غداً مع رياح خفيفة بعد الظهر"
+  },
+  {
+   "source": "Settings",
+   "v2": "الإعدادات"
+  },
+  {
+   "source": "Save and continue",
+   "v2": "احفظ واكمل"
+  },
+  {
+   "source": "The river flooded the old bridge after three days of heavy rain.",
+   "v2": "لقد غمر النهر الجسر القديم بعد ثلاثة أيام من الأمطار الغزيرة."
+  },
+  {
+   "source": "Can you tell me where the nearest pharmacy is?",
+   "v2": "هل يمكنك أن تخبرني أين أقرب صيدلية؟"
+  },
+  {
+   "source": "This file could not be opened because it is damaged.",
+   "v2": "لم يمكن فتح هذا الملف لأنه متضرر."
+  },
+  {
+   "source": "The children played in the garden until sunset.",
+   "v2": "الأطفال لعبوا في الحديقة حتى غروب الشمس"
+  },
+  {
+   "source": "Download complete.",
+   "v2": "تم التنزيل"
+  },
+  {
+   "source": "He has worked as an engineer in this city for ten years.",
+   "v2": "لقد عمل مهندساً في هذه المدينة لعشر سنوات"
+  },
+  {
+   "source": "Turn left at the second traffic light.",
+   "v2": "انعطف يسارا عند إشارة المرور الثانية"
+  },
+  {
+   "source": "Thank you for your patience while we fix the problem.",
+   "v2": "شكراً لصبرك بينما نصلح المشكلة"
+  }
+ ],
+ "en-fr": [
+  {
+   "source": "The lighthouse stands on the coast.",
+   "v2": "Le phare se dresse sur la côte."
+  },
+  {
+   "source": "Press E to interact",
+   "v2": "Appuyez sur E pour interagir"
+  },
+  {
+   "source": "Are you sure you want to quit? Unsaved progress will be lost.",
+   "v2": "Voulez-vous vraiment arrêter ? Des progrès non enregistrés seront perdus."
+  },
+  {
+   "source": "The train to the airport leaves every twenty minutes.",
+   "v2": "Le train pour l'aéroport part toutes les vingt minutes."
+  },
+  {
+   "source": "Please restart the application to apply the update.",
+   "v2": "Veuillez redémarrer l'application pour appliquer la mise à jour."
+  },
+  {
+   "source": "She bought fresh bread and a small jar of honey at the market.",
+   "v2": "Elle a acheté du pain frais et un petit pot de miel au marché."
+  },
+  {
+   "source": "Your password must contain at least eight characters.",
+   "v2": "Votre mot de passe doit contenir au moins huit caractères."
+  },
+  {
+   "source": "The museum is closed on Mondays.",
+   "v2": "Le musée est fermé le lundi."
+  },
+  {
+   "source": "We will meet in front of the library at noon.",
+   "v2": "Nous nous retrouverons devant la bibliothèque à midi."
+  },
+  {
+   "source": "The weather will be sunny tomorrow, with light wind in the afternoon.",
+   "v2": "Le temps sera ensoleillé demain, avec un vent léger dans l'après-midi."
+  },
+  {
+   "source": "Settings",
+   "v2": "Paramètres"
+  },
+  {
+   "source": "Save and continue",
+   "v2": "Enregistrer et continuer"
+  },
+  {
+   "source": "The river flooded the old bridge after three days of heavy rain.",
+   "v2": "La rivière inonda le vieux pont après trois jours de fortes pluies."
+  },
+  {
+   "source": "Can you tell me where the nearest pharmacy is?",
+   "v2": "Pouvez-vous me dire où se trouve la pharmacie la plus proche ?"
+  },
+  {
+   "source": "This file could not be opened because it is damaged.",
+   "v2": "Ce fichier n'a pas pu être ouvert car il est endommagé."
+  },
+  {
+   "source": "The children played in the garden until sunset.",
+   "v2": "Les enfants jouèrent dans le jardin jusqu'au coucher du soleil."
+  },
+  {
+   "source": "Download complete.",
+   "v2": "Télécharger complet."
+  },
+  {
+   "source": "He has worked as an engineer in this city for ten years.",
+   "v2": "Il travaille comme ingénieur dans cette ville depuis dix ans."
+  },
+  {
+   "source": "Turn left at the second traffic light.",
+   "v2": "Tournez à gauche au deuxième feu."
+  },
+  {
+   "source": "Thank you for your patience while we fix the problem.",
+   "v2": "Merci de votre patience pendant que nous réglons le problème."
+  }
+ ],
+ "en-es": [
+  {
+   "source": "The lighthouse stands on the coast.",
+   "v2": "El faro se encuentra en la costa."
+  },
+  {
+   "source": "Press E to interact",
+   "v2": "Presione E para interactuar"
+  },
+  {
+   "source": "Are you sure you want to quit? Unsaved progress will be lost.",
+   "v2": "¿Estás seguro de que quieres renunciar? El progreso no guardado se perderá."
+  },
+  {
+   "source": "The train to the airport leaves every twenty minutes.",
+   "v2": "El tren al aeropuerto sale cada veinte minutos."
+  },
+  {
+   "source": "Please restart the application to apply the update.",
+   "v2": "Por favor reinicie la aplicación para aplicar la actualización."
+  },
+  {
+   "source": "She bought fresh bread and a small jar of honey at the market.",
+   "v2": "Compró pan fresco y un pequeño frasco de miel en el mercado."
+  },
+  {
+   "source": "Your password must contain at least eight characters.",
+   "v2": "Su contraseña debe contener al menos ocho caracteres."
+  },
+  {
+   "source": "The museum is closed on Mondays.",
+   "v2": "El museo está cerrado los lunes."
+  },
+  {
+   "source": "We will meet in front of the library at noon.",
+   "v2": "Nos encontraremos frente a la biblioteca al mediodía."
+  },
+  {
+   "source": "The weather will be sunny tomorrow, with light wind in the afternoon.",
+   "v2": "El tiempo será soleado mañana, con viento ligero por la tarde."
+  },
+  {
+   "source": "Settings",
+   "v2": "Configuración"
+  },
+  {
+   "source": "Save and continue",
+   "v2": "Guardar y continuar"
+  },
+  {
+   "source": "The river flooded the old bridge after three days of heavy rain.",
+   "v2": "El río inundó el viejo puente después de tres días de fuerte lluvia."
+  },
+  {
+   "source": "Can you tell me where the nearest pharmacy is?",
+   "v2": "¿Puede decirme dónde está la farmacia más cercana?"
+  },
+  {
+   "source": "This file could not be opened because it is damaged.",
+   "v2": "Este archivo no se pudo abrir porque está dañado."
+  },
+  {
+   "source": "The children played in the garden until sunset.",
+   "v2": "Los niños jugaban en el jardín hasta el atardecer."
+  },
+  {
+   "source": "Download complete.",
+   "v2": "Descarga completa."
+  },
+  {
+   "source": "He has worked as an engineer in this city for ten years.",
+   "v2": "Ha trabajado como ingeniero en esta ciudad durante diez años."
+  },
+  {
+   "source": "Turn left at the second traffic light.",
+   "v2": "Gire a la izquierda en el segundo semáforo."
+  },
+  {
+   "source": "Thank you for your patience while we fix the problem.",
+   "v2": "Gracias por su paciencia mientras arreglamos el problema."
+  }
+ ],
+ "en-de": [
+  {
+   "source": "The lighthouse stands on the coast.",
+   "v2": "Der Leuchtturm steht an der Küste."
+  },
+  {
+   "source": "Press E to interact",
+   "v2": "Drücken Sie E, um zu interagieren"
+  },
+  {
+   "source": "Are you sure you want to quit? Unsaved progress will be lost.",
+   "v2": "Sind Sie sicher, dass Sie aufhören wollen? Unerrettete Fortschritte werden verloren gehen."
+  },
+  {
+   "source": "The train to the airport leaves every twenty minutes.",
+   "v2": "Der Zug zum Flughafen fährt alle zwanzig Minuten."
+  },
+  {
+   "source": "Please restart the application to apply the update.",
+   "v2": "Bitte starten Sie die Anwendung neu, um das Update anzuwenden."
+  },
+  {
+   "source": "She bought fresh bread and a small jar of honey at the market.",
+   "v2": "Sie kaufte frisches Brot und ein kleines Glas Honig auf dem Markt."
+  },
+  {
+   "source": "Your password must contain at least eight characters.",
+   "v2": "Ihr Passwort muss mindestens acht Zeichen enthalten."
+  },
+  {
+   "source": "The museum is closed on Mondays.",
+   "v2": "Das Museum ist montags geschlossen."
+  },
+  {
+   "source": "We will meet in front of the library at noon.",
+   "v2": "Wir treffen uns um 12 Uhr vor der Bibliothek."
+  },
+  {
+   "source": "The weather will be sunny tomorrow, with light wind in the afternoon.",
+   "v2": "Das Wetter wird sonnig, am Nachmittag leicht bewölkt."
+  },
+  {
+   "source": "Settings",
+   "v2": "Einstellungen"
+  },
+  {
+   "source": "Save and continue",
+   "v2": "Speichern und Weiterfahren"
+  },
+  {
+   "source": "The river flooded the old bridge after three days of heavy rain.",
+   "v2": "Der Fluss überflutete die alte Brücke nach drei Tagen heftigen Regens."
+  },
+  {
+   "source": "Can you tell me where the nearest pharmacy is?",
+   "v2": "Können Sie mir sagen, wo die nächste Apotheke ist?"
+  },
+  {
+   "source": "This file could not be opened because it is damaged.",
+   "v2": "Diese Datei konnte nicht geöffnet werden, weil sie beschädigt ist."
+  },
+  {
+   "source": "The children played in the garden until sunset.",
+   "v2": "Die Kinder spielten bis zum Sonnenuntergang im Garten."
+  },
+  {
+   "source": "Download complete.",
+   "v2": "Download abgeschlossen."
+  },
+  {
+   "source": "He has worked as an engineer in this city for ten years.",
+   "v2": "Er arbeitet seit zehn Jahren als Ingenieur in dieser Stadt."
+  },
+  {
+   "source": "Turn left at the second traffic light.",
+   "v2": "An der zweiten Ampel links abbiegen."
+  },
+  {
+   "source": "Thank you for your patience while we fix the problem.",
+   "v2": "Danke für Ihre Geduld, während wir das Problem beheben."
+  }
+ ],
+ "en-ru": [
+  {
+   "source": "The lighthouse stands on the coast.",
+   "v2": "Маяк стоит на побережье."
+  },
+  {
+   "source": "Press E to interact",
+   "v2": "Нажмите E для взаимодействия"
+  },
+  {
+   "source": "Are you sure you want to quit? Unsaved progress will be lost.",
+   "v2": "Несохранённый прогресс будет потерян."
+  },
+  {
+   "source": "The train to the airport leaves every twenty minutes.",
+   "v2": "Поезд до аэропорта отправляется каждые 20 минут."
+  },
+  {
+   "source": "Please restart the application to apply the update.",
+   "v2": "Просьба вновь запустить заявку на обновление."
+  },
+  {
+   "source": "She bought fresh bread and a small jar of honey at the market.",
+   "v2": "Она купила свежий хлеб и маленькую банку меда на рынке."
+  },
+  {
+   "source": "Your password must contain at least eight characters.",
+   "v2": "В вашем пароле должно быть не менее восьми символов."
+  },
+  {
+   "source": "The museum is closed on Mondays.",
+   "v2": "Музей закрыт по понедельникам."
+  },
+  {
+   "source": "We will meet in front of the library at noon.",
+   "v2": "Мы встретимся перед библиотекой в полдень."
+  },
+  {
+   "source": "The weather will be sunny tomorrow, with light wind in the afternoon.",
+   "v2": "Завтра будет солнечная погода, а днем будет светлое ветерок."
+  },
+  {
+   "source": "Settings",
+   "v2": "Параметры"
+  },
+  {
+   "source": "Save and continue",
+   "v2": "Сохранить и продолжить"
+  },
+  {
+   "source": "The river flooded the old bridge after three days of heavy rain.",
+   "v2": "Река затопила старый мост после трех дней сильного дождя."
+  },
+  {
+   "source": "Can you tell me where the nearest pharmacy is?",
+   "v2": "Не подскажете, где ближайший аптека?"
+  },
+  {
+   "source": "This file could not be opened because it is damaged.",
+   "v2": "Этот файл не мог быть открыт, потому что он поврежден."
+  },
+  {
+   "source": "The children played in the garden until sunset.",
+   "v2": "Дети играли в саду до захода солнца."
+  },
+  {
+   "source": "Download complete.",
+   "v2": "Загрузка завершена."
+  },
+  {
+   "source": "He has worked as an engineer in this city for ten years.",
+   "v2": "Он работал инженером в этом городе десять лет."
+  },
+  {
+   "source": "Turn left at the second traffic light.",
+   "v2": "Повернитесь налево на втором светофоре."
+  },
+  {
+   "source": "Thank you for your patience while we fix the problem.",
+   "v2": "Спасибо за терпение, пока мы исправим проблему."
+  }
+ ],
+ "en-zh": [
+  {
+   "source": "The lighthouse stands on the coast.",
+   "v2": "灯塔站在海岸上"
+  },
+  {
+   "source": "Press E to interact",
+   "v2": "按 E 键进行互动"
+  },
+  {
+   "source": "Are you sure you want to quit? Unsaved progress will be lost.",
+   "v2": "您确定要退出吗 ? 未保存的进展将会丢失 。"
+  },
+  {
+   "source": "The train to the airport leaves every twenty minutes.",
+   "v2": "开往机场的火车每20分钟开一次车"
+  },
+  {
+   "source": "Please restart the application to apply the update.",
+   "v2": "请重新启动应用程序以应用更新 。"
+  },
+  {
+   "source": "She bought fresh bread and a small jar of honey at the market.",
+   "v2": "她买新鲜面包和一小罐蜂蜜在市场。"
+  },
+  {
+   "source": "Your password must contain at least eight characters.",
+   "v2": "您的密码必须包含至少八个字符 。"
+  },
+  {
+   "source": "The museum is closed on Mondays.",
+   "v2": "博物馆周一关门"
+  },
+  {
+   "source": "We will meet in front of the library at noon.",
+   "v2": "我们中午在图书馆前会合"
+  },
+  {
+   "source": "The weather will be sunny tomorrow, with light wind in the afternoon.",
+   "v2": "明天天气会晴朗,下午风会轻点"
+  },
+  {
+   "source": "Settings",
+   "v2": "设置"
+  },
+  {
+   "source": "Save and continue",
+   "v2": "保存并继续执行"
+  },
+  {
+   "source": "The river flooded the old bridge after three days of heavy rain.",
+   "v2": "河水淹没了老桥 经过三天的暴雨"
+  },
+  {
+   "source": "Can you tell me where the nearest pharmacy is?",
+   "v2": "你能告诉我最近的药房在哪里吗?"
+  },
+  {
+   "source": "This file could not be opened because it is damaged.",
+   "v2": "此文件因损坏而无法打开 。"
+  },
+  {
+   "source": "The children played in the garden until sunset.",
+   "v2": "孩子们在花园里玩到日落"
+  },
+  {
+   "source": "Download complete.",
+   "v2": "下载完成 。"
+  },
+  {
+   "source": "He has worked as an engineer in this city for ten years.",
+   "v2": "他在这城市当了十年工程师"
+  },
+  {
+   "source": "Turn left at the second traffic light.",
+   "v2": "转左,第二道交通灯。"
+  },
+  {
+   "source": "Thank you for your patience while we fix the problem.",
+   "v2": "谢谢你耐心地处理问题"
+  }
+ ],
+ "ar-en": [
+  {
+   "source": "المنارة تقف على الساحل.",
+   "v2": "The lighthouse is standing on the coast."
+  },
+  {
+   "source": "اضغط على زر البدء",
+   "v2": "Press the start button."
+  },
+  {
+   "source": "هل أنت متأكد أنك تريد الخروج؟",
+   "v2": "Are you sure you want to go out?"
+  },
+  {
+   "source": "يغادر القطار المتجه إلى المطار كل عشرين دقيقة.",
+   "v2": "The train to the airport leaves every 20 minutes."
+  },
+  {
+   "source": "يرجى إعادة تشغيل التطبيق لتطبيق التحديث.",
+   "v2": "Please re-start the application for the update application."
+  },
+  {
+   "source": "اشترت خبزًا طازجًا وجرة صغيرة من العسل من السوق.",
+   "v2": "She bought fresh bread and a little pot of honey from the market."
+  },
+  {
+   "source": "يجب أن تحتوي كلمة المرور على ثمانية أحرف على الأقل.",
+   "v2": "The password should contain at least eight letters."
+  },
+  {
+   "source": "المتحف مغلق أيام الاثنين.",
+   "v2": "The museum is closed Mondays."
+  },
+  {
+   "source": "سنلتقي أمام المكتبة عند الظهر.",
+   "v2": "We'll meet in front of the library at noon."
+  },
+  {
+   "source": "سيكون الطقس مشمسًا غدًا مع رياح خفيفة بعد الظهر.",
+   "v2": "It'll be sunny tomorrow with a light wind this afternoon."
+  },
+  {
+   "source": "الإعدادات",
+   "v2": "Settings"
+  },
+  {
+   "source": "احفظ وتابع",
+   "v2": "Save and Continue"
+  },
+  {
+   "source": "غمر النهر الجسر القديم بعد ثلاثة أيام من الأمطار الغزيرة.",
+   "v2": "The river flooded the old bridge after three days of heavy rains."
+  },
+  {
+   "source": "هل يمكنك أن تخبرني أين أقرب صيدلية؟",
+   "v2": "Can you tell me where the nearest pharmacy is?"
+  },
+  {
+   "source": "تعذر فتح هذا الملف لأنه تالف.",
+   "v2": "Couldn't open this file because it was damaged."
+  },
+  {
+   "source": "لعب الأطفال في الحديقة حتى غروب الشمس.",
+   "v2": "Children played in the garden until sunset."
+  },
+  {
+   "source": "اكتمل التنزيل.",
+   "v2": "Complete download."
+  },
+  {
+   "source": "يعمل مهندسًا في هذه المدينة منذ عشر سنوات.",
+   "v2": "He's been an engineer in this city for ten years."
+  },
+  {
+   "source": "انعطف يسارًا عند الإشارة الضوئية الثانية.",
+   "v2": "Turn left at the second light."
+  },
+  {
+   "source": "شكرًا لصبرك بينما نصلح المشكلة.",
+   "v2": "Thanks for your patience while we fix the problem."
+  }
+ ],
+ "fr-en": [
+  {
+   "source": "Le phare se dresse sur la côte.",
+   "v2": "The lighthouse stands on the coast."
+  },
+  {
+   "source": "Appuyez sur E pour interagir",
+   "v2": "Press E to interact"
+  },
+  {
+   "source": "Voulez-vous vraiment quitter la partie ?",
+   "v2": "Do you really want to quit the game?"
+  }
+ ],
+ "zh-en": [
+  {
+   "source": "灯塔矗立在海岸上。",
+   "v2": "Lighthouses stand on the coast."
+  },
+  {
+   "source": "按E键互动",
+   "v2": "Press E to interact"
+  },
+  {
+   "source": "你确定要退出吗？",
+   "v2": "Are you sure you want to quit?"
+  }
+ ],
+ "ja-en": [
+  {
+   "source": "灯台は海岸に立っています。",
+   "v2": "The lighthouse stands on the beach."
+  },
+  {
+   "source": "Eキーで調べる",
+   "v2": "I'll check with the E-keys."
+  },
+  {
+   "source": "本当に終了しますか？",
+   "v2": "Are you sure you want to quit?"
+  },
+  {
+   "source": "空港行きの電車は二十分ごとに出発します。",
+   "v2": "The train to the airport leaves every two minutes."
+  },
+  {
+   "source": "アップデートを適用するにはアプリを再起動してください。",
+   "v2": "Please restart the app to apply the update."
+  },
+  {
+   "source": "彼女は市場で焼きたてのパンと小さな蜂蜜の瓶を買いました。",
+   "v2": "She bought freshly baked bread and a small honey bottle in the market."
+  },
+  {
+   "source": "パスワードは八文字以上にしてください。",
+   "v2": "Please make the password more than eight characters."
+  },
+  {
+   "source": "博物館は月曜日が休館です。",
+   "v2": "The museum is closed on Mondays."
+  },
+  {
+   "source": "正午に図書館の前で会いましょう。",
+   "v2": "Let's meet in front of the library at noon."
+  },
+  {
+   "source": "明日は晴れで、午後は弱い風が吹くでしょう。",
+   "v2": "It'll be fine tomorrow, and in the afternoon it'll be weak winds."
+  },
+  {
+   "source": "設定",
+   "v2": "Settings"
+  },
+  {
+   "source": "保存して続ける",
+   "v2": "Keep"
+  },
+  {
+   "source": "三日間の大雨のあと、川が古い橋をのみこみました。",
+   "v2": "After three days of heavy rain, the river passed across the old bridge."
+  },
+  {
+   "source": "一番近い薬局はどこか教えてもらえますか？",
+   "v2": "Can you tell me where the nearest pharmacy is?"
+  },
+  {
+   "source": "このファイルは破損しているため開けませんでした。",
+   "v2": "This file was damaged so it could not be opened."
+  },
+  {
+   "source": "子どもたちは日が暮れるまで庭で遊びました。",
+   "v2": "The children played in the garden till dark."
+  },
+  {
+   "source": "ダウンロードが完了しました。",
+   "v2": "Download finished."
+  },
+  {
+   "source": "彼はこの町で十年間エンジニアとして働いています。",
+   "v2": "He has been an engineer in this town for ten years."
+  },
+  {
+   "source": "二つ目の信号を左に曲がってください。",
+   "v2": "Turn left at the second light."
+  },
+  {
+   "source": "問題を解決するまでお待ちいただきありがとうございます。",
+   "v2": "Thank you for waiting until you're done with your problem."
+  }
+ ],
+ "es-en": [
+  {
+   "source": "El faro está en la costa.",
+   "v2": "The lighthouse is on the coast."
+  },
+  {
+   "source": "Pulsa E para interactuar",
+   "v2": "Press E to interact"
+  },
+  {
+   "source": "¿Seguro que quieres salir?",
+   "v2": "You sure you want to go out?"
+  }
+ ],
+ "de-en": [
+  {
+   "source": "Der Leuchtturm steht an der Küste.",
+   "v2": "The lighthouse is on the coast."
+  },
+  {
+   "source": "Drücke E, um zu interagieren",
+   "v2": "Press E to interact"
+  },
+  {
+   "source": "Willst du das Spiel wirklich beenden?",
+   "v2": "You really want to finish the game?"
+  },
+  {
+   "source": "Der Zug zum Flughafen fährt alle zwanzig Minuten.",
+   "v2": "The train to the airport runs every twenty minutes."
+  },
+  {
+   "source": "Bitte starten Sie die Anwendung neu, um das Update zu installieren.",
+   "v2": "Please restart the application to install the update."
+  },
+  {
+   "source": "Sie kaufte auf dem Markt frisches Brot und ein kleines Glas Honig.",
+   "v2": "She bought fresh bread and a small glass of honey at the market."
+  },
+  {
+   "source": "Ihr Passwort muss mindestens acht Zeichen enthalten.",
+   "v2": "Your password must contain at least eight characters."
+  },
+  {
+   "source": "Das Museum ist montags geschlossen.",
+   "v2": "The museum is closed on Mondays."
+  },
+  {
+   "source": "Wir treffen uns mittags vor der Bibliothek.",
+   "v2": "We'll meet at the library at noon."
+  },
+  {
+   "source": "Morgen wird es sonnig, am Nachmittag mit leichtem Wind.",
+   "v2": "In the afternoon it will be sunny with light wind."
+  },
+  {
+   "source": "Einstellungen",
+   "v2": "Settings"
+  },
+  {
+   "source": "Speichern und weiter",
+   "v2": "Save and Continue"
+  },
+  {
+   "source": "Nach drei Tagen Starkregen überflutete der Fluss die alte Brücke.",
+   "v2": "After three days of heavy rain, the river flooded the old bridge."
+  },
+  {
+   "source": "Können Sie mir sagen, wo die nächste Apotheke ist?",
+   "v2": "Can you tell me where the nearest pharmacy is?"
+  },
+  {
+   "source": "Diese Datei konnte nicht geöffnet werden, weil sie beschädigt ist.",
+   "v2": "This file could not be opened because it is corrupted."
+  },
+  {
+   "source": "Die Kinder spielten bis zum Sonnenuntergang im Garten.",
+   "v2": "The children played in the garden until sunset."
+  },
+  {
+   "source": "Download abgeschlossen.",
+   "v2": "Download completed."
+  },
+  {
+   "source": "Er arbeitet seit zehn Jahren als Ingenieur in dieser Stadt.",
+   "v2": "He's been working as an engineer in this city for ten years."
+  },
+  {
+   "source": "Biegen Sie an der zweiten Ampel links ab.",
+   "v2": "Turn left at the second traffic light."
+  },
+  {
+   "source": "Vielen Dank für Ihre Geduld, während wir das Problem beheben.",
+   "v2": "Thank you for your patience while we fix the problem."
+  }
+ ],
+ "ru-en": [
+  {
+   "source": "Маяк стоит на берегу моря.",
+   "v2": "The beacon is standing on the seaside."
+  },
+  {
+   "source": "Нажмите E, чтобы взаимодействовать",
+   "v2": "Press E to interact"
+  },
+  {
+   "source": "Вы уверены, что хотите выйти?",
+   "v2": "Are you sure you want to go out?"
+  }
+ ],
+ "it-en": [
+  {
+   "source": "Il faro si trova sulla costa.",
+   "v2": "The lighthouse is on the coast."
+  },
+  {
+   "source": "Premi E per interagire",
+   "v2": "Press E to interact"
+  },
+  {
+   "source": "Vuoi davvero uscire?",
+   "v2": "You really want to go out?"
+  }
+ ],
+ "nl-en": [
+  {
+   "source": "De vuurtoren staat aan de kust.",
+   "v2": "The lighthouse is on the coast."
+  },
+  {
+   "source": "Druk op E om te praten",
+   "v2": "Press E to talk"
+  },
+  {
+   "source": "Wil je echt stoppen?",
+   "v2": "You really want to quit?"
+  }
+ ],
+ "uk-en": [
+  {
+   "source": "Маяк стоїть на березі моря.",
+   "v2": "The lighthouse is on the shore of the sea."
+  },
+  {
+   "source": "Натисніть E, щоб взаємодіяти",
+   "v2": "Press E to interact"
+  },
+  {
+   "source": "Ви впевнені, що хочете вийти?",
+   "v2": "Are you sure you want to quit?"
+  }
+ ],
+ "pl-en": [
+  {
+   "source": "Latarnia morska stoi na wybrzeżu.",
+   "v2": "The lighthouse is on the coast."
+  },
+  {
+   "source": "Naciśnij E, aby wejść w interakcję",
+   "v2": "Press E to interact"
+  },
+  {
+   "source": "Czy na pewno chcesz wyjść?",
+   "v2": "Are you sure you want to leave?"
+  }
+ ],
+ "hi-en": [
+  {
+   "source": "प्रकाशस्तंभ तट पर खड़ा है।",
+   "v2": "Standing on the clear coast."
+  },
+  {
+   "source": "बातचीत करने के लिए E दबाएँ",
+   "v2": "Click E to converse"
+  },
+  {
+   "source": "क्या आप सचमुच बाहर निकलना चाहते हैं?",
+   "v2": "Do you really want to quit?"
+  }
+ ],
+ "id-en": [
+  {
+   "source": "Mercusuar berdiri di pantai.",
+   "v2": "The lighthouse stands on the beach."
+  },
+  {
+   "source": "Tekan E untuk berinteraksi",
+   "v2": "Press E to interact"
+  },
+  {
+   "source": "Yakin ingin keluar?",
+   "v2": "Sure you want to go out?"
+  }
+ ],
+ "vi-en": [
+  {
+   "source": "Ngọn hải đăng đứng trên bờ biển.",
+   "v2": "The lighthouse stands on the beach."
+  },
+  {
+   "source": "Nhấn E để tương tác",
+   "v2": "Press E for interaction"
+  },
+  {
+   "source": "Bạn có chắc muốn thoát không?",
+   "v2": "Are you sure you want to escape?"
+  }
+ ],
+ "th-en": [
+  {
+   "source": "ประภาคารตั้งอยู่บนชายฝั่ง",
+   "v2": "The lighthouse is on the coast."
+  },
+  {
+   "source": "กด E เพื่อโต้ตอบ",
+   "v2": "Press E to interact."
+  },
+  {
+   "source": "คุณแน่ใจหรือไม่ว่าต้องการออก",
+   "v2": "Are you sure you want to leave?"
+  }
+ ],
+ "ko-en": [
+  {
+   "source": "등대는 해안에 있습니다.",
+   "v2": "The lighthouse is on the coast."
+  },
+  {
+   "source": "E 키를 눌러 상호작용",
+   "v2": "Interactive by Pressing E key"
+  },
+  {
+   "source": "정말 종료하시겠습니까?",
+   "v2": "Do you really want to end it?"
+  }
+ ],
+ "en-it": [
+  {
+   "source": "The lighthouse stands on the coast.",
+   "v2": "Il faro si trova sulla costa."
+  },
+  {
+   "source": "Press E to interact",
+   "v2": "Premere E per interagire"
+  },
+  {
+   "source": "Are you sure you want to quit? Unsaved progress will be lost.",
+   "v2": "Sei sicuro di voler smettere? I progressi non salvati andranno persi."
+  },
+  {
+   "source": "The train to the airport leaves every twenty minutes.",
+   "v2": "Il treno per l'aeroporto parte ogni venti minuti."
+  },
+  {
+   "source": "Please restart the application to apply the update.",
+   "v2": "Riavviare l'applicazione per applicare l'aggiornamento."
+  },
+  {
+   "source": "She bought fresh bread and a small jar of honey at the market.",
+   "v2": "Ha comprato del pane fresco e un piccolo barattolo di miele al mercato."
+  },
+  {
+   "source": "Your password must contain at least eight characters.",
+   "v2": "La password deve contenere almeno otto caratteri."
+  },
+  {
+   "source": "The museum is closed on Mondays.",
+   "v2": "Il museo è chiuso il lunedì."
+  },
+  {
+   "source": "We will meet in front of the library at noon.",
+   "v2": "Ci incontreremo davanti alla biblioteca a mezzogiorno."
+  },
+  {
+   "source": "The weather will be sunny tomorrow, with light wind in the afternoon.",
+   "v2": "Il tempo sarà soleggiato domani, con il vento leggero nel pomeriggio."
+  },
+  {
+   "source": "Settings",
+   "v2": "Impostazioni"
+  },
+  {
+   "source": "Save and continue",
+   "v2": "Salva e continua"
+  },
+  {
+   "source": "The river flooded the old bridge after three days of heavy rain.",
+   "v2": "Il fiume inondava il vecchio ponte dopo tre giorni di pioggia."
+  },
+  {
+   "source": "Can you tell me where the nearest pharmacy is?",
+   "v2": "Puoi dirmi dov'e' la farmacia piu' vicina?"
+  },
+  {
+   "source": "This file could not be opened because it is damaged.",
+   "v2": "Questo file non può essere aperto perché è danneggiato."
+  },
+  {
+   "source": "The children played in the garden until sunset.",
+   "v2": "I bambini giocavano in giardino fino al tramonto."
+  },
+  {
+   "source": "Download complete.",
+   "v2": "Scaricamento completato."
+  },
+  {
+   "source": "He has worked as an engineer in this city for ten years.",
+   "v2": "Ha lavorato come ingegnere in questa città per dieci anni."
+  },
+  {
+   "source": "Turn left at the second traffic light.",
+   "v2": "Girare a sinistra al secondo semaforo."
+  },
+  {
+   "source": "Thank you for your patience while we fix the problem.",
+   "v2": "Grazie per la pazienza mentre risolviamo il problema."
+  }
+ ],
+ "en-nl": [
+  {
+   "source": "The lighthouse stands on the coast.",
+   "v2": "De vuurtoren staat aan de kust."
+  },
+  {
+   "source": "Press E to interact",
+   "v2": "Druk op E om te communiceren"
+  },
+  {
+   "source": "Are you sure you want to quit? Unsaved progress will be lost.",
+   "v2": "Weet u zeker dat u wilt stoppen? Onopgeslagen vooruitgang zal verloren gaan."
+  },
+  {
+   "source": "The train to the airport leaves every twenty minutes.",
+   "v2": "De trein naar het vliegveld vertrekt elke twintig minuten."
+  },
+  {
+   "source": "Please restart the application to apply the update.",
+   "v2": "Herstart de toepassing om de update toe te passen."
+  },
+  {
+   "source": "She bought fresh bread and a small jar of honey at the market.",
+   "v2": "Ze kocht vers brood en een kleine pot honing op de markt."
+  },
+  {
+   "source": "Your password must contain at least eight characters.",
+   "v2": "Uw wachtwoord moet minstens acht tekens bevatten."
+  },
+  {
+   "source": "The museum is closed on Mondays.",
+   "v2": "Het museum is gesloten op maandag."
+  },
+  {
+   "source": "We will meet in front of the library at noon.",
+   "v2": "We zien elkaar voor de bibliotheek om 12 uur."
+  },
+  {
+   "source": "The weather will be sunny tomorrow, with light wind in the afternoon.",
+   "v2": "Het weer is morgenochtend zonnig, met lichte wind in de namiddag."
+  },
+  {
+   "source": "Settings",
+   "v2": "Instellingen"
+  },
+  {
+   "source": "Save and continue",
+   "v2": "Opslaan en doorgaan"
+  },
+  {
+   "source": "The river flooded the old bridge after three days of heavy rain.",
+   "v2": "De rivier overstroomde de oude brug na drie dagen van zware regen."
+  },
+  {
+   "source": "Can you tell me where the nearest pharmacy is?",
+   "v2": "Waar is de dichtstbijzijnde apotheek?"
+  },
+  {
+   "source": "This file could not be opened because it is damaged.",
+   "v2": "Dit bestand kon niet worden geopend omdat het beschadigd is."
+  },
+  {
+   "source": "The children played in the garden until sunset.",
+   "v2": "De kinderen speelden in de tuin tot zonsondergang."
+  },
+  {
+   "source": "Download complete.",
+   "v2": "Download voltooid."
+  },
+  {
+   "source": "He has worked as an engineer in this city for ten years.",
+   "v2": "Hij werkt al tien jaar als ingenieur in deze stad."
+  },
+  {
+   "source": "Turn left at the second traffic light.",
+   "v2": "Sla linksaf bij het tweede stoplicht."
+  },
+  {
+   "source": "Thank you for your patience while we fix the problem.",
+   "v2": "Bedankt voor uw geduld terwijl we het probleem oplossen."
+  }
+ ],
+ "en-uk": [
+  {
+   "source": "The lighthouse stands on the coast.",
+   "v2": "На узбережжі стоїть маяк."
+  },
+  {
+   "source": "Press E to interact",
+   "v2": "Натисніть кнопку E, щоб взаємодіяти з програмою"
+  },
+  {
+   "source": "Are you sure you want to quit? Unsaved progress will be lost.",
+   "v2": "Ви справді бажаєте вийти? Незбережений поступ буде втрачено."
+  },
+  {
+   "source": "The train to the airport leaves every twenty minutes.",
+   "v2": "Потяг в аеропорт виїжджає кожні двадцять хвилин."
+  },
+  {
+   "source": "Please restart the application to apply the update.",
+   "v2": "Будь ласка, перезапустіть програму, щоб застосувати оновлення."
+  },
+  {
+   "source": "She bought fresh bread and a small jar of honey at the market.",
+   "v2": "Вона купила на ринку свіжий хліб і маленьку банку меду."
+  },
+  {
+   "source": "Your password must contain at least eight characters.",
+   "v2": "Ваш пароль повинен містити принаймні вісім символів."
+  },
+  {
+   "source": "The museum is closed on Mondays.",
+   "v2": "Музей зачинений по понеділках."
+  },
+  {
+   "source": "We will meet in front of the library at noon.",
+   "v2": "Ми зустрінемося перед бібліотекою опівдні."
+  },
+  {
+   "source": "The weather will be sunny tomorrow, with light wind in the afternoon.",
+   "v2": "Завтра буде сонячна погода, а вдень - легкий вітер."
+  },
+  {
+   "source": "Settings",
+   "v2": "Параметри"
+  },
+  {
+   "source": "Save and continue",
+   "v2": "Зберегти і продовжити"
+  },
+  {
+   "source": "The river flooded the old bridge after three days of heavy rain.",
+   "v2": "Ріка затопила старий міст після трьох днів сильної зливи."
+  },
+  {
+   "source": "Can you tell me where the nearest pharmacy is?",
+   "v2": "Можете мені сказати, де знаходиться найближча аптека?"
+  },
+  {
+   "source": "This file could not be opened because it is damaged.",
+   "v2": "Цей файл неможливо відкрити, оскільки він пошкоджений."
+  },
+  {
+   "source": "The children played in the garden until sunset.",
+   "v2": "Діти грали в саду до заходу сонця."
+  },
+  {
+   "source": "Download complete.",
+   "v2": "Звантаження завершено."
+  },
+  {
+   "source": "He has worked as an engineer in this city for ten years.",
+   "v2": "Він працює інженером у цьому місті вже десять років."
+  },
+  {
+   "source": "Turn left at the second traffic light.",
+   "v2": "Поверни наліво на другому світлофорі."
+  },
+  {
+   "source": "Thank you for your patience while we fix the problem.",
+   "v2": "Дякую за терпіння, поки ми розв'яжемо проблему."
+  }
+ ],
+ "en-hi": [
+  {
+   "source": "The lighthouse stands on the coast.",
+   "v2": "यह बंदरगाह के किनारे पर खड़ा है ।"
+  },
+  {
+   "source": "Press E to interact",
+   "v2": "व्यवहार करने के लिए ई- मेल दबाएँ"
+  },
+  {
+   "source": "Are you sure you want to quit? Unsaved progress will be lost.",
+   "v2": "क्या आप वाक़ई बाहर होना चाहते हैं? सहेजा नहीं गया प्रगति गुम हो जाएगी."
+  },
+  {
+   "source": "The train to the airport leaves every twenty minutes.",
+   "v2": "हवाई अड्डे के लिए ट्रेन हर बीस मिनट छोड़ देती है."
+  },
+  {
+   "source": "Please restart the application to apply the update.",
+   "v2": "अद्यतन लागू करने के लिए कृपया अनुप्रयोग फिर आरंभ करें."
+  },
+  {
+   "source": "She bought fresh bread and a small jar of honey at the market.",
+   "v2": "उसने बाज़ार में ताज़ा रोटी और एक छोटा - सा पात्र खरीदा ।"
+  },
+  {
+   "source": "Your password must contain at least eight characters.",
+   "v2": "आपका कूटशब्द में कम से कम आठ अक्षर होने चाहिएँ."
+  },
+  {
+   "source": "The museum is closed on Mondays.",
+   "v2": "संग्रहालय सोमवार में बंद है."
+  },
+  {
+   "source": "We will meet in front of the library at noon.",
+   "v2": "हम दोपहर के समय पुस्तकालय के सामने मिलेंगे."
+  },
+  {
+   "source": "The weather will be sunny tomorrow, with light wind in the afternoon.",
+   "v2": "मौसम कल धूप होगा, दोपहर में प्रकाश हवा."
+  },
+  {
+   "source": "Settings",
+   "v2": "विन्यास"
+  },
+  {
+   "source": "Save and continue",
+   "v2": "सहेजें व जारी रखें"
+  },
+  {
+   "source": "The river flooded the old bridge after three days of heavy rain.",
+   "v2": "पानी की धारा तीन दिन के बाद पानी में बह गयी ।"
+  },
+  {
+   "source": "Can you tell me where the nearest pharmacy is?",
+   "v2": "आप मुझे बता सकते हैं कि सबसे नज़दीकी का कहाँ है?"
+  },
+  {
+   "source": "This file could not be opened because it is damaged.",
+   "v2": "यह फ़ाइल खोला नहीं जा सका चूंकि यह क्षति है."
+  },
+  {
+   "source": "The children played in the garden until sunset.",
+   "v2": "बच्चे सूर्यास्त तक बाग में खेलते रहे ।"
+  },
+  {
+   "source": "Download complete.",
+   "v2": "डाउनलोड सम्पन्न."
+  },
+  {
+   "source": "He has worked as an engineer in this city for ten years.",
+   "v2": "उसने इस शहर में दस साल से एक इंजीनियर की तरह काम किया है ।"
+  },
+  {
+   "source": "Turn left at the second traffic light.",
+   "v2": "दूसरी ट्रैफिक रोशनी से पीछे हटिए ।"
+  },
+  {
+   "source": "Thank you for your patience while we fix the problem.",
+   "v2": "समस्या ठीक करने के दौरान अपने धैर्य के लिए धन्यवाद."
+  }
+ ],
+ "en-id": [
+  {
+   "source": "The lighthouse stands on the coast.",
+   "v2": "Mercusuar berdiri di pantai."
+  },
+  {
+   "source": "Press E to interact",
+   "v2": "Tekan E untuk berinteraksi"
+  },
+  {
+   "source": "Are you sure you want to quit? Unsaved progress will be lost.",
+   "v2": "Anda yakin ingin berhenti? Kemajuan yang belum disimpan akan hilang."
+  },
+  {
+   "source": "The train to the airport leaves every twenty minutes.",
+   "v2": "Kereta ke bandara berangkat setiap dua puluh menit."
+  },
+  {
+   "source": "Please restart the application to apply the update.",
+   "v2": "Silakan jalankan ulang aplikasi untuk menerapkan pemutakhiran."
+  },
+  {
+   "source": "She bought fresh bread and a small jar of honey at the market.",
+   "v2": "Dia membeli roti segar dan sebotol kecil madu di pasar."
+  },
+  {
+   "source": "Your password must contain at least eight characters.",
+   "v2": "Sandi Anda harus memuat setidaknya delapan karakter."
+  },
+  {
+   "source": "The museum is closed on Mondays.",
+   "v2": "Museum ditutup pada hari Senin."
+  },
+  {
+   "source": "We will meet in front of the library at noon.",
+   "v2": "Kita akan bertemu di depan perpustakaan siang nanti."
+  },
+  {
+   "source": "The weather will be sunny tomorrow, with light wind in the afternoon.",
+   "v2": "Cuaca akan cerah besok, dengan angin terang di sore hari."
+  },
+  {
+   "source": "Settings",
+   "v2": "Pengaturan"
+  },
+  {
+   "source": "Save and continue",
+   "v2": "Simpan dan lanjutkan"
+  },
+  {
+   "source": "The river flooded the old bridge after three days of heavy rain.",
+   "v2": "Sungai itu membanjiri jembatan tua itu setelah hujan deras selama tiga hari."
+  },
+  {
+   "source": "Can you tell me where the nearest pharmacy is?",
+   "v2": "Bisa kau beritahu aku di mana apotek terdekat?"
+  },
+  {
+   "source": "This file could not be opened because it is damaged.",
+   "v2": "Berkas ini tidak dapat dibuka karena rusak."
+  },
+  {
+   "source": "The children played in the garden until sunset.",
+   "v2": "Anak-anak bermain di taman sampai matahari terbenam."
+  },
+  {
+   "source": "Download complete.",
+   "v2": "Download selesai."
+  },
+  {
+   "source": "He has worked as an engineer in this city for ten years.",
+   "v2": "Dia telah bekerja sebagai insinyur di kota ini selama sepuluh tahun."
+  },
+  {
+   "source": "Turn left at the second traffic light.",
+   "v2": "Belok kiri di lampu lalu lintas kedua."
+  },
+  {
+   "source": "Thank you for your patience while we fix the problem.",
+   "v2": "Terima kasih atas kesabaranmu sementara kami memperbaiki masalah."
+  }
+ ],
+ "en-vi": [
+  {
+   "source": "The lighthouse stands on the coast.",
+   "v2": "- Ngọn núi ở bờ biển."
+  },
+  {
+   "source": "Press E to interact",
+   "v2": "Hiện chức chức chức chức chức chức chức chức chức chức chức chức chức chức chức chức chức chức chức chức chức chức chức chức chức chức chức chức chức chức chứcm"
+  },
+  {
+   "source": "Are you sure you want to quit? Unsaved progress will be lost.",
+   "v2": "Bạn có chắc muốn thoát ra không?"
+  },
+  {
+   "source": "The train to the airport leaves every twenty minutes.",
+   "v2": "Xe lửa đến sân bay mỗi 20 phút."
+  },
+  {
+   "source": "Please restart the application to apply the update.",
+   "v2": "Xin vui lòng khởi động lại một ứng dụng cần áp dụng cho việc cập nhật."
+  },
+  {
+   "source": "She bought fresh bread and a small jar of honey at the market.",
+   "v2": "Cô mua bánh mì mới và một bình nhỏ mật ong tại chợ."
+  },
+  {
+   "source": "Your password must contain at least eight characters.",
+   "v2": "Mật khẩu của bạn phải chứa ít nhất 8 chữ ký."
+  },
+  {
+   "source": "The museum is closed on Mondays.",
+   "v2": "Bảo tàng đóng cửa vào thứ hai."
+  },
+  {
+   "source": "We will meet in front of the library at noon.",
+   "v2": "Chúng ta sẽ gặp nhau ở trước cửa thư viện vào trưa mai."
+  },
+  {
+   "source": "The weather will be sunny tomorrow, with light wind in the afternoon.",
+   "v2": "Ngày mai trời sẽ nắng, với gió sáng vào buổi chiều."
+  },
+  {
+   "source": "Settings",
+   "v2": "Thiết lập"
+  },
+  {
+   "source": "Save and continue",
+   "v2": "& &"
+  },
+  {
+   "source": "The river flooded the old bridge after three days of heavy rain.",
+   "v2": "Nước lụt ngập chiếc cầu cũ sau ba ngày mưa lớn."
+  },
+  {
+   "source": "Can you tell me where the nearest pharmacy is?",
+   "v2": "Anh có thể cho tôi biết địa điểm ở đâu không?"
+  },
+  {
+   "source": "This file could not be opened because it is damaged.",
+   "v2": "Không thể mở tập tin này vì nó bị hỏng."
+  },
+  {
+   "source": "The children played in the garden until sunset.",
+   "v2": "Những đứa trẻ chơi đùa trong vườn cho đến khi mặt trời lặn."
+  },
+  {
+   "source": "Download complete.",
+   "v2": "Tải về"
+  },
+  {
+   "source": "He has worked as an engineer in this city for ten years.",
+   "v2": "Anh ta đã làm kỹ sư ở thành phố này 10 năm rồi."
+  },
+  {
+   "source": "Turn left at the second traffic light.",
+   "v2": "Quay trái tại đèn giao thông thứ hai."
+  },
+  {
+   "source": "Thank you for your patience while we fix the problem.",
+   "v2": "Cảm ơn vì sự kiên nhẫn của các bạn trong khi chúng tôi giải quyết vấn đề."
+  }
+ ],
+ "de-es": [
+  {
+   "source": "Der Leuchtturm steht an der Küste.",
+   "v2": "El faro está en la costa."
+  },
+  {
+   "source": "Drücke E, um zu interagieren",
+   "v2": "Pulse E para interactuar"
+  },
+  {
+   "source": "Willst du das Spiel wirklich beenden?",
+   "v2": "¿De verdad quieres terminar el juego?"
+  },
+  {
+   "source": "Der Zug zum Flughafen fährt alle zwanzig Minuten.",
+   "v2": "El tren al aeropuerto sale cada 20 minutos."
+  },
+  {
+   "source": "Bitte starten Sie die Anwendung neu, um das Update zu installieren.",
+   "v2": "Por favor, reinicie la aplicación para instalar la actualización."
+  },
+  {
+   "source": "Sie kaufte auf dem Markt frisches Brot und ein kleines Glas Honig.",
+   "v2": "Compró pan fresco en el mercado y un pequeño vaso de miel."
+  },
+  {
+   "source": "Ihr Passwort muss mindestens acht Zeichen enthalten.",
+   "v2": "Su contraseña debe contener al menos ocho caracteres."
+  },
+  {
+   "source": "Das Museum ist montags geschlossen.",
+   "v2": "El museo está cerrado los lunes."
+  },
+  {
+   "source": "Wir treffen uns mittags vor der Bibliothek.",
+   "v2": "Nos vemos en la biblioteca al mediodía."
+  },
+  {
+   "source": "Morgen wird es sonnig, am Nachmittag mit leichtem Wind.",
+   "v2": "Mañana se pone soleado, por la tarde con viento ligero."
+  },
+  {
+   "source": "Einstellungen",
+   "v2": "Preferencias"
+  },
+  {
+   "source": "Speichern und weiter",
+   "v2": "Guardar y seguir"
+  },
+  {
+   "source": "Nach drei Tagen Starkregen überflutete der Fluss die alte Brücke.",
+   "v2": "Después de tres días de estrella, el río inundó el viejo puente."
+  },
+  {
+   "source": "Können Sie mir sagen, wo die nächste Apotheke ist?",
+   "v2": "¿Puede decirme dónde está la farmacia más cercana?"
+  },
+  {
+   "source": "Diese Datei konnte nicht geöffnet werden, weil sie beschädigt ist.",
+   "v2": "Este archivo no se pudo abrir porque está dañado."
+  },
+  {
+   "source": "Die Kinder spielten bis zum Sonnenuntergang im Garten.",
+   "v2": "Los niños jugaron en el jardín hasta la puesta del sol."
+  },
+  {
+   "source": "Download abgeschlossen.",
+   "v2": "Descargar terminado."
+  },
+  {
+   "source": "Er arbeitet seit zehn Jahren als Ingenieur in dieser Stadt.",
+   "v2": "Ha trabajado como ingeniero en esta ciudad durante diez años."
+  },
+  {
+   "source": "Biegen Sie an der zweiten Ampel links ab.",
+   "v2": "Gire a la izquierda en el segundo semáforo."
+  },
+  {
+   "source": "Vielen Dank für Ihre Geduld, während wir das Problem beheben.",
+   "v2": "Gracias por su paciencia mientras arreglamos el problema."
+  }
+ ],
+ "de-fr": [
+  {
+   "source": "Der Leuchtturm steht an der Küste.",
+   "v2": "Le phare est sur la côte."
+  },
+  {
+   "source": "Drücke E, um zu interagieren",
+   "v2": "Appuyez sur E pour interagir"
+  },
+  {
+   "source": "Willst du das Spiel wirklich beenden?",
+   "v2": "Tu veux vraiment finir le jeu ?"
+  },
+  {
+   "source": "Der Zug zum Flughafen fährt alle zwanzig Minuten.",
+   "v2": "Le train pour l'aéroport part toutes les vingt minutes."
+  },
+  {
+   "source": "Bitte starten Sie die Anwendung neu, um das Update zu installieren.",
+   "v2": "Veuillez redémarrer l'application pour installer la mise à jour."
+  },
+  {
+   "source": "Sie kaufte auf dem Markt frisches Brot und ein kleines Glas Honig.",
+   "v2": "Elle a acheté du pain frais et un petit verre de miel sur le marché."
+  },
+  {
+   "source": "Ihr Passwort muss mindestens acht Zeichen enthalten.",
+   "v2": "Votre mot de passe doit contenir au moins huit caractères."
+  },
+  {
+   "source": "Das Museum ist montags geschlossen.",
+   "v2": "Le musée est fermé le lundi."
+  },
+  {
+   "source": "Wir treffen uns mittags vor der Bibliothek.",
+   "v2": "On se retrouve devant la bibliothèque à midi."
+  },
+  {
+   "source": "Morgen wird es sonnig, am Nachmittag mit leichtem Wind.",
+   "v2": "Demain, le soleil sera ensoleillé, l'après-midi avec le vent léger."
+  },
+  {
+   "source": "Einstellungen",
+   "v2": "Configuration"
+  },
+  {
+   "source": "Speichern und weiter",
+   "v2": "Enregistrer et continuer"
+  },
+  {
+   "source": "Nach drei Tagen Starkregen überflutete der Fluss die alte Brücke.",
+   "v2": "Après trois jours de fortes pluies, le fleuve a envahi le vieux pont."
+  },
+  {
+   "source": "Können Sie mir sagen, wo die nächste Apotheke ist?",
+   "v2": "Vous pouvez me dire où est la pharmacie la plus proche ?"
+  },
+  {
+   "source": "Diese Datei konnte nicht geöffnet werden, weil sie beschädigt ist.",
+   "v2": "Ce fichier n'a pas pu être ouvert parce qu'il est corrompu."
+  },
+  {
+   "source": "Die Kinder spielten bis zum Sonnenuntergang im Garten.",
+   "v2": "Les enfants jouaient dans le jardin jusqu'au coucher du soleil."
+  },
+  {
+   "source": "Download abgeschlossen.",
+   "v2": "Téléchargement terminé."
+  },
+  {
+   "source": "Er arbeitet seit zehn Jahren als Ingenieur in dieser Stadt.",
+   "v2": "Il travaille dans cette ville depuis dix ans."
+  },
+  {
+   "source": "Biegen Sie an der zweiten Ampel links ab.",
+   "v2": "Tournez à gauche au deuxième feu."
+  },
+  {
+   "source": "Vielen Dank für Ihre Geduld, während wir das Problem beheben.",
+   "v2": "Merci de votre patience pendant que nous résolvons le problème."
+  }
+ ],
+ "es-de": [
+  {
+   "source": "El faro está en la costa.",
+   "v2": "Der Leuchtturm ist an der Küste."
+  },
+  {
+   "source": "Pulsa E para interactuar",
+   "v2": "Drücken Sie E, um zu interagieren"
+  },
+  {
+   "source": "¿Seguro que quieres salir?",
+   "v2": "Bist du sicher, dass du raus willst?"
+  }
+ ],
+ "es-fr": [
+  {
+   "source": "El faro está en la costa.",
+   "v2": "Le phare est sur la côte."
+  },
+  {
+   "source": "Pulsa E para interactuar",
+   "v2": "Appuyez sur E pour interagir"
+  },
+  {
+   "source": "¿Seguro que quieres salir?",
+   "v2": "Tu es sûr de vouloir sortir ?"
+  }
+ ],
+ "es-it": [
+  {
+   "source": "El faro está en la costa.",
+   "v2": "Il faro e' sulla costa."
+  },
+  {
+   "source": "Pulsa E para interactuar",
+   "v2": "Premere E per interagire"
+  },
+  {
+   "source": "¿Seguro que quieres salir?",
+   "v2": "Sei sicuro di voler uscire?"
+  }
+ ],
+ "es-ru": [
+  {
+   "source": "El faro está en la costa.",
+   "v2": "Маяк на берегу."
+  },
+  {
+   "source": "Pulsa E para interactuar",
+   "v2": "Пульс E для взаимодействия"
+  },
+  {
+   "source": "¿Seguro que quieres salir?",
+   "v2": "Ты уверен, что хочешь выйти?"
+  }
+ ],
+ "fr-de": [
+  {
+   "source": "Le phare se dresse sur la côte.",
+   "v2": "Der Leuchtturm steht an der Küste."
+  },
+  {
+   "source": "Appuyez sur E pour interagir",
+   "v2": "Drücken Sie E, um zu interagieren"
+  },
+  {
+   "source": "Voulez-vous vraiment quitter la partie ?",
+   "v2": "Wollen Sie wirklich das Spiel verlassen?"
+  }
+ ],
+ "fr-es": [
+  {
+   "source": "Le phare se dresse sur la côte.",
+   "v2": "El faro se levanta en la costa."
+  },
+  {
+   "source": "Appuyez sur E pour interagir",
+   "v2": "Pulse E para interactuar"
+  },
+  {
+   "source": "Voulez-vous vraiment quitter la partie ?",
+   "v2": "¿De verdad quieres dejar el juego?"
+  }
+ ],
+ "fr-ru": [
+  {
+   "source": "Le phare se dresse sur la côte.",
+   "v2": "Фара наберется на побережье."
+  },
+  {
+   "source": "Appuyez sur E pour interagir",
+   "v2": "Нажать E для взаимодействия"
+  },
+  {
+   "source": "Voulez-vous vraiment quitter la partie ?",
+   "v2": "Вы действительно хотите уйти из игры?"
+  }
+ ],
+ "it-es": [
+  {
+   "source": "Il faro si trova sulla costa.",
+   "v2": "El faro está en la costa."
+  },
+  {
+   "source": "Premi E per interagire",
+   "v2": "Pulse E para interactuar"
+  },
+  {
+   "source": "Vuoi davvero uscire?",
+   "v2": "¿De verdad quieres salir?"
+  }
+ ],
+ "it-fr": [
+  {
+   "source": "Il faro si trova sulla costa.",
+   "v2": "Le phare est sur la côte."
+  },
+  {
+   "source": "Premi E per interagire",
+   "v2": "Appuyez sur E pour interagir"
+  },
+  {
+   "source": "Vuoi davvero uscire?",
+   "v2": "Tu veux vraiment sortir ?"
+  }
+ ],
+ "ru-es": [
+  {
+   "source": "Маяк стоит на берегу моря.",
+   "v2": "La baliza está en la orilla del mar."
+  },
+  {
+   "source": "Нажмите E, чтобы взаимодействовать",
+   "v2": "Pulse E para interactuar"
+  },
+  {
+   "source": "Вы уверены, что хотите выйти?",
+   "v2": "¿Estás seguro de que quieres salir?"
+  }
+ ],
+ "ru-fr": [
+  {
+   "source": "Маяк стоит на берегу моря.",
+   "v2": "Le balai est au bord de la mer."
+  },
+  {
+   "source": "Нажмите E, чтобы взаимодействовать",
+   "v2": "Cliquez sur E pour interagir"
+  },
+  {
+   "source": "Вы уверены, что хотите выйти?",
+   "v2": "Vous êtes sûr de vouloir sortir ?"
+  }
+ ],
+ "ru-uk": [
+  {
+   "source": "Маяк стоит на берегу моря.",
+   "v2": "Маяк стоїть на березі моря."
+  },
+  {
+   "source": "Нажмите E, чтобы взаимодействовать",
+   "v2": "Натисніть E, щоб взаємодіяти"
+  },
+  {
+   "source": "Вы уверены, что хотите выйти?",
+   "v2": "Ви впевнені, що хочете вийти?"
+  }
+ ],
+ "uk-ru": [
+  {
+   "source": "Маяк стоїть на березі моря.",
+   "v2": "Маяк стоит на берегу моря."
+  },
+  {
+   "source": "Натисніть E, щоб взаємодіяти",
+   "v2": "Нажмите E для взаимодействия"
+  },
+  {
+   "source": "Ви впевнені, що хочете вийти?",
+   "v2": "Вы уверены, что хотите выйти?"
+  }
+ ],
+ "nl-fr": [
+  {
+   "source": "De vuurtoren staat aan de kust.",
+   "v2": "Le phare est sur la côte."
+  },
+  {
+   "source": "Druk op E om te praten",
+   "v2": "Appuyez sur E pour parler"
+  },
+  {
+   "source": "Wil je echt stoppen?",
+   "v2": "Tu veux vraiment arrêter ?"
+  }
+ ],
+ "fr-ar": [
+  {
+   "source": "Le phare se dresse sur la côte.",
+   "v2": "المنارة تقف على الساحل"
+  },
+  {
+   "source": "Appuyez sur E pour interagir",
+   "v2": "اضغط E للتفاعل"
+  },
+  {
+   "source": "Voulez-vous vraiment quitter la partie ?",
+   "v2": "هل تريد حقاً أن تترك اللعبة؟"
+  }
+ ],
+ "es-ar": [
+  {
+   "source": "El faro está en la costa.",
+   "v2": "المنارة على الشاطئ"
+  },
+  {
+   "source": "Pulsa E para interactuar",
+   "v2": "النقر E للتفاعل"
+  },
+  {
+   "source": "¿Seguro que quieres salir?",
+   "v2": "هل أنت متأكد أنك تريد الخروج؟"
+  }
+ ],
+ "ar-fr": [
+  {
+   "source": "المنارة تقف على الساحل.",
+   "v2": "Le phare est sur la côte."
+  },
+  {
+   "source": "اضغط على زر البدء",
+   "v2": "Appuyez sur le bouton de démarrage."
+  },
+  {
+   "source": "هل أنت متأكد أنك تريد الخروج؟",
+   "v2": "Tu es sûr de vouloir sortir ?"
+  },
+  {
+   "source": "يغادر القطار المتجه إلى المطار كل عشرين دقيقة.",
+   "v2": "Il quitte le train pour l'aéroport toutes les 20 minutes."
+  },
+  {
+   "source": "يرجى إعادة تشغيل التطبيق لتطبيق التحديث.",
+   "v2": "Veuillez réactiver l'application pour la mise à jour."
+  },
+  {
+   "source": "اشترت خبزًا طازجًا وجرة صغيرة من العسل من السوق.",
+   "v2": "Elle a acheté du pain frais et une petite bouteille de miel sur le marché."
+  },
+  {
+   "source": "يجب أن تحتوي كلمة المرور على ثمانية أحرف على الأقل.",
+   "v2": "Le mot de passe doit contenir au moins huit lettres."
+  },
+  {
+   "source": "المتحف مغلق أيام الاثنين.",
+   "v2": "Le musée est fermé lundi."
+  },
+  {
+   "source": "سنلتقي أمام المكتبة عند الظهر.",
+   "v2": "On se retrouve devant la bibliothèque à midi."
+  },
+  {
+   "source": "سيكون الطقس مشمسًا غدًا مع رياح خفيفة بعد الظهر.",
+   "v2": "Il fera soleil demain avec un vent léger cet après-midi."
+  },
+  {
+   "source": "الإعدادات",
+   "v2": "Configuration"
+  },
+  {
+   "source": "احفظ وتابع",
+   "v2": "& & & Continuer"
+  },
+  {
+   "source": "غمر النهر الجسر القديم بعد ثلاثة أيام من الأمطار الغزيرة.",
+   "v2": "Le vieux pont a été inondé par la rivière après trois jours de pluies."
+  },
+  {
+   "source": "هل يمكنك أن تخبرني أين أقرب صيدلية؟",
+   "v2": "Pouvez-vous me dire où est la pharmacie la plus proche ?"
+  },
+  {
+   "source": "تعذر فتح هذا الملف لأنه تالف.",
+   "v2": "Impossible d'ouvrir ce fichier parce qu'il est endommagé."
+  },
+  {
+   "source": "لعب الأطفال في الحديقة حتى غروب الشمس.",
+   "v2": "Les enfants jouent dans le jardin jusqu'au coucher du soleil."
+  },
+  {
+   "source": "اكتمل التنزيل.",
+   "v2": "Téléchargement terminé."
+  },
+  {
+   "source": "يعمل مهندسًا في هذه المدينة منذ عشر سنوات.",
+   "v2": "Il est ingénieur dans cette ville depuis dix ans."
+  },
+  {
+   "source": "انعطف يسارًا عند الإشارة الضوئية الثانية.",
+   "v2": "Tournez à gauche à la seconde lumière."
+  },
+  {
+   "source": "شكرًا لصبرك بينما نصلح المشكلة.",
+   "v2": "Merci pour votre patience, pendant qu'on règle le problème."
+  }
+ ],
+ "ar-es": [
+  {
+   "source": "المنارة تقف على الساحل.",
+   "v2": "El faro está en la costa."
+  },
+  {
+   "source": "اضغط على زر البدء",
+   "v2": "Presiona el botón de inicio."
+  },
+  {
+   "source": "هل أنت متأكد أنك تريد الخروج؟",
+   "v2": "¿Seguro que quieres salir?"
+  },
+  {
+   "source": "يغادر القطار المتجه إلى المطار كل عشرين دقيقة.",
+   "v2": "El tren se va al aeropuerto cada 20 minutos."
+  },
+  {
+   "source": "يرجى إعادة تشغيل التطبيق لتطبيق التحديث.",
+   "v2": "Por favor reinicien la aplicación para actualizarla."
+  },
+  {
+   "source": "اشترت خبزًا طازجًا وجرة صغيرة من العسل من السوق.",
+   "v2": "Compró pan fresco y un pequeño frasco de miel en el mercado."
+  },
+  {
+   "source": "يجب أن تحتوي كلمة المرور على ثمانية أحرف على الأقل.",
+   "v2": "La contraseña debe contener al menos ocho letras."
+  },
+  {
+   "source": "المتحف مغلق أيام الاثنين.",
+   "v2": "El museo está cerrado los lunes."
+  },
+  {
+   "source": "سنلتقي أمام المكتبة عند الظهر.",
+   "v2": "Nos vemos en la biblioteca al mediodía."
+  },
+  {
+   "source": "سيكون الطقس مشمسًا غدًا مع رياح خفيفة بعد الظهر.",
+   "v2": "Mañana estará soleado con vientos ligeros por la tarde."
+  },
+  {
+   "source": "الإعدادات",
+   "v2": "Configuración"
+  },
+  {
+   "source": "احفظ وتابع",
+   "v2": "Guardar y continuar"
+  },
+  {
+   "source": "غمر النهر الجسر القديم بعد ثلاثة أيام من الأمطار الغزيرة.",
+   "v2": "El río inunda el viejo puente después de tres días de lluvias torrenciales."
+  },
+  {
+   "source": "هل يمكنك أن تخبرني أين أقرب صيدلية؟",
+   "v2": "¿Puedes decirme dónde está la farmacia más cercana?"
+  },
+  {
+   "source": "تعذر فتح هذا الملف لأنه تالف.",
+   "v2": "No se pudo abrir este archivo porque estaba dañado."
+  },
+  {
+   "source": "لعب الأطفال في الحديقة حتى غروب الشمس.",
+   "v2": "Los niños juegan en el parque hasta el atardecer."
+  },
+  {
+   "source": "اكتمل التنزيل.",
+   "v2": "Descarga completa."
+  },
+  {
+   "source": "يعمل مهندسًا في هذه المدينة منذ عشر سنوات.",
+   "v2": "Hace 10 años que es ingeniero en esta ciudad."
+  },
+  {
+   "source": "انعطف يسارًا عند الإشارة الضوئية الثانية.",
+   "v2": "Gira a la izquierda en la segunda señal."
+  },
+  {
+   "source": "شكرًا لصبرك بينما نصلح المشكلة.",
+   "v2": "Gracias por su paciencia mientras arreglamos el problema."
+  }
+ ],
+ "ar-de": [
+  {
+   "source": "المنارة تقف على الساحل.",
+   "v2": "Der Leuchtturm steht an der Küste."
+  },
+  {
+   "source": "اضغط على زر البدء",
+   "v2": "Drücken Sie den Startknopf."
+  },
+  {
+   "source": "هل أنت متأكد أنك تريد الخروج؟",
+   "v2": "Willst du wirklich raus?"
+  },
+  {
+   "source": "يغادر القطار المتجه إلى المطار كل عشرين دقيقة.",
+   "v2": "Alle 20 Minuten fährt der Zug zum Flughafen."
+  },
+  {
+   "source": "يرجى إعادة تشغيل التطبيق لتطبيق التحديث.",
+   "v2": "Bitte starten Sie die Anwendung erneut mit dem Programm„ Aktualisieren“."
+  },
+  {
+   "source": "اشترت خبزًا طازجًا وجرة صغيرة من العسل من السوق.",
+   "v2": "Sie hat frisches Brot und eine kleine Schüssel Honig vom Markt gekauft."
+  },
+  {
+   "source": "يجب أن تحتوي كلمة المرور على ثمانية أحرف على الأقل.",
+   "v2": "Das Passwort muss mindestens acht Buchstaben enthalten."
+  },
+  {
+   "source": "المتحف مغلق أيام الاثنين.",
+   "v2": "Das Museum ist Montag geschlossen."
+  },
+  {
+   "source": "سنلتقي أمام المكتبة عند الظهر.",
+   "v2": "Wir treffen uns um 12 Uhr vor der Bibliothek."
+  },
+  {
+   "source": "سيكون الطقس مشمسًا غدًا مع رياح خفيفة بعد الظهر.",
+   "v2": "Morgen wird es sonnig sein, mit einem leichten Nachmittagswind."
+  },
+  {
+   "source": "الإعدادات",
+   "v2": "Einstellungen"
+  },
+  {
+   "source": "احفظ وتابع",
+   "v2": "Speichern und fortsetzen"
+  },
+  {
+   "source": "غمر النهر الجسر القديم بعد ثلاثة أيام من الأمطار الغزيرة.",
+   "v2": "Der Fluss überflutete die alte Brücke drei Tage nach dem heftigen Regen."
+  },
+  {
+   "source": "هل يمكنك أن تخبرني أين أقرب صيدلية؟",
+   "v2": "Können Sie mir sagen, wo die nächste Apotheke ist?"
+  },
+  {
+   "source": "تعذر فتح هذا الملف لأنه تالف.",
+   "v2": "Die Datei kann nicht geöffnet werden, weil sie beschädigt ist."
+  },
+  {
+   "source": "لعب الأطفال في الحديقة حتى غروب الشمس.",
+   "v2": "Kinder spielen im Park bis Sonnenuntergang."
+  },
+  {
+   "source": "اكتمل التنزيل.",
+   "v2": "Herunterladen abgeschlossen."
+  },
+  {
+   "source": "يعمل مهندسًا في هذه المدينة منذ عشر سنوات.",
+   "v2": "Er arbeitet seit zehn Jahren in dieser Stadt."
+  },
+  {
+   "source": "انعطف يسارًا عند الإشارة الضوئية الثانية.",
+   "v2": "Links bei der zweiten Ampel."
+  },
+  {
+   "source": "شكرًا لصبرك بينما نصلح المشكلة.",
+   "v2": "Danke für deine Geduld, während wir das Problem lösen."
+  }
+ ]
+}
