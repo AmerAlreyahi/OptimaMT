@@ -177,6 +177,15 @@ def org_card() -> None:
         used_in=used_in(), collection=collection_url(), **sub)
     (HF / "_org_card").mkdir(parents=True, exist_ok=True)
     (HF / "_org_card" / "README.md").write_text(text, encoding="utf-8")
+    # A static README Space shows its index.html as the organization card.
+    html_used = " ".join(f'<a href="{u["url"]}" target="_blank" rel="noopener">{u["name"]}</a>, {u["what"]}, ships '
+                         f'these models since {u["since"]}.' for u in CFG.get("used_in", []))
+    html = Template((ROOT / "templates" / "org_card.html").read_text(encoding="utf-8")).substitute(
+        name=CFG["name"], count=len(sources()), results=results_url(), github=CFG["github_repo"],
+        example=repo_id("en-ar"), collection=collection_url(), namespace=CFG["hf_namespace"],
+        used_in_html=html_used, **sub)
+    (HF / "_org_card" / "index.html").write_text(html, encoding="utf-8")
+    shutil.copyfile(ROOT / "assets" / "charts" / "tradeoff.png", HF / "_org_card" / "tradeoff.png")
 
 
 def main() -> None:

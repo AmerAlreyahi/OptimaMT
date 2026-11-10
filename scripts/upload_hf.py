@@ -82,8 +82,8 @@ def main() -> None:
     if a.org_card:
         rid = f"{CFG['hf_namespace']}/README"
         api.create_repo(rid, repo_type="space", space_sdk="static", exist_ok=True)
-        api.upload_file(path_or_fileobj=str(HF / "_org_card" / "README.md"), path_in_repo="README.md",
-                        repo_id=rid, repo_type="space", commit_message=f"{CFG['name']} organization card")
+        api.upload_folder(repo_id=rid, repo_type="space", folder_path=str(HF / "_org_card"),
+                          delete_patterns=["style.css"], commit_message=f"{CFG['name']} organization card")
         print(f"organization card https://huggingface.co/{CFG['hf_namespace']}")
 
     if a.space:

@@ -1,5 +1,7 @@
 ---
 title: $name
+emoji: 🌐
+short_description: Lighter OPUS-MT translation models for ONNX Runtime
 colorFrom: blue
 colorTo: indigo
 sdk: static
