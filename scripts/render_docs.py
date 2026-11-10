@@ -185,12 +185,12 @@ def main() -> None:
         q = ("qdq_off", "default")
         qa, qb = bmed("qdq_off", "loaded_mib_original"), bmed("qdq_off", "loaded_mib_rebuilt")
         da, db = bmed("default", "loaded_mib_original"), bmed("default", "loaded_mib_rebuilt")
-        ident = sum(r["identical"] == "True" for r in br)
+        b_ident = sum(r["identical"] == "True" for r in br)
         v["browser_summary"] = (
             f"fast mode {qa:.0f} → {qb:.0f} MiB after load ({pct(qb, qa)}); defaults {da:.0f} → {db:.0f} MiB "
             f"({'no saving' if db >= da else pct(db, da)} after load); fast mode "
             f"{bmed('default', 'ms_per_step_original') / bmed('qdq_off', 'ms_per_step_rebuilt'):.1f}× faster; "
-            f"{'identical tokens' if ident == len(br) else f'identical tokens in {ident} of {len(br)} runs'}")
+            f"{'identical tokens' if b_ident == len(br) else f'identical tokens in {b_ident} of {len(br)} runs'}")
         t = ["| Pair | Settings | After load (MiB) | After the batch (MiB) | ms/step | Identical |",
              "|---|---|---:|---:|---:|---|"]
         for r in br:

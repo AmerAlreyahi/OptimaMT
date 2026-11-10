@@ -1,27 +1,31 @@
 # OptimaMT
 
-![models: CC BY 4.0](https://img.shields.io/badge/models-CC%20BY%204.0-blue) ![code: MIT](https://img.shields.io/badge/code-MIT-green) ![pairs: 49](https://img.shields.io/badge/pairs-49-orange) ![ONNX Runtime: 1.31.1](https://img.shields.io/badge/ONNX%20Runtime-1.31.1-informational) ![FLORES-200: see report](https://img.shields.io/badge/FLORES--200-see%20report-brightgreen)
+![models: CC BY 4.0](https://img.shields.io/badge/models-CC%20BY%204.0-blue) ![code: MIT](https://img.shields.io/badge/code-MIT-green) ![pairs: 49](https://img.shields.io/badge/pairs-49-orange) ![ONNX Runtime: 1.31.1](https://img.shields.io/badge/ONNX%20Runtime-1.31.1-informational) ![FLORES-200: identical output](https://img.shields.io/badge/FLORES--200-identical%20output-brightgreen)
 
 **ONNX Runtime's fast mode at half the memory: 2.3–2.5× faster than the default, same translations.**
 
-ONNX Runtime decodes these OPUS-MT models 2.3–2.5× faster with `disable_quant_qdq = 1`, but the original
-int8 exports pay for it with a second float copy of the output layer. OptimaMT removes that copy.
+ONNX Runtime decodes these OPUS-MT models 2.3–2.5× faster with `disable_quant_qdq = 1` (fast mode):
 
-| | Linux | Windows |
-|---|---:|---:|
-| Decoder time per step: defaults → fast mode | 17.3 → 6.9 ms | 21.3 → 9.1 ms |
-| Memory in fast mode: original → OptimaMT | 525 → 281 MiB | 500 → 257 MiB |
-| Memory with defaults: original → OptimaMT | 277 → 217 MiB | 196 → 166 MiB |
+![Decoder time per step](assets/charts/speed.svg)
 
-Medians over 49 pairs (memory) and 5 reference pairs (time).
+The original int8 exports pay for fast mode with a second float copy of the output layer. OptimaMT removes it:
 
-- **Same translations:** FLORES-200 devtest, 49 pairs × 2 settings × 1012 sentences: identical output in 98 of 98 runs, identical BLEU and chrF in 98 of 98.
-- **In the browser** (transformers.js, onnxruntime-web): fast mode 1288 → 1050 MiB after load (-18 %); defaults 739 → 803 MiB (no saving after load); fast mode 1.3× faster; identical tokens.
+![Memory in fast mode](assets/charts/memory_fast.svg)
 
-Interactive results and a live demo:
-[OptimaMT/results](https://huggingface.co/spaces/OptimaMT/results) · method: [REPORT.md](REPORT.md)
+Same translations: on FLORES-200 devtest every pair gives the same output, so the same BLEU:
+
+![BLEU, original vs OptimaMT](assets/charts/flores.svg)
+
+In the browser (transformers.js, WebAssembly) fast mode saves memory too; with the defaults there is no saving:
+
+![Browser memory after load](assets/charts/browser.svg)
+
+What changed in the decoder:
 
 ![What changed in the decoder](assets/decoder-change.svg)
+
+Medians: memory over 49 pairs, time over 5 reference pairs, browser over 5 pairs. Every number, both
+session settings: [REPORT.md](REPORT.md) · interactive results and a live demo: [OptimaMT/results](https://huggingface.co/spaces/OptimaMT/results)
 
 ## Used in production
 

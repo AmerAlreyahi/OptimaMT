@@ -17,6 +17,8 @@ subgraph in front of the branches, so it is folded once.
 | Defaults memory, original → OptimaMT | 277 → 217 MiB | 196 → 166 MiB |
 | Speed change from the rebuild | none (6.9 → 6.9 ms) | none (9.2 → 9.1 ms) |
 
+![Decoder time per step](assets/charts/speed.svg) ![Memory in fast mode](assets/charts/memory_fast.svg)
+
 Identical output: 98 / 98 short-sentence runs; FLORES-200 devtest: 49 pairs × 2 settings × 1012 sentences: identical output in 98 of 98 runs, identical BLEU and chrF in 98 of 98.
 Browser (transformers.js, onnxruntime-web): fast mode 1288 → 1050 MiB after load (-18 %); defaults 739 → 803 MiB (no saving after load); fast mode 1.3× faster; identical tokens.
 
@@ -94,6 +96,8 @@ folding briefly holds intermediate copies either way. The batch peak drops -41 %
 `13a`, `zh` for Chinese targets; chrF). Original and OptimaMT scores are listed once when equal. Scores are
 greedy-decoding scores (no beam search).
 
+![BLEU, original vs OptimaMT](assets/charts/flores.svg)
+
 <details><summary>Table: all 49 pairs, fast mode</summary>
 
 | Pair | BLEU | chrF | Sentences identical (fast / default) |
@@ -156,6 +160,8 @@ greedy-decoding scores (no beam search).
 onnxruntime-web (WASM, 4 threads), 20-line batch, one fresh browser per configuration. Memory = RSS of all
 browser processes minus the RSS with a blank page (`measureUserAgentSpecificMemory` is not available in headless
 Chromium).
+
+![Browser memory after load](assets/charts/browser.svg)
 
 | Pair | Settings | After load (MiB) | After the batch (MiB) | ms/step | Identical |
 |---|---|---:|---:|---:|---|

@@ -92,6 +92,78 @@ def saving(mems: dict) -> None:
     save(fig, "saving.svg")
 
 
+def pair_bars(ax, groups, a_vals, b_vals, a_label, b_label, unit, digits=0):
+    """Horizontal bars, two per group (orange = original/defaults, blue = rebuilt/fast), value at the bar end."""
+    h = 0.34
+    for i, (g, a, b) in enumerate(zip(groups, a_vals, b_vals)):
+        y = -i
+        ax.barh(y + h / 2 + 0.02, a, h, color=ORIGINAL, label=a_label if i == 0 else None, zorder=2)
+        ax.barh(y - h / 2 - 0.02, b, h, color=OURS, label=b_label if i == 0 else None, zorder=2)
+        for v, yy in ((a, y + h / 2 + 0.02), (b, y - h / 2 - 0.02)):
+            ax.text(v, yy, f"  {v:.{digits}f} {unit}", va="center", fontsize=11, color=MUTED)
+    ax.set_yticks([-i for i in range(len(groups))], groups)
+    ax.set_xlim(0, max(a_vals + b_vals) * 1.3)
+    ax.xaxis.set_visible(False)
+    ax.grid(False)
+    ax.spines["bottom"].set_visible(False)
+    ax.legend(loc="lower right", bbox_to_anchor=(1, 1.0), ncol=2, fontsize=11, handlelength=1, handletextpad=0.4)
+
+
+def medians(rows, field, config):
+    pairs = sorted({r["pair"] for r in rows})
+    return statistics.median(float(next(r[field] for r in rows if r["pair"] == p and r["config"] == config))
+                             for p in pairs)
+
+
+def speed(refs) -> None:
+    oses = list(refs)
+    fig, ax = plt.subplots(figsize=(7.2, 0.9 + 0.9 * len(oses)))
+    pair_bars(ax, oses, [medians(refs[o], "ms_per_step", "v1-default") for o in oses],
+              [medians(refs[o], "ms_per_step", "v2-qdq_off") for o in oses],
+              "ONNX Runtime defaults", "fast mode (disable_quant_qdq = 1)", "ms", 1)
+    save(fig, "speed.svg")
+
+
+def fast_memory(mems) -> None:
+    oses = list(mems)
+    val = lambda o, c: statistics.median(float(r["load_mib"]) for r in mems[o] if r["config"] == c)  # noqa: E731
+    fig, ax = plt.subplots(figsize=(7.2, 0.9 + 0.9 * len(oses)))
+    pair_bars(ax, oses, [val(o, "v1-qdq_off") for o in oses], [val(o, "v2-qdq_off") for o in oses],
+              "original", CFG["name"], "MiB")
+    save(fig, "memory_fast.svg")
+
+
+def flores_chart() -> None:
+    rows = [r for r in read("flores.csv") if r["setting"] == "qdq_off"]
+    a = [float(r["bleu_original"]) for r in rows]
+    b = [float(r["bleu_rebuilt"]) for r in rows]
+    fig, ax = plt.subplots(figsize=(4.6, 4.2))
+    top = max(a + b) * 1.08
+    ax.plot([0, top], [0, top], color=GRID, lw=2, zorder=1)
+    ax.scatter(a, b, s=46, color=OURS, edgecolor=SURFACE, linewidth=1.5, zorder=3)
+    ax.set_xlim(0, top)
+    ax.set_ylim(0, top)
+    ax.set_aspect("equal")
+    ax.grid(axis="both")
+    ax.spines["left"].set_visible(True)
+    ax.tick_params(axis="y", left=True, colors=MUTED)
+    ax.set_xlabel("BLEU, original")
+    ax.set_ylabel(f"BLEU, {CFG['name']}")
+    same = sum(x == y for x, y in zip(a, b))
+    ax.text(top * 0.04, top * 0.92, f"{same} of {len(rows)} pairs on the line", fontsize=11, color=INK)
+    save(fig, "flores.svg")
+
+
+def browser_chart() -> None:
+    rows = read("browser.csv")
+    med = lambda s, k: statistics.median(float(r[k]) for r in rows if r["setting"] == s)  # noqa: E731
+    groups = [("fast mode", "qdq_off"), ("defaults", "default")]
+    fig, ax = plt.subplots(figsize=(7.2, 2.7))
+    pair_bars(ax, [g for g, _ in groups], [med(s, "loaded_mib_original") for _, s in groups],
+              [med(s, "loaded_mib_rebuilt") for _, s in groups], "original", CFG["name"], "MiB")
+    save(fig, "browser.svg")
+
+
 def page(refs: dict, mems: dict) -> None:
     """The interactive page: one self-contained HTML file, data inlined; one data set per operating system."""
     same = {(r["pair"], r["setting"]): r["identical"] == "yes" for r in read("identical.csv")}
@@ -132,6 +204,12 @@ def main() -> None:
     mems = {o: read(f"memory_all{x}.csv") for o, x in OSES.items() if (RESULTS / f"memory_all{x}.csv").exists()}
     memory(refs["Linux"])
     saving(mems)
+    speed(refs)
+    fast_memory(mems)
+    if (RESULTS / "flores.csv").exists():
+        flores_chart()
+    if (RESULTS / "browser.csv").exists():
+        browser_chart()
     page(refs, mems)
     print("charts in assets/charts, results page in", (HF / "_space").name)
 

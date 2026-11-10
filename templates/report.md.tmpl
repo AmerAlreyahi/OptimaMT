@@ -17,6 +17,8 @@ subgraph in front of the branches, so it is folded once.
 | Defaults memory, original → $name | $default_v1_med → $default_v2_med MiB | $win_default_v1_med → $win_default_v2_med MiB |
 | Speed change from the rebuild | none ($ms_v1_qdq_off → $ms_v2_qdq_off ms) | none ($win_ms_v1_qdq_off → $win_ms_v2_qdq_off ms) |
 
+![Decoder time per step](assets/charts/speed.svg) ![Memory in fast mode](assets/charts/memory_fast.svg)
+
 Identical output: $identical_runs / $all_runs short-sentence runs; FLORES-200 devtest: $flores_summary.
 Browser (transformers.js, onnxruntime-web): $browser_summary.
 
@@ -80,6 +82,8 @@ folding briefly holds intermediate copies either way. The batch peak drops $peak
 `13a`, `zh` for Chinese targets; chrF). Original and $name scores are listed once when equal. Scores are
 greedy-decoding scores (no beam search).
 
+![BLEU, original vs $name](assets/charts/flores.svg)
+
 <details><summary>Table: all $pairs pairs, fast mode</summary>
 
 $flores_table
@@ -92,6 +96,8 @@ $flores_table
 onnxruntime-web (WASM, 4 threads), 20-line batch, one fresh browser per configuration. Memory = RSS of all
 browser processes minus the RSS with a blank page (`measureUserAgentSpecificMemory` is not available in headless
 Chromium).
+
+![Browser memory after load](assets/charts/browser.svg)
 
 $browser_table
 

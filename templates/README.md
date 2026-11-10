@@ -4,24 +4,28 @@ $badges
 
 **$tagline**
 
-ONNX Runtime decodes these OPUS-MT models $speedup× faster with `disable_quant_qdq = 1`, but the original
-int8 exports pay for it with a second float copy of the output layer. $name removes that copy.
+ONNX Runtime decodes these OPUS-MT models $speedup× faster with `disable_quant_qdq = 1` (fast mode):
 
-| | Linux | Windows |
-|---|---:|---:|
-| Decoder time per step: defaults → fast mode | $ms_v1_default → $ms_v2_qdq_off ms | $win_ms_v1_default → $win_ms_v2_qdq_off ms |
-| Memory in fast mode: original → $name | $qdq_off_v1_med → $qdq_off_v2_med MiB | $win_qdq_off_v1_med → $win_qdq_off_v2_med MiB |
-| Memory with defaults: original → $name | $default_v1_med → $default_v2_med MiB | $win_default_v1_med → $win_default_v2_med MiB |
+![Decoder time per step](assets/charts/speed.svg)
 
-Medians over $pairs pairs (memory) and 5 reference pairs (time).
+The original int8 exports pay for fast mode with a second float copy of the output layer. $name removes it:
 
-- **Same translations:** FLORES-200 devtest, $flores_summary.
-- **In the browser** (transformers.js, onnxruntime-web): $browser_summary.
+![Memory in fast mode](assets/charts/memory_fast.svg)
 
-Interactive results and a live demo:
-[$results_name]($results_url) · method: [REPORT.md](REPORT.md)
+Same translations: on FLORES-200 devtest every pair gives the same output, so the same BLEU:
+
+![BLEU, original vs $name](assets/charts/flores.svg)
+
+In the browser (transformers.js, WebAssembly) fast mode saves memory too; with the defaults there is no saving:
+
+![Browser memory after load](assets/charts/browser.svg)
+
+What changed in the decoder:
 
 ![What changed in the decoder](assets/decoder-change.svg)
+
+Medians: memory over $pairs pairs, time over 5 reference pairs, browser over 5 pairs. Every number, both
+session settings: [REPORT.md](REPORT.md) · interactive results and a live demo: [$results_name]($results_url)
 
 ## Used in production
 
