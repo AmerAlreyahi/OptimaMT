@@ -4,28 +4,18 @@
 
 **ONNX Runtime's fast mode at half the memory: 2.3–2.5× faster than the default, same translations.**
 
-ONNX Runtime decodes these OPUS-MT models 2.3–2.5× faster with `disable_quant_qdq = 1` (fast mode):
+![Memory against speed](assets/charts/tradeoff.svg)
 
-![Decoder time per step](assets/charts/speed.svg)
+<sub>Fast mode used to cost double memory; OptimaMT keeps it fast and light. Medians of 5 reference pairs.</sub>
 
-The original int8 exports pay for fast mode with a second float copy of the output layer. OptimaMT removes it:
+![How it works](assets/charts/how-it-works.svg)
 
-![Memory in fast mode](assets/charts/memory_fast.svg)
-
-Same translations: on FLORES-200 devtest every pair gives the same output, so the same BLEU:
+Same translations: on FLORES-200 devtest all 49 pairs give identical output, so identical BLEU.
 
 ![BLEU, original vs OptimaMT](assets/charts/flores.svg)
 
-In the browser (transformers.js, WebAssembly) fast mode saves memory too; with the defaults there is no saving:
-
-![Browser memory after load](assets/charts/browser.svg)
-
-What changed in the decoder:
-
-![What changed in the decoder](assets/decoder-change.svg)
-
-Medians: memory over 49 pairs, time over 5 reference pairs, browser over 5 pairs. Every number, both
-session settings: [REPORT.md](REPORT.md) · interactive results and a live demo: [OptimaMT/results](https://huggingface.co/spaces/OptimaMT/results)
+More charts, the browser results and every number: [REPORT.md](REPORT.md) · interactive results and a live demo:
+[OptimaMT/results](https://huggingface.co/spaces/OptimaMT/results)
 
 ## Used in production
 

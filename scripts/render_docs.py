@@ -225,6 +225,12 @@ def main() -> None:
                             badge("FLORES-200", "identical output" if fl and ident == len(fl) else "see report",
                                   "brightgreen")])
     v["used_in"] = used_in()
+    cp = next(t for t in graph["original"]["after_ort_qdq_off"] if t["dtype"] == "float")
+    v["copy_shape"] = " × ".join(f"{d:,}" for d in cp["shape"])
+    v["copy_mib"] = str(cp["mib"])
+    v["pair_note"] = "en-ar, fast mode"
+    diffs = {e["v1"]["decoder_model_merged_quantized.onnx"]["size"] - e["v2_decoder"]["size"] for e in src}
+    v["size_diff"] = " to ".join(str(d) for d in sorted(diffs))
     v["collection_url"] = collection_url()
     v["collection_label"] = f"the {CFG['name']} collection" if CFG.get("hf_collection") else \
         collection_url().replace("https://", "")

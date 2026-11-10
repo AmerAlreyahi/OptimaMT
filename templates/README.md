@@ -4,28 +4,18 @@ $badges
 
 **$tagline**
 
-ONNX Runtime decodes these OPUS-MT models $speedup× faster with `disable_quant_qdq = 1` (fast mode):
+![Memory against speed](assets/charts/tradeoff.svg)
 
-![Decoder time per step](assets/charts/speed.svg)
+<sub>Fast mode used to cost double memory; $name keeps it fast and light. Medians of 5 reference pairs.</sub>
 
-The original int8 exports pay for fast mode with a second float copy of the output layer. $name removes it:
+![How it works](assets/charts/how-it-works.svg)
 
-![Memory in fast mode](assets/charts/memory_fast.svg)
-
-Same translations: on FLORES-200 devtest every pair gives the same output, so the same BLEU:
+Same translations: on FLORES-200 devtest all $pairs pairs give identical output, so identical BLEU.
 
 ![BLEU, original vs $name](assets/charts/flores.svg)
 
-In the browser (transformers.js, WebAssembly) fast mode saves memory too; with the defaults there is no saving:
-
-![Browser memory after load](assets/charts/browser.svg)
-
-What changed in the decoder:
-
-![What changed in the decoder](assets/decoder-change.svg)
-
-Medians: memory over $pairs pairs, time over 5 reference pairs, browser over 5 pairs. Every number, both
-session settings: [REPORT.md](REPORT.md) · interactive results and a live demo: [$results_name]($results_url)
+More charts, the browser results and every number: [REPORT.md](REPORT.md) · interactive results and a live demo:
+[$results_name]($results_url)
 
 ## Used in production
 

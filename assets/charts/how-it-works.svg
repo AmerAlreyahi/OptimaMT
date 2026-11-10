@@ -1,0 +1,97 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 960" width="960" height="960" font-family="system-ui, -apple-system, Segoe UI, Roboto, sans-serif" font-size="15">
+<rect width="960" height="960" rx="14" fill="#fcfcfb"/>
+<defs><marker id="a" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto"><path d="M0,0 L10,5 L0,10 z" fill="#52514e"/></marker></defs>
+<text x="24" y="32" text-anchor="start" font-size="20" fill="#0b0b0b" font-weight="700">How it works</text>
+<rect x="600" y="18" width="6" height="18" rx="3" fill="#2a78d6"/>
+<text x="614" y="32" text-anchor="start" font-size="13" fill="#52514e" font-weight="400">our change (in the file)</text>
+<rect x="780" y="18" width="6" height="18" rx="3" fill="#52514e"/>
+<text x="794" y="32" text-anchor="start" font-size="13" fill="#52514e" font-weight="400">ONNX Runtime</text>
+<rect x="24" y="52" width="912" height="34" rx="8" fill="#f1f0ec"/>
+<rect x="24" y="52" width="6" height="34" rx="3" fill="#2a78d6"/>
+<text x="44" y="75" text-anchor="start" font-size="17" fill="#0b0b0b" font-weight="700">1  The file</text>
+<text x="920" y="75" text-anchor="end" font-size="13" fill="#2a78d6" font-weight="700">our change</text>
+<text x="240" y="112" text-anchor="middle" font-size="16" fill="#0b0b0b" font-weight="700">Old</text>
+<rect x="120.0" y="124" width="240" height="36" rx="9" fill="#ffffff" stroke="#c9c8c3" stroke-width="1.5"/>
+<text x="240" y="147" text-anchor="middle" font-size="15" fill="#0b0b0b" font-weight="400">model.shared.weight (8-bit)</text>
+<text x="720" y="112" text-anchor="middle" font-size="16" fill="#0b0b0b" font-weight="700">New</text>
+<rect x="600.0" y="124" width="240" height="36" rx="9" fill="#ffffff" stroke="#c9c8c3" stroke-width="1.5"/>
+<text x="720" y="147" text-anchor="middle" font-size="15" fill="#0b0b0b" font-weight="400">model.shared.weight (8-bit)</text>
+<path d="M240 160 L240 176" stroke="#52514e" stroke-width="1.6" fill="none" marker-end="url(#a)"/>
+<path d="M240 178 L274 198 L240 218 L206 198 Z" fill="#ffffff" stroke="#c9c8c3" stroke-width="1.5"/>
+<text x="240" y="203" text-anchor="middle" font-size="15" fill="#0b0b0b" font-weight="600">If</text>
+<path d="M222.75 208 L125 236" stroke="#52514e" stroke-width="1.6" fill="none" marker-end="url(#a)"/>
+<rect x="25" y="238" width="200" height="210" rx="9" fill="none" stroke="#c9c8c3" stroke-width="1.5" stroke-dasharray="5 4"/>
+<text x="125" y="260" text-anchor="middle" font-size="14" fill="#0b0b0b" font-weight="600">branch 1: no_past</text>
+<rect x="40.0" y="272" width="170" height="36" rx="9" fill="#fdeee7" stroke="#eb6834" stroke-width="2"/>
+<text x="125" y="295" text-anchor="middle" font-size="15" fill="#0b0b0b" font-weight="400">Transpose</text>
+<path d="M125 308 L125 322" stroke="#52514e" stroke-width="1.6" fill="none" marker-end="url(#a)"/>
+<rect x="40.0" y="324" width="170" height="36" rx="9" fill="#fdeee7" stroke="#eb6834" stroke-width="2"/>
+<text x="125" y="347" text-anchor="middle" font-size="15" fill="#0b0b0b" font-weight="400">DequantizeLinear</text>
+<path d="M125 360 L125 374" stroke="#52514e" stroke-width="1.6" fill="none" marker-end="url(#a)"/>
+<rect x="40.0" y="376" width="170" height="36" rx="9" fill="#ffffff" stroke="#c9c8c3" stroke-width="1.5"/>
+<text x="125" y="399" text-anchor="middle" font-size="15" fill="#0b0b0b" font-weight="400">MatMul → logits</text>
+<path d="M257.25 208 L355 236" stroke="#52514e" stroke-width="1.6" fill="none" marker-end="url(#a)"/>
+<rect x="255" y="238" width="200" height="210" rx="9" fill="none" stroke="#c9c8c3" stroke-width="1.5" stroke-dasharray="5 4"/>
+<text x="355" y="260" text-anchor="middle" font-size="14" fill="#0b0b0b" font-weight="600">branch 2: with_past</text>
+<rect x="270.0" y="272" width="170" height="36" rx="9" fill="#fdeee7" stroke="#eb6834" stroke-width="2"/>
+<text x="355" y="295" text-anchor="middle" font-size="15" fill="#0b0b0b" font-weight="400">Transpose</text>
+<path d="M355 308 L355 322" stroke="#52514e" stroke-width="1.6" fill="none" marker-end="url(#a)"/>
+<rect x="270.0" y="324" width="170" height="36" rx="9" fill="#fdeee7" stroke="#eb6834" stroke-width="2"/>
+<text x="355" y="347" text-anchor="middle" font-size="15" fill="#0b0b0b" font-weight="400">DequantizeLinear</text>
+<path d="M355 360 L355 374" stroke="#52514e" stroke-width="1.6" fill="none" marker-end="url(#a)"/>
+<rect x="270.0" y="376" width="170" height="36" rx="9" fill="#ffffff" stroke="#c9c8c3" stroke-width="1.5"/>
+<text x="355" y="399" text-anchor="middle" font-size="15" fill="#0b0b0b" font-weight="400">MatMul → logits</text>
+<text x="240" y="470" text-anchor="middle" font-size="13" fill="#eb6834" font-weight="400">the same two steps in both branches</text>
+<path d="M720 160 L720 174" stroke="#52514e" stroke-width="1.6" fill="none" marker-end="url(#a)"/>
+<rect x="635.0" y="176" width="170" height="36" rx="9" fill="#e6f0fb" stroke="#2a78d6" stroke-width="2"/>
+<text x="720" y="199" text-anchor="middle" font-size="15" fill="#0b0b0b" font-weight="400">Transpose</text>
+<path d="M720 212 L720 226" stroke="#52514e" stroke-width="1.6" fill="none" marker-end="url(#a)"/>
+<rect x="635.0" y="228" width="170" height="36" rx="9" fill="#e6f0fb" stroke="#2a78d6" stroke-width="2"/>
+<text x="720" y="251" text-anchor="middle" font-size="15" fill="#0b0b0b" font-weight="400">DequantizeLinear</text>
+<path d="M720 264 L720 280" stroke="#52514e" stroke-width="1.6" fill="none" marker-end="url(#a)"/>
+<path d="M720 282 L754 302 L720 322 L686 302 Z" fill="#ffffff" stroke="#c9c8c3" stroke-width="1.5"/>
+<text x="720" y="307" text-anchor="middle" font-size="15" fill="#0b0b0b" font-weight="600">If</text>
+<path d="M702.75 312 L605 340" stroke="#52514e" stroke-width="1.6" fill="none" marker-end="url(#a)"/>
+<rect x="505" y="342" width="200" height="106" rx="9" fill="none" stroke="#c9c8c3" stroke-width="1.5" stroke-dasharray="5 4"/>
+<text x="605" y="364" text-anchor="middle" font-size="14" fill="#0b0b0b" font-weight="600">branch 1: no_past</text>
+<rect x="520.0" y="376" width="170" height="36" rx="9" fill="#ffffff" stroke="#c9c8c3" stroke-width="1.5"/>
+<text x="605" y="399" text-anchor="middle" font-size="15" fill="#0b0b0b" font-weight="400">MatMul → logits</text>
+<path d="M737.25 312 L835 340" stroke="#52514e" stroke-width="1.6" fill="none" marker-end="url(#a)"/>
+<rect x="735" y="342" width="200" height="106" rx="9" fill="none" stroke="#c9c8c3" stroke-width="1.5" stroke-dasharray="5 4"/>
+<text x="835" y="364" text-anchor="middle" font-size="14" fill="#0b0b0b" font-weight="600">branch 2: with_past</text>
+<rect x="750.0" y="376" width="170" height="36" rx="9" fill="#ffffff" stroke="#c9c8c3" stroke-width="1.5"/>
+<text x="835" y="399" text-anchor="middle" font-size="15" fill="#0b0b0b" font-weight="400">MatMul → logits</text>
+<text x="720" y="470" text-anchor="middle" font-size="13" fill="#2a78d6" font-weight="400">the two steps once, before the If</text>
+<text x="480.0" y="498" text-anchor="middle" font-size="14" fill="#52514e" font-weight="400">Same weights, same tokens. The file is 332 bytes smaller.</text>
+<rect x="24" y="516" width="912" height="34" rx="8" fill="#f1f0ec"/>
+<rect x="24" y="516" width="6" height="34" rx="3" fill="#52514e"/>
+<text x="44" y="539" text-anchor="start" font-size="17" fill="#0b0b0b" font-weight="700">2  Loading in fast mode</text>
+<text x="920" y="539" text-anchor="end" font-size="13" fill="#52514e" font-weight="700">ONNX Runtime</text>
+<text x="44" y="572" text-anchor="start" font-size="14" fill="#52514e" font-weight="400">session.disable_quant_qdq = 1 folds DequantizeLinear into a float table when the model loads</text>
+<rect x="50" y="588" width="180" height="52" rx="9" fill="#fdeee7" stroke="#eb6834" stroke-width="2"/>
+<text x="140" y="609" text-anchor="middle" font-size="14" fill="#0b0b0b" font-weight="600">float table, branch 1</text>
+<text x="140" y="629" text-anchor="middle" font-size="12" fill="#52514e" font-weight="400">62,802 × 512 · 122.7 MiB</text>
+<rect x="250" y="588" width="180" height="52" rx="9" fill="#fdeee7" stroke="#eb6834" stroke-width="2"/>
+<text x="340" y="609" text-anchor="middle" font-size="14" fill="#0b0b0b" font-weight="600">float table, branch 2</text>
+<text x="340" y="629" text-anchor="middle" font-size="12" fill="#52514e" font-weight="400">62,802 × 512 · 122.7 MiB</text>
+<rect x="630" y="588" width="180" height="52" rx="9" fill="#e6f0fb" stroke="#2a78d6" stroke-width="2"/>
+<text x="720" y="609" text-anchor="middle" font-size="14" fill="#0b0b0b" font-weight="600">float table, shared</text>
+<text x="720" y="629" text-anchor="middle" font-size="12" fill="#52514e" font-weight="400">62,802 × 512 · 122.7 MiB</text>
+<text x="240" y="668" text-anchor="middle" font-size="15" fill="#0b0b0b" font-weight="700">en-ar, Linux: 528 MiB after load</text>
+<text x="720" y="668" text-anchor="middle" font-size="15" fill="#0b0b0b" font-weight="700">en-ar, Linux: 282 MiB after load</text>
+<text x="240" y="688" text-anchor="middle" font-size="12" fill="#52514e" font-weight="400">the second copy costs about 246 MiB as measured (ONNX Runtime 1.31)</text>
+<rect x="24" y="712" width="912" height="34" rx="8" fill="#f1f0ec"/>
+<rect x="24" y="712" width="6" height="34" rx="3" fill="#52514e"/>
+<text x="44" y="735" text-anchor="start" font-size="17" fill="#0b0b0b" font-weight="700">3  Translating</text>
+<text x="920" y="735" text-anchor="end" font-size="13" fill="#52514e" font-weight="700">ONNX Runtime</text>
+<rect x="40" y="762" width="420" height="86" rx="9" fill="#ffffff" stroke="#c9c8c3" stroke-width="1.5"/>
+<text x="250" y="786" text-anchor="middle" font-size="15" fill="#0b0b0b" font-weight="600">Default setting: 8-bit path</text>
+<text x="250" y="806" text-anchor="middle" font-size="13" fill="#52514e" font-weight="400">dequantizes every step: less memory, slower</text>
+<text x="250" y="830" text-anchor="middle" font-size="14" fill="#0b0b0b" font-weight="400">Linux 17.3 ms · Windows 21.3 ms per step</text>
+<rect x="500" y="762" width="420" height="86" rx="9" fill="#e6f0fb" stroke="#2a78d6" stroke-width="2"/>
+<text x="710" y="786" text-anchor="middle" font-size="15" fill="#0b0b0b" font-weight="600">Fast mode: MatMul on the ready float table</text>
+<text x="710" y="806" text-anchor="middle" font-size="13" fill="#52514e" font-weight="400">with OptimaMT: one table instead of two</text>
+<text x="710" y="830" text-anchor="middle" font-size="14" fill="#0b0b0b" font-weight="400">Linux 6.9 ms · Windows 9.1 ms per step</text>
+<text x="480.0" y="880" text-anchor="middle" font-size="15" fill="#52514e" font-weight="400">The speed is ONNX Runtime's fast mode; OptimaMT makes it affordable in memory.</text>
+<text x="480.0" y="925" text-anchor="middle" font-size="16" fill="#0b0b0b" font-weight="700">One change in the file; ONNX Runtime's fast mode does the rest, now without the double memory.</text>
+</svg>

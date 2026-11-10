@@ -17,7 +17,11 @@ subgraph in front of the branches, so it is folded once.
 | Defaults memory, original → $name | $default_v1_med → $default_v2_med MiB | $win_default_v1_med → $win_default_v2_med MiB |
 | Speed change from the rebuild | none ($ms_v1_qdq_off → $ms_v2_qdq_off ms) | none ($win_ms_v1_qdq_off → $win_ms_v2_qdq_off ms) |
 
-![Decoder time per step](assets/charts/speed.svg) ![Memory in fast mode](assets/charts/memory_fast.svg)
+![Memory against speed](assets/charts/tradeoff.svg)
+
+![Decoder time per step](assets/charts/speed.svg)
+
+![Memory in fast mode](assets/charts/memory_fast.svg)
 
 Identical output: $identical_runs / $all_runs short-sentence runs; FLORES-200 devtest: $flores_summary.
 Browser (transformers.js, onnxruntime-web): $browser_summary.
@@ -44,7 +48,13 @@ $g_held_table
 - Defaults: the `DequantizeLinear` stays; the transposed 8-bit matrix is folded per branch: two copies vs one.
 - This is constant folding of a duplicated subgraph, not `MatMulInteger` pre-packing.
 
-![What changed in the decoder](assets/decoder-change.svg)
+![How it works](assets/charts/how-it-works.svg)
+
+![Where the memory goes](assets/charts/breakdown.svg)
+
+Totals measured ($pair_note); the float copy is computed from the tensor shape ($copy_shape × 4 bytes =
+$copy_mib MiB). With ONNX Runtime $ort the measured saving is about two copies' worth; with 1.28 it is one copy
+(version table below).
 
 ## 2. Method
 
@@ -123,6 +133,8 @@ buffers ONNX Runtime keeps.
 ### All pairs
 
 ![Memory saved, all pairs](assets/charts/saving.svg)
+
+![Memory after load, reference pairs](assets/charts/memory.svg)
 
 <details><summary>Table: all $pairs pairs</summary>
 
