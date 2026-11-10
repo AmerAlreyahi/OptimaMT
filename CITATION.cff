@@ -5,8 +5,9 @@ type: software
 authors:
   - family-names: Alreyahi
     given-names: Amer
-version: 1.0.0
-date-released: 2026-11-09
+version: 1.1.0
+doi: 10.5281/zenodo.24107401
+date-released: 2026-11-10
 license: MIT
 repository-code: "https://github.com/AmerAlreyahi/OptimaMT"
 url: "https://huggingface.co/OptimaMT"

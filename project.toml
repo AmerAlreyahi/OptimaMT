@@ -22,6 +22,8 @@ hf_collection = "https://huggingface.co/collections/OptimaMT/optimamt-lighter-op
 results_space = "results"
 
 github_repo = "AmerAlreyahi/OptimaMT"
+# Zenodo concept DOI (always resolves to the latest archived release, incl. the technical report).
+doi = "10.5281/zenodo.24107401"
 author = "Amer Alreyahi"
 
 # Downloads, builds and the Hugging Face folders (relative to this file; ignored by git).

@@ -1,6 +1,6 @@
 # OptimaMT
 
-![models: CC BY 4.0](https://img.shields.io/badge/models-CC%20BY%204.0-blue) ![code: MIT](https://img.shields.io/badge/code-MIT-green) ![pairs: 49](https://img.shields.io/badge/pairs-49-orange) ![ONNX Runtime: 1.31.1](https://img.shields.io/badge/ONNX%20Runtime-1.31.1-informational) ![FLORES-200: identical output](https://img.shields.io/badge/FLORES--200-identical%20output-brightgreen)
+[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.24107401.svg)](https://doi.org/10.5281/zenodo.24107401) ![models: CC BY 4.0](https://img.shields.io/badge/models-CC%20BY%204.0-blue) ![code: MIT](https://img.shields.io/badge/code-MIT-green) ![pairs: 49](https://img.shields.io/badge/pairs-49-orange) ![ONNX Runtime: 1.31.1](https://img.shields.io/badge/ONNX%20Runtime-1.31.1-informational) ![FLORES-200: identical output](https://img.shields.io/badge/FLORES--200-identical%20output-brightgreen)
 
 **OptimaMT is a set of free translation models that run locally**, on your own computer or in the browser: 49
 translation directions built from the University of Helsinki's OPUS-MT models and optimized for ONNX Runtime. Same

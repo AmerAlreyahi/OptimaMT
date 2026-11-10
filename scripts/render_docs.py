@@ -224,6 +224,9 @@ def main() -> None:
                             badge("pairs", str(len(pairs)), "orange"), badge("ONNX Runtime", v["ort"], "informational"),
                             badge("FLORES-200", "identical output" if fl and ident == len(fl) else "see report",
                                   "brightgreen")])
+    if CFG.get("doi"):
+        v["badges"] = (f"[![DOI](https://zenodo.org/badge/DOI/{CFG['doi']}.svg)](https://doi.org/{CFG['doi']}) "
+                       + v["badges"])
     v["used_in"] = used_in()
     cp = next(t for t in graph["original"]["after_ort_qdq_off"] if t["dtype"] == "float")
     v["copy_shape"] = " × ".join(f"{d:,}" for d in cp["shape"])
