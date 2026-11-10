@@ -1,7 +1,9 @@
+# Notice
+
 Licences of this repository and of the models it describes
 
 The code in this repository (scripts/, tests/, notebooks/) is licensed under the
-MIT License (see LICENSE).
+MIT License (see [LICENSE](LICENSE.md)).
 
 The model files described here and published on Hugging Face are NOT covered by
 the MIT License. They are distributed under the Creative Commons Attribution 4.0
@@ -11,9 +13,9 @@ International License (CC BY 4.0, https://creativecommons.org/licenses/by/4.0/):
   Group at the University of Helsinki (https://github.com/Helsinki-NLP/Opus-MT,
   https://huggingface.co/Helsinki-NLP), CC BY 4.0.
 - ONNX exports: 44 pairs from Xenova (https://huggingface.co/Xenova, the
-  Xenova/opus-mt-<pair> repositories, at the revisions pinned in
+  `Xenova/opus-mt-<pair>` repositories, at the revisions pinned in
   data/sources.json). Five pairs (fr-ar, es-ar, ar-fr, ar-es, ar-de) exported
-  from the Helsinki-NLP/opus-mt-<pair> weights with Hugging Face Optimum in the
+  from the `Helsinki-NLP/opus-mt-<pair>` weights with Hugging Face Optimum in the
   same layout (first published in the OpenCircle-models repository).
 - Modifications: in every pair, the file onnx/decoder_model_merged_quantized.onnx
   was modified. The Transpose and DequantizeLinear nodes that build the output

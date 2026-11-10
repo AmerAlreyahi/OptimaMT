@@ -314,4 +314,4 @@ their pinned revisions), with transformers.js 3.8.1 and 4.3.2 and ONNX Runtime P
 
 OPUS-MT (University of Helsinki) and the Xenova exports: CC BY 4.0. Five pairs (fr-ar, es-ar, ar-fr, ar-es,
 ar-de) were exported from the Helsinki-NLP weights in the same layout. Modified files: CC BY 4.0
-([NOTICE](NOTICE)). Code: MIT ([LICENSE](LICENSE)).
+([NOTICE](NOTICE.md)). Code: MIT ([LICENSE](LICENSE.md)).

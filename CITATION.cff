@@ -1,0 +1,29 @@
+cff-version: 1.2.0
+message: "If you use OptimaMT, please cite it as below."
+title: "OptimaMT: lighter OPUS-MT translation models for ONNX Runtime"
+type: software
+authors:
+  - family-names: Alreyahi
+    given-names: Amer
+version: 1.0.0
+date-released: 2026-11-09
+license: MIT
+repository-code: "https://github.com/AmerAlreyahi/OptimaMT"
+url: "https://huggingface.co/OptimaMT"
+keywords:
+  - machine translation
+  - OPUS-MT
+  - ONNX Runtime
+  - quantization
+  - memory
+references:
+  - type: conference-paper
+    title: "OPUS-MT – Building open translation services for the World"
+    authors:
+      - family-names: Tiedemann
+        given-names: Jörg
+      - family-names: Thottingal
+        given-names: Santhosh
+    year: 2020
+    conference:
+      name: "EAMT 2020"

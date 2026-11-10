@@ -68,5 +68,5 @@ en-ar, en-zh, fr-ar and es-ar take a target token first (`>>ara<<`, `>>cmn_Hans<
 
 ## Licence
 
-Models: OPUS-MT (University of Helsinki), ONNX exports by Xenova, modified; CC BY 4.0 ([NOTICE](NOTICE)).
-Code: MIT ([LICENSE](LICENSE)).
+Models: OPUS-MT (University of Helsinki), ONNX exports by Xenova, modified; CC BY 4.0 ([NOTICE](NOTICE.md)).
+Code: MIT ([LICENSE](LICENSE.md)).
