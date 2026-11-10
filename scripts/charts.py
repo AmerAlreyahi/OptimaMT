@@ -35,12 +35,13 @@ def read(name: str) -> list[dict]:
     return list(csv.DictReader((RESULTS / name).open(encoding="utf-8")))
 
 
-def save(fig, name: str) -> None:
-    CHARTS.mkdir(parents=True, exist_ok=True)
-    fig.savefig(CHARTS / name, bbox_inches="tight", metadata={"Creator": None, "Date": None, "Format": None,
+def save(fig, name: str, folder=None) -> None:
+    folder = folder or CHARTS
+    folder.mkdir(parents=True, exist_ok=True)
+    fig.savefig(folder / name, bbox_inches="tight", metadata={"Creator": None, "Date": None, "Format": None,
                                                                 "Type": None})
     plt.close(fig)
-    svg = CHARTS / name
+    svg = folder / name
     svg.write_text(svg.read_text(encoding="utf-8").replace('id="matplotlib.', 'id="'))  # plain element ids
 
 
@@ -164,10 +165,14 @@ def browser_chart() -> None:
     save(fig, "browser.svg")
 
 
-def tradeoff(refs) -> None:
+def tradeoff(refs, vertical: bool = False, folder=None) -> None:
     """Memory after load against decoder ms per step: four configurations per OS (medians, reference pairs)."""
     oses = list(refs)
-    fig, axes = plt.subplots(1, len(oses), figsize=(3.9 * len(oses), 3.6), squeeze=False)
+    if vertical:
+        fig, axes = plt.subplots(len(oses), 1, figsize=(4.6, 3.3 * len(oses)), squeeze=False)
+        axes = axes.T
+    else:
+        fig, axes = plt.subplots(1, len(oses), figsize=(3.9 * len(oses), 3.6), squeeze=False)
     for ax, o in zip(axes[0], oses):
         pt = {c: (medians(refs[o], "ms_per_step", c), medians(refs[o], "load_mib", c))
               for c in ("v1-default", "v1-qdq_off", "v2-default", "v2-qdq_off")}
@@ -186,13 +191,14 @@ def tradeoff(refs) -> None:
         ax.spines["left"].set_visible(True)
         ax.tick_params(axis="y", left=True, colors=MUTED)
         ax.set_xlabel("Decoder ms per step (lower is faster)")
-    axes[0][0].set_ylabel("Memory after load (MiB)")
+    for ax in axes[0] if vertical else axes[0][:1]:
+        ax.set_ylabel("Memory after load (MiB)")
     from matplotlib.lines import Line2D
     handles = [Line2D([], [], marker="o", ls="", color=ORIGINAL, markersize=9, label="original"),
                Line2D([], [], marker="o", ls="", color=OURS, markersize=9, label=CFG["name"])]
     fig.legend(handles=handles, loc="upper right", ncol=2, fontsize=10, handletextpad=0.2, frameon=False)
-    fig.tight_layout(rect=(0, 0, 1, 0.92))
-    save(fig, "tradeoff.svg")
+    fig.tight_layout(rect=(0, 0, 1, 0.95 if vertical else 0.92))
+    save(fig, "tradeoff-portrait.svg" if vertical else "tradeoff.svg", folder)
 
 
 def breakdown(refs, pair: str = "en-ar") -> None:
