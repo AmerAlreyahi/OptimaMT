@@ -138,20 +138,19 @@ def flores_chart() -> None:
     rows = [r for r in read("flores.csv") if r["setting"] == "qdq_off"]
     a = [float(r["bleu_original"]) for r in rows]
     b = [float(r["bleu_rebuilt"]) for r in rows]
-    fig, ax = plt.subplots(figsize=(4.6, 4.2))
+    fig, ax = plt.subplots(figsize=(7.8, 3.6))
     top = max(a + b) * 1.08
     ax.plot([0, top], [0, top], color=GRID, lw=2, zorder=1)
     ax.scatter(a, b, s=46, color=OURS, edgecolor=SURFACE, linewidth=1.5, zorder=3)
     ax.set_xlim(0, top)
     ax.set_ylim(0, top)
-    ax.set_aspect("equal")
     ax.grid(axis="both")
     ax.spines["left"].set_visible(True)
     ax.tick_params(axis="y", left=True, colors=MUTED)
     ax.set_xlabel("BLEU, original")
     ax.set_ylabel(f"BLEU, {CFG['name']}")
     same = sum(x == y for x, y in zip(a, b))
-    ax.text(top * 0.04, top * 0.92, f"{same} of {len(rows)} pairs on the line", fontsize=11, color=INK)
+    ax.text(top * 0.02, top * 0.9, f"{same} of {len(rows)} pairs on the line", fontsize=11, color=INK)
     save(fig, "flores.svg")
 
 

@@ -17,11 +17,11 @@ subgraph in front of the branches, so it is folded once.
 | Defaults memory, original → $name | $default_v1_med → $default_v2_med MiB | $win_default_v1_med → $win_default_v2_med MiB |
 | Speed change from the rebuild | none ($ms_v1_qdq_off → $ms_v2_qdq_off ms) | none ($win_ms_v1_qdq_off → $win_ms_v2_qdq_off ms) |
 
-![Memory against speed](assets/charts/tradeoff.svg)
+<p align="center"><img src="assets/charts/tradeoff.svg" alt="Memory against speed"></p>
 
-![Decoder time per step](assets/charts/speed.svg)
+<p align="center"><img src="assets/charts/speed.svg" alt="Decoder time per step"></p>
 
-![Memory in fast mode](assets/charts/memory_fast.svg)
+<p align="center"><img src="assets/charts/memory_fast.svg" alt="Memory in fast mode"></p>
 
 Identical output: $identical_runs / $all_runs short-sentence runs; FLORES-200 devtest: $flores_summary.
 Browser (transformers.js, onnxruntime-web): $browser_summary.
@@ -48,9 +48,9 @@ $g_held_table
 - Defaults: the `DequantizeLinear` stays; the transposed 8-bit matrix is folded per branch: two copies vs one.
 - This is constant folding of a duplicated subgraph, not `MatMulInteger` pre-packing.
 
-![How it works](assets/charts/how-it-works.svg)
+<p align="center"><img src="assets/charts/how-it-works.svg" alt="How it works"></p>
 
-![Where the memory goes](assets/charts/breakdown.svg)
+<p align="center"><img src="assets/charts/breakdown.svg" alt="Where the memory goes"></p>
 
 Totals measured ($pair_note); the float copy is computed from the tensor shape ($copy_shape × 4 bytes =
 $copy_mib MiB). With ONNX Runtime $ort the measured saving is about two copies' worth; with 1.28 it is one copy
@@ -79,7 +79,7 @@ Measurements:
 
 ### Linux, reference pairs ($ref_pairs)
 
-![Memory after load](assets/charts/memory.svg)
+<p align="center"><img src="assets/charts/memory.svg" alt="Memory after load"></p>
 
 $reference_table
 
@@ -92,7 +92,7 @@ folding briefly holds intermediate copies either way. The batch peak drops $peak
 `13a`, `zh` for Chinese targets; chrF). Original and $name scores are listed once when equal. Scores are
 greedy-decoding scores (no beam search).
 
-![BLEU, original vs $name](assets/charts/flores.svg)
+<p align="center"><img src="assets/charts/flores.svg" alt="BLEU, original vs $name"></p>
 
 <details><summary>Table: all $pairs pairs, fast mode</summary>
 
@@ -107,7 +107,7 @@ onnxruntime-web (WASM, 4 threads), 20-line batch, one fresh browser per configur
 browser processes minus the RSS with a blank page (`measureUserAgentSpecificMemory` is not available in headless
 Chromium).
 
-![Browser memory after load](assets/charts/browser.svg)
+<p align="center"><img src="assets/charts/browser.svg" alt="Browser memory after load"></p>
 
 $browser_table
 
@@ -132,9 +132,9 @@ buffers ONNX Runtime keeps.
 
 ### All pairs
 
-![Memory saved, all pairs](assets/charts/saving.svg)
+<p align="center"><img src="assets/charts/saving.svg" alt="Memory saved, all pairs"></p>
 
-![Memory after load, reference pairs](assets/charts/memory.svg)
+<p align="center"><img src="assets/charts/memory.svg" alt="Memory after load, reference pairs"></p>
 
 <details><summary>Table: all $pairs pairs</summary>
 

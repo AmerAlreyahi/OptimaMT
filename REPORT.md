@@ -17,11 +17,11 @@ subgraph in front of the branches, so it is folded once.
 | Defaults memory, original → OptimaMT | 277 → 217 MiB | 196 → 166 MiB |
 | Speed change from the rebuild | none (6.9 → 6.9 ms) | none (9.2 → 9.1 ms) |
 
-![Memory against speed](assets/charts/tradeoff.svg)
+<p align="center"><img src="assets/charts/tradeoff.svg" alt="Memory against speed"></p>
 
-![Decoder time per step](assets/charts/speed.svg)
+<p align="center"><img src="assets/charts/speed.svg" alt="Decoder time per step"></p>
 
-![Memory in fast mode](assets/charts/memory_fast.svg)
+<p align="center"><img src="assets/charts/memory_fast.svg" alt="Memory in fast mode"></p>
 
 Identical output: 98 / 98 short-sentence runs; FLORES-200 devtest: 49 pairs × 2 settings × 1012 sentences: identical output in 98 of 98 runs, identical BLEU and chrF in 98 of 98.
 Browser (transformers.js, onnxruntime-web): fast mode 1288 → 1050 MiB after load (-18 %); defaults 739 → 803 MiB (no saving after load); fast mode 1.3× faster; identical tokens.
@@ -51,9 +51,9 @@ ONNX Runtime folds constant nodes at load, inside the subgraph where they live. 
 - Defaults: the `DequantizeLinear` stays; the transposed 8-bit matrix is folded per branch: two copies vs one.
 - This is constant folding of a duplicated subgraph, not `MatMulInteger` pre-packing.
 
-![How it works](assets/charts/how-it-works.svg)
+<p align="center"><img src="assets/charts/how-it-works.svg" alt="How it works"></p>
 
-![Where the memory goes](assets/charts/breakdown.svg)
+<p align="center"><img src="assets/charts/breakdown.svg" alt="Where the memory goes"></p>
 
 Totals measured (en-ar, fast mode); the float copy is computed from the tensor shape (512 × 62,802 × 4 bytes =
 122.7 MiB). With ONNX Runtime 1.31.1 the measured saving is about two copies' worth; with 1.28 it is one copy
@@ -82,7 +82,7 @@ Measurements:
 
 ### Linux, reference pairs (en-ar, ar-en, en-de, de-en, ja-en)
 
-![Memory after load](assets/charts/memory.svg)
+<p align="center"><img src="assets/charts/memory.svg" alt="Memory after load"></p>
 
 | Pair | Settings | After load (MiB) | Peak, 20 lines (MiB) | ms/step | Identical |
 |---|---|---:|---:|---:|---|
@@ -106,7 +106,7 @@ folding briefly holds intermediate copies either way. The batch peak drops -41 %
 `13a`, `zh` for Chinese targets; chrF). Original and OptimaMT scores are listed once when equal. Scores are
 greedy-decoding scores (no beam search).
 
-![BLEU, original vs OptimaMT](assets/charts/flores.svg)
+<p align="center"><img src="assets/charts/flores.svg" alt="BLEU, original vs OptimaMT"></p>
 
 <details><summary>Table: all 49 pairs, fast mode</summary>
 
@@ -171,7 +171,7 @@ onnxruntime-web (WASM, 4 threads), 20-line batch, one fresh browser per configur
 browser processes minus the RSS with a blank page (`measureUserAgentSpecificMemory` is not available in headless
 Chromium).
 
-![Browser memory after load](assets/charts/browser.svg)
+<p align="center"><img src="assets/charts/browser.svg" alt="Browser memory after load"></p>
 
 | Pair | Settings | After load (MiB) | After the batch (MiB) | ms/step | Identical |
 |---|---|---:|---:|---:|---|
@@ -223,9 +223,9 @@ buffers ONNX Runtime keeps.
 
 ### All pairs
 
-![Memory saved, all pairs](assets/charts/saving.svg)
+<p align="center"><img src="assets/charts/saving.svg" alt="Memory saved, all pairs"></p>
 
-![Memory after load, reference pairs](assets/charts/memory.svg)
+<p align="center"><img src="assets/charts/memory.svg" alt="Memory after load, reference pairs"></p>
 
 <details><summary>Table: all 49 pairs</summary>
 
