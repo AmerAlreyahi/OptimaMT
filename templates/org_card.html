@@ -4,9 +4,21 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>$name</title>
+<style>
+  .omt { line-height: 1.6; }
+  .omt a { color: #3b82f6; text-decoration: none; }
+  .omt a:hover { text-decoration: underline; }
+  .omt img { max-width: 100%; border-radius: 10px; margin: 8px 0; }
+  .omt table { border-collapse: collapse; width: 100%; margin: 12px 0; }
+  .omt th, .omt td { padding: 8px 10px; border-bottom: 1px solid rgba(127, 127, 127, 0.3); text-align: left; }
+  .omt td + td, .omt th + th { text-align: right; white-space: nowrap; }
+  .omt h3 { font-size: 1.1em; font-weight: 600; margin: 18px 0 6px; }
+  .omt pre { background: rgba(127, 127, 127, 0.12); color: inherit; padding: 14px; border-radius: 10px; overflow-x: auto; font-size: 13px; }
+  .omt .links a { margin-right: 18px; white-space: nowrap; }
+</style>
 </head>
 <body>
-<main>
+<main class="omt">
 <p><strong>Lighter OPUS-MT translation models that run locally</strong>, in ONNX Runtime or in the browser with
 transformers.js. $count translation directions, the same translations, and about half the memory in fast mode.</p>
 
