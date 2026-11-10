@@ -2,6 +2,12 @@
 
 $badges
 
+**$name is a set of free translation models that run offline**, on your own computer or in the browser: 49 translation
+directions between 17 languages, including English, Arabic, Chinese, French, German, Japanese, Russian and Spanish.
+They are the OPUS-MT models from the University of Helsinki with one small fix inside the model file. The translations
+stay exactly the same, and in ONNX Runtime's fast mode they need about half the memory. Same files, same code: swap
+the model name and you're done.
+
 **$tagline**
 
 ![Memory against speed](assets/charts/tradeoff.svg)

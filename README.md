@@ -2,6 +2,12 @@
 
 ![models: CC BY 4.0](https://img.shields.io/badge/models-CC%20BY%204.0-blue) ![code: MIT](https://img.shields.io/badge/code-MIT-green) ![pairs: 49](https://img.shields.io/badge/pairs-49-orange) ![ONNX Runtime: 1.31.1](https://img.shields.io/badge/ONNX%20Runtime-1.31.1-informational) ![FLORES-200: identical output](https://img.shields.io/badge/FLORES--200-identical%20output-brightgreen)
 
+**OptimaMT is a set of free translation models that run offline**, on your own computer or in the browser: 49 translation
+directions between 17 languages, including English, Arabic, Chinese, French, German, Japanese, Russian and Spanish.
+They are the OPUS-MT models from the University of Helsinki with one small fix inside the model file. The translations
+stay exactly the same, and in ONNX Runtime's fast mode they need about half the memory. Same files, same code: swap
+the model name and you're done.
+
 **ONNX Runtime's fast mode at half the memory: 2.3–2.5× faster than the default, same translations.**
 
 ![Memory against speed](assets/charts/tradeoff.svg)
