@@ -267,7 +267,7 @@ $("tagline").textContent = D.tagline;
 for (const n of document.querySelectorAll(".nm")) n.textContent = D.name;
 for (const [label, href] of [["Models on Hugging Face", `https://huggingface.co/${D.namespace}`],
      ["Method and code", `https://github.com/${D.github}`], ["Technical report", `https://github.com/${D.github}/blob/main/REPORT.md`]]) {
-  const a = document.createElement("a"); a.href = href; a.textContent = label; $("links").appendChild(a); }
+  const a = document.createElement("a"); a.href = href; a.target = "_blank"; a.rel = "noopener"; a.textContent = label; $("links").appendChild(a); }
 for (const o of OSES) { const btn = document.createElement("button"); btn.dataset.v = o; btn.textContent = o;
   btn.setAttribute("aria-pressed", o === state.os ? "true" : "false"); $("os").appendChild(btn); }
 seg("os", "os"); seg("setting", "setting"); seg("metric", "metric");
