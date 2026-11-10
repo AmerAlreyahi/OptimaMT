@@ -2,7 +2,7 @@
 
 $badges
 
-**$name is a set of free translation models that run offline**, on your own computer or in the browser: 49
+**$name is a set of free translation models that run locally**, on your own computer or in the browser: 49
 translation directions built from the University of Helsinki's OPUS-MT models and optimized for ONNX Runtime. Same
 translations, about half the memory in fast mode, and a drop-in replacement: swap the model name and you're done.
 
