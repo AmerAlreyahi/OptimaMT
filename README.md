@@ -18,7 +18,7 @@ Same translations: on FLORES-200 devtest all 49 pairs give identical output, so 
 
 <p align="center"><img src="assets/charts/flores.svg" alt="BLEU, original vs OptimaMT"></p>
 
-More charts, the browser results and every number: [REPORT.md](REPORT.md) · interactive results and a live demo:
+Full technical report (PDF): [OptimaMT-Technical-Report.pdf](report/OptimaMT-Technical-Report.pdf) · more charts, the browser results and every number: [REPORT.md](REPORT.md) · interactive results and a live demo:
 [OptimaMT/results](https://huggingface.co/spaces/OptimaMT/results)
 
 ## Used in production

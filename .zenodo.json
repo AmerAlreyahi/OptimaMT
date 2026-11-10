@@ -1,0 +1,36 @@
+{
+  "title": "OptimaMT: Lighter OPUS-MT Translation Models for ONNX Runtime",
+  "upload_type": "publication",
+  "publication_type": "report",
+  "creators": [
+    {
+      "name": "Alreyahi, Amer"
+    }
+  ],
+  "description": "ONNX Runtime decodes the quantized ONNX exports of OPUS-MT translation models 2.3–2.5× faster per token when the session option session.disable_quant_qdq is set to 1, but the models then need about twice the memory. The cause is one detail of the exported decoder: the Transpose and DequantizeLinear that build the output layer from the shared 8-bit embedding appear in both branches of the decoder's If node, and ONNX Runtime folds them to a float matrix once per branch. Moving the two nodes in front of the If, without changing any weight, removes the duplicate. Across 49 translation directions with ONNX Runtime 1.31.1, memory after loading in this mode fell from a median of 525 to 281 MiB on Linux and from 500 to 257 MiB on Windows, with no change in speed. On FLORES-200 devtest every pair produces identical tokens, so BLEU and chrF are unchanged. The rebuilt models are published as drop-in replacements.",
+  "keywords": [
+    "machine translation",
+    "OPUS-MT",
+    "MarianMT",
+    "ONNX Runtime",
+    "quantization",
+    "memory footprint",
+    "on-device inference",
+    "transformers.js"
+  ],
+  "license": "cc-by-4.0",
+  "language": "eng",
+  "version": "1.0",
+  "related_identifiers": [
+    {
+      "identifier": "https://huggingface.co/OptimaMT",
+      "relation": "isSupplementedBy",
+      "scheme": "url"
+    },
+    {
+      "identifier": "https://huggingface.co/spaces/OptimaMT/results",
+      "relation": "isSupplementedBy",
+      "scheme": "url"
+    }
+  ]
+}

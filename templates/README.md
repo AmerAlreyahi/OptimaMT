@@ -18,7 +18,7 @@ Same translations: on FLORES-200 devtest all $pairs pairs give identical output,
 
 <p align="center"><img src="assets/charts/flores.svg" alt="BLEU, original vs $name"></p>
 
-More charts, the browser results and every number: [REPORT.md](REPORT.md) · interactive results and a live demo:
+Full technical report (PDF): [OptimaMT-Technical-Report.pdf](report/OptimaMT-Technical-Report.pdf) · more charts, the browser results and every number: [REPORT.md](REPORT.md) · interactive results and a live demo:
 [$results_name]($results_url)
 
 ## Used in production
