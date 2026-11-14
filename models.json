@@ -3893,6 +3893,166 @@
      "changed": false
     }
    ]
+  },
+  {
+   "pair": "en-pt",
+   "source": "en",
+   "target": "pt",
+   "repo_id": "OptimaMT/en-pt",
+   "url": "https://huggingface.co/OptimaMT/en-pt",
+   "upstream": "Helsinki-NLP/opus-mt-en-ROMANCE",
+   "onnx_export": "Xenova/opus-mt-en-ROMANCE",
+   "onnx_export_revision": "9d2ba69ac80c8e8453c3d9a1e2323a0e7b8ca3cd",
+   "lang_token": ">>pt_br<<",
+   "vocab_size": 65001,
+   "files": [
+    {
+     "path": "config.json",
+     "size": 1508,
+     "sha256": "dc4f6f9ffbbf1196ff9e8329e5666fe190aef1b1c6806649d86b962b9bde292c",
+     "changed": false
+    },
+    {
+     "path": "generation_config.json",
+     "size": 293,
+     "sha256": "b743baabb7da4c1a2f19fe558bd6b4c0c7c3b0762fcb5ca7a48fe5a2c2219803",
+     "changed": false
+    },
+    {
+     "path": "onnx/decoder_model_merged_quantized.onnx",
+     "size": 60212472,
+     "sha256": "1ffccf13013399c33978b08b0cde841be23705e45e7e9a203a318e4aeb1377f0",
+     "changed": true
+    },
+    {
+     "path": "onnx/encoder_model_quantized.onnx",
+     "size": 52899742,
+     "sha256": "b4ddfd9338ba3d7c6b9c2d1410ed94fb7e06741226918cef6148031101bbd019",
+     "changed": false
+    },
+    {
+     "path": "quantize_config.json",
+     "size": 3124,
+     "sha256": "a53575bb872f0e17da77ca33a643b16ba10e91da46c0e287993c2773dd0b79d5",
+     "changed": false
+    },
+    {
+     "path": "source.spm",
+     "size": 779155,
+     "sha256": "b1f89e7b05828846baf19109a61029a36838f1c4f3defc218e6aee0ee2787864",
+     "changed": false
+    },
+    {
+     "path": "special_tokens_map.json",
+     "size": 74,
+     "sha256": "5e4d1f5e759d74cb1c2fe1d165cfc62b5237aa904de759380cd6f43042eec723",
+     "changed": false
+    },
+    {
+     "path": "target.spm",
+     "size": 799001,
+     "sha256": "5e54632fe5ce5ef4108a827daccc121b7cd4ea589fbb4bd856b8dd06086166b2",
+     "changed": false
+    },
+    {
+     "path": "tokenizer.json",
+     "size": 6117691,
+     "sha256": "31cabbd7e3857f21bcde266b0e84585ef3282133acce42d3765e8f31cb5f4040",
+     "changed": false
+    },
+    {
+     "path": "tokenizer_config.json",
+     "size": 503,
+     "sha256": "666d091bdf094d476aac60b645efd7d18cac468510f5c71b327b7ae937126e05",
+     "changed": false
+    },
+    {
+     "path": "vocab.json",
+     "size": 1587364,
+     "sha256": "d9c3b6b01d3a9c9403befa60fd17e4a50dc4929698e3d6b9c2e7f066a9d1f041",
+     "changed": false
+    }
+   ]
+  },
+  {
+   "pair": "pt-en",
+   "source": "pt",
+   "target": "en",
+   "repo_id": "OptimaMT/pt-en",
+   "url": "https://huggingface.co/OptimaMT/pt-en",
+   "upstream": "Helsinki-NLP/opus-mt-ROMANCE-en",
+   "onnx_export": "Xenova/opus-mt-ROMANCE-en",
+   "onnx_export_revision": "f60feaabe8bb435a5871e7702b25f53a01e770f8",
+   "lang_token": null,
+   "vocab_size": 65001,
+   "files": [
+    {
+     "path": "config.json",
+     "size": 1361,
+     "sha256": "df1876a346b1852ef4590bc74c6e180eb2ba10193cf2bded24c31876f357d83c",
+     "changed": false
+    },
+    {
+     "path": "generation_config.json",
+     "size": 293,
+     "sha256": "b743baabb7da4c1a2f19fe558bd6b4c0c7c3b0762fcb5ca7a48fe5a2c2219803",
+     "changed": false
+    },
+    {
+     "path": "onnx/decoder_model_merged_quantized.onnx",
+     "size": 60212471,
+     "sha256": "f056609eacc1bc75f907ec1c4ab43f93783ce30ef5641b6641dbb8cf321ddb01",
+     "changed": true
+    },
+    {
+     "path": "onnx/encoder_model_quantized.onnx",
+     "size": 52899741,
+     "sha256": "13750ba31ee80c88f6bbb28aa03320674c50394efb95f791d5c4f5c8894232bf",
+     "changed": false
+    },
+    {
+     "path": "quantize_config.json",
+     "size": 3124,
+     "sha256": "7e7dd7a67fec0e8d194da8c73b17056b11a3a035a40325ee29ee7b8c744f550b",
+     "changed": false
+    },
+    {
+     "path": "source.spm",
+     "size": 800087,
+     "sha256": "baeab21ec00d0b490382b82499ef0348235c5a8e75de28aec8290adf62b007c4",
+     "changed": false
+    },
+    {
+     "path": "special_tokens_map.json",
+     "size": 74,
+     "sha256": "5e4d1f5e759d74cb1c2fe1d165cfc62b5237aa904de759380cd6f43042eec723",
+     "changed": false
+    },
+    {
+     "path": "target.spm",
+     "size": 779494,
+     "sha256": "121d4e0a20cda2052945d790d335f421f7bea7fa6b0ff7fbc9112eed5f12036f",
+     "changed": false
+    },
+    {
+     "path": "tokenizer.json",
+     "size": 6120151,
+     "sha256": "34979cc78f4dfa92f7b39ad8f0d4068dc7d1be61940f09db5ac77818e013bd99",
+     "changed": false
+    },
+    {
+     "path": "tokenizer_config.json",
+     "size": 503,
+     "sha256": "3e2f209841b92e5ed7cbb188e5bb2c2bcbb05afaef4777e3d03b4c4cc25da334",
+     "changed": false
+    },
+    {
+     "path": "vocab.json",
+     "size": 1590308,
+     "sha256": "32c8eeec099b448425a7da4e09ec10acbe424a733780c9bcec2062846f03e706",
+     "changed": false
+    }
+   ]
   }
  ]
 }

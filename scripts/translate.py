@@ -5,7 +5,7 @@ sentencepiece and numpy (greedy decoding, KV cache).
 
 A folder from Hugging Face can be fetched first with
 `huggingface_hub.snapshot_download(repo_id)`. Pairs whose target has several
-variants (en-ar, en-zh, fr-ar, es-ar) need a target token: pass it with
+variants (en-ar, en-zh, en-pt, fr-ar, es-ar) need a target token: pass it with
 --lang ">>ara<<" (see the model card).
 """
 

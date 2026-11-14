@@ -2044,5 +2044,101 @@
    "source": "شكرًا لصبرك بينما نصلح المشكلة.",
    "v2": "Danke für deine Geduld, während wir das Problem lösen."
   }
+ ],
+ "en-pt": [
+  {
+   "source": "The lighthouse stands on the coast.",
+   "v2": "O farol fica na costa."
+  },
+  {
+   "source": "Press E to interact",
+   "v2": "Pressione E para interagir"
+  },
+  {
+   "source": "Are you sure you want to quit? Unsaved progress will be lost.",
+   "v2": "O progresso não salvo será perdido."
+  },
+  {
+   "source": "The train to the airport leaves every twenty minutes.",
+   "v2": "O trem para o aeroporto sai a cada vinte minutos."
+  },
+  {
+   "source": "Please restart the application to apply the update.",
+   "v2": "Por favor, reinicie a aplicação para aplicar a atualização."
+  },
+  {
+   "source": "She bought fresh bread and a small jar of honey at the market.",
+   "v2": "Ela comprou pão fresco e um pequeno frasco de mel no mercado."
+  },
+  {
+   "source": "Your password must contain at least eight characters.",
+   "v2": "Sua senha deve conter pelo menos oito caracteres."
+  },
+  {
+   "source": "The museum is closed on Mondays.",
+   "v2": "O museu está fechado nas segundas-feiras."
+  },
+  {
+   "source": "We will meet in front of the library at noon.",
+   "v2": "Nos encontraremos em frente à biblioteca ao meio-dia."
+  },
+  {
+   "source": "The weather will be sunny tomorrow, with light wind in the afternoon.",
+   "v2": "O tempo estará ensolarado amanhã, com vento leve à tarde."
+  },
+  {
+   "source": "Settings",
+   "v2": "Configuração"
+  },
+  {
+   "source": "Save and continue",
+   "v2": "Salvar e continuar"
+  },
+  {
+   "source": "The river flooded the old bridge after three days of heavy rain.",
+   "v2": "O rio inundou a velha ponte após três dias de chuva."
+  },
+  {
+   "source": "Can you tell me where the nearest pharmacy is?",
+   "v2": "Pode me dizer onde fica a farmácia mais próxima?"
+  },
+  {
+   "source": "This file could not be opened because it is damaged.",
+   "v2": "Este arquivo não pôde ser aberto porque está danificado."
+  },
+  {
+   "source": "The children played in the garden until sunset.",
+   "v2": "As crianças brincaram no jardim até o pôr do sol."
+  },
+  {
+   "source": "Download complete.",
+   "v2": "Download completo."
+  },
+  {
+   "source": "He has worked as an engineer in this city for ten years.",
+   "v2": "Ele trabalhou como engenheiro nesta cidade por dez anos."
+  },
+  {
+   "source": "Turn left at the second traffic light.",
+   "v2": "Vire à esquerda no segundo semáforo."
+  },
+  {
+   "source": "Thank you for your patience while we fix the problem.",
+   "v2": "Obrigado por sua paciência enquanto nós resolvomos o problema."
+  }
+ ],
+ "pt-en": [
+  {
+   "source": "O farol fica na costa.",
+   "v2": "The lighthouse is on the coast."
+  },
+  {
+   "source": "Pressione E para interagir",
+   "v2": "Pressure E to interact"
+  },
+  {
+   "source": "Tem certeza de que quer sair do jogo?",
+   "v2": "Are you sure you want to get out of the game?"
+  }
  ]
 }

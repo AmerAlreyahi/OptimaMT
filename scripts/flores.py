@@ -16,13 +16,14 @@ import sys
 import tarfile
 from concurrent.futures import ProcessPoolExecutor
 
-from common import DEC, ENC, RESULTS, WORK, Tok, download, greedy, session, source, sources, v1_dir, v2_decoder
+from common import (DEC, ENC, RESULTS, WORK, Tok, download, greedy, merge_rows, session, source, sources, v1_dir,
+                    v2_decoder)
 
 URL = "https://dl.fbaipublicfiles.com/nllb/flores200_dataset.tar.gz"
 SHA = "b8b0b76783024b85797e5cc75064eb83fc5288b41e9654dabc7be6ae944011f6"
 CODES = {"ar": "arb_Arab", "de": "deu_Latn", "en": "eng_Latn", "es": "spa_Latn", "fr": "fra_Latn",
          "hi": "hin_Deva", "id": "ind_Latn", "it": "ita_Latn", "ja": "jpn_Jpan", "ko": "kor_Hang",
-         "nl": "nld_Latn", "pl": "pol_Latn", "ru": "rus_Cyrl", "th": "tha_Thai", "uk": "ukr_Cyrl",
+         "nl": "nld_Latn", "pl": "pol_Latn", "pt": "por_Latn", "ru": "rus_Cyrl", "th": "tha_Thai", "uk": "ukr_Cyrl",
          "vi": "vie_Latn", "zh": "zho_Hans"}
 BATCH = 16
 
@@ -74,10 +75,11 @@ def main() -> None:
     devtest("en")  # download once before the workers start
     with ProcessPoolExecutor(5) as pool:
         rows = [r for rs in pool.map(run, pairs) for r in rs]
+    merged = merge_rows(RESULTS / "flores.csv", rows)  # a run over some pairs keeps the rest
     with (RESULTS / "flores.csv").open("w", newline="", encoding="utf-8") as f:
         w = csv.DictWriter(f, list(rows[0]), lineterminator="\n")
         w.writeheader()
-        w.writerows(rows)
+        w.writerows(merged)
     same = sum(r["identical_sentences"] == r["sentences"] for r in rows)
     print(f"{same} of {len(rows)} pair/setting runs identical on every sentence")
 

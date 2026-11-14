@@ -12,10 +12,12 @@ Results: results/identical.csv and results/translations.json.
 """
 
 import csv
+import json
 import sys
 from concurrent.futures import ProcessPoolExecutor
 
-from common import DEC, ENC, RESULTS, Tok, greedy, sentences, session, source, sources, v1_dir, v2_decoder, write_json
+from common import (DEC, ENC, RESULTS, Tok, greedy, merge_rows, sentences, session, source, sources, v1_dir, v2_decoder,
+                    write_json)
 
 
 def check(pair: str) -> list[dict]:
@@ -40,13 +42,16 @@ def main() -> None:
     with ProcessPoolExecutor(5) as pool:
         rows = [r for rs in pool.map(check, pairs) for r in rs]
     RESULTS.mkdir(exist_ok=True)
+    new = [{"pair": r["pair"], "setting": r["setting"], "lines": r["lines"], "tokens": r["tokens"],
+            "identical": "yes" if r["identical"] else "no"} for r in rows]
+    merged = merge_rows(RESULTS / "identical.csv", new)  # a run over some pairs keeps the rest
     with (RESULTS / "identical.csv").open("w", newline="", encoding="utf-8") as f:
-        w = csv.writer(f, lineterminator="\n")
-        w.writerow(["pair", "setting", "lines", "tokens", "identical"])
-        for r in rows:
-            w.writerow([r["pair"], r["setting"], r["lines"], r["tokens"], "yes" if r["identical"] else "no"])
-    write_json(RESULTS / "translations.json",
-               {r["pair"]: r["translations"] for r in rows if r["setting"] == "default"})
+        w = csv.DictWriter(f, ["pair", "setting", "lines", "tokens", "identical"], lineterminator="\n")
+        w.writeheader()
+        w.writerows(merged)
+    tr = json.loads((RESULTS / "translations.json").read_text(encoding="utf-8")) if pairs != [e["pair"] for e in sources()] else {}
+    tr.update({r["pair"]: r["translations"] for r in rows if r["setting"] == "default"})
+    write_json(RESULTS / "translations.json", {e["pair"]: tr[e["pair"]] for e in sources() if e["pair"] in tr})
     same = sum(r["identical"] for r in rows)
     print(f"{same} of {len(rows)} pair/setting runs give identical tokens")
     if same != len(rows):

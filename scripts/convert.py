@@ -27,7 +27,7 @@ import sys
 
 import onnx
 
-from common import BUILD, DEC, sha256, source, sources, v1_dir, v2_decoder
+from common import BUILD, DEC, ROOT, sha256, source, sources, v1_dir, v2_decoder, write_json
 
 
 def hoist(src, dst) -> None:
@@ -87,6 +87,12 @@ def main() -> None:
     for pair in pairs:
         dst = v2_decoder(pair)
         pin = source(pair)["v2_decoder"]
+        if pin is None:  # a new pair: build it and pin the result in data/sources.json
+            hoist(v1_dir(pair) / "onnx" / DEC, dst)
+            pin = {"size": dst.stat().st_size, "sha256": sha256(dst), "url": None}
+            new = sources()
+            next(e for e in new if e["pair"] == pair)["v2_decoder"] = pin
+            write_json(ROOT / "data" / "sources.json", new)
         if not (dst.exists() and dst.stat().st_size == pin["size"] and sha256(dst) == pin["sha256"]):
             hoist(v1_dir(pair) / "onnx" / DEC, dst)
         same = sha256(dst) == pin["sha256"]

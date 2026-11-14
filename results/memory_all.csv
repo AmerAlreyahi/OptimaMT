@@ -195,3 +195,11 @@ ar-de,v1-default,283.0,283.0
 ar-de,v1-qdq_off,529.6,652.7
 ar-de,v2-qdq_off,283.0,529.4
 ar-de,v2-default,221.2,221.2
+en-pt,v1-default,290.7,290.7
+en-pt,v1-qdq_off,542.5,669.5
+en-pt,v2-qdq_off,289.0,542.5
+en-pt,v2-default,225.3,225.3
+pt-en,v1-default,290.7,290.7
+pt-en,v1-qdq_off,543.3,670.2
+pt-en,v2-qdq_off,291.1,545.0
+pt-en,v2-default,227.1,227.1

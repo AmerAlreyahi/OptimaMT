@@ -97,3 +97,7 @@ ar-es,default,20,198,yes
 ar-es,qdq_off,20,198,yes
 ar-de,default,20,189,yes
 ar-de,qdq_off,20,189,yes
+en-pt,default,20,236,yes
+en-pt,qdq_off,20,236,yes
+pt-en,default,3,26,yes
+pt-en,qdq_off,3,26,yes

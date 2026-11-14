@@ -12,9 +12,10 @@ International License (CC BY 4.0, https://creativecommons.org/licenses/by/4.0/):
 - Model weights: OPUS-MT, by Jörg Tiedemann and the Language Technology Research
   Group at the University of Helsinki (https://github.com/Helsinki-NLP/Opus-MT,
   https://huggingface.co/Helsinki-NLP), CC BY 4.0.
-- ONNX exports: 44 pairs from Xenova (https://huggingface.co/Xenova, the
+- ONNX exports: 46 pairs from Xenova (https://huggingface.co/Xenova, the
   `Xenova/opus-mt-<pair>` repositories, at the revisions pinned in
-  data/sources.json). Five pairs (fr-ar, es-ar, ar-fr, ar-es, ar-de) exported
+  data/sources.json; en-pt and pt-en come from Xenova/opus-mt-en-ROMANCE and
+  Xenova/opus-mt-ROMANCE-en, Helsinki-NLP's multi-language Romance models). Five pairs (fr-ar, es-ar, ar-fr, ar-es, ar-de) exported
   from the `Helsinki-NLP/opus-mt-<pair>` weights with Hugging Face Optimum in the
   same layout (first published in the OpenCircle-models repository).
 - Modifications: in every pair, the file onnx/decoder_model_merged_quantized.onnx

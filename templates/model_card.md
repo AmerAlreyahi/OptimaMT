@@ -23,7 +23,7 @@ $used_in
 
 $memory_table
 
-ONNX Runtime $ort, CPU, 4 threads (Linux; Windows in a VM). Interactive results: [$results_name]($results_url) ·
+ONNX Runtime $ort, CPU, 4 threads ($hosts). Interactive results: [$results_name]($results_url) ·
 method: [REPORT.md](https://github.com/$github/blob/main/REPORT.md).
 
 ## Use

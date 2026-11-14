@@ -32,7 +32,7 @@ transformers.js. $count translation directions, the same translations, and about
 <img src="https://huggingface.co/spaces/$namespace/README/resolve/main/tradeoff.png" alt="Memory against speed, original and $name, on Linux and Windows">
 
 <table>
-  <tr><th>Memory after load (median, $count pairs)</th><th>Linux</th><th>Windows</th></tr>
+  <tr><th>Memory after load (median; Linux $count pairs, Windows $win_count)</th><th>Linux</th><th>Windows</th></tr>
   <tr><td>Fast mode (<code>disable_quant_qdq = 1</code>)</td><td>$qdq_v1 → $qdq_v2 MiB ($qdq_pct %)</td><td>$win_qdq_v1 → $win_qdq_v2 MiB ($win_qdq_pct %)</td></tr>
   <tr><td>ONNX Runtime defaults</td><td>$def_v1 → $def_v2 MiB ($def_pct %)</td><td>$win_def_v1 → $win_def_v2 MiB ($win_def_pct %)</td></tr>
 </table>

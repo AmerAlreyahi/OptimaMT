@@ -12,7 +12,7 @@ subgraph in front of the branches, so it is folded once.
 | | Linux | Windows |
 |---|---:|---:|
 | ms/step, defaults → fast mode (median, 5 pairs) | 17.3 → 6.9 | 21.3 → 9.1 |
-| Fast mode memory, original → OptimaMT (median, 49 pairs) | 525 → 281 MiB | 500 → 257 MiB |
+| Fast mode memory, original → OptimaMT (median; Linux 51 pairs, Windows 49) | 525 → 281 MiB | 500 → 257 MiB |
 | Fast mode saving per pair | 45–49 % | 47–51 % |
 | Defaults memory, original → OptimaMT | 277 → 217 MiB | 196 → 166 MiB |
 | Speed change from the rebuild | none (6.9 → 6.9 ms) | none (9.2 → 9.1 ms) |
@@ -23,7 +23,7 @@ subgraph in front of the branches, so it is folded once.
 
 <p align="center"><img src="assets/charts/memory_fast.svg" alt="Memory in fast mode"></p>
 
-Identical output: 98 / 98 short-sentence runs; FLORES-200 devtest: 49 pairs × 2 settings × 1012 sentences: identical output in 98 of 98 runs, identical BLEU and chrF in 98 of 98.
+Identical output: 102 / 102 short-sentence runs; FLORES-200 devtest: 51 pairs × 2 settings × 1012 sentences: identical output in 102 of 102 runs, identical BLEU and chrF in 102 of 102.
 Browser (transformers.js, onnxruntime-web): fast mode 1288 → 1050 MiB after load (-18 %); defaults 739 → 803 MiB (no saving after load); fast mode 1.3× faster; identical tokens.
 
 ## 1. The finding
@@ -108,7 +108,7 @@ greedy-decoding scores (no beam search).
 
 <p align="center"><img src="assets/charts/flores.svg" alt="BLEU, original vs OptimaMT"></p>
 
-<details><summary>Table: all 49 pairs, fast mode</summary>
+<details><summary>Table: all 51 pairs, fast mode</summary>
 
 | Pair | BLEU | chrF | Sentences identical (fast / default) |
 |---|---:|---:|---|
@@ -161,6 +161,8 @@ greedy-decoding scores (no beam search).
 | ar-fr | 26.01 | 53.48 | 1012 / 1012 of 1012 |
 | ar-es | 17.85 | 46.35 | 1012 / 1012 of 1012 |
 | ar-de | 17.43 | 47.48 | 1012 / 1012 of 1012 |
+| en-pt | 41.73 | 66.59 | 1012 / 1012 of 1012 |
+| pt-en | 44.75 | 69.08 | 1012 / 1012 of 1012 |
 
 </details>
 
@@ -205,8 +207,8 @@ the batch. Fast mode is also faster in the browser, by less than in native ONNX 
 | ja-en | ONNX Runtime defaults | 194 → 165 (-15 %) | 483 → 363 | 21.3 → 20.2 | yes |
 | ja-en | `disable_quant_qdq = 1` | 489 → 251 (-49 %) | 560 → 322 | 8.8 → 8.9 | yes |
 
-All 49 pairs: 47–51 % less with `disable_quant_qdq = 1`, 14–17 %
-less with the defaults ([results/memory_all_windows.csv](results/memory_all_windows.csv)). The token ids on the
+49 of 51 pairs: 47–51 % less with `disable_quant_qdq = 1`, 14–17 %
+less with the defaults ([results/memory_all_windows.csv](results/memory_all_windows.csv)). Measured on Linux only: en-pt, pt-en. The token ids on the
 reference batch are the same on Windows and Linux (`ids_md5` in the reference files).
 
 ### ONNX Runtime versions
@@ -227,7 +229,7 @@ buffers ONNX Runtime keeps.
 
 <p align="center"><img src="assets/charts/memory.svg" alt="Memory after load, reference pairs"></p>
 
-<details><summary>Table: all 49 pairs</summary>
+<details><summary>Table: all 51 pairs</summary>
 
 | Pair | Vocabulary | Defaults (MiB) | qdq off (MiB) | Identical | Model |
 |---|---:|---:|---:|---|---|
@@ -280,6 +282,8 @@ buffers ONNX Runtime keeps.
 | ar-fr | 64,505 | 288 → 226 (-22 %) | 542 → 290 (-47 %) | yes | [OptimaMT/ar-fr](https://huggingface.co/OptimaMT/ar-fr) |
 | ar-es | 62,526 | 281 → 220 (-22 %) | 526 → 281 (-47 %) | yes | [OptimaMT/ar-es](https://huggingface.co/OptimaMT/ar-es) |
 | ar-de | 63,079 | 283 → 221 (-22 %) | 530 → 283 (-47 %) | yes | [OptimaMT/ar-de](https://huggingface.co/OptimaMT/ar-de) |
+| en-pt | 65,001 | 291 → 225 (-22 %) | 542 → 289 (-47 %) | yes | [OptimaMT/en-pt](https://huggingface.co/OptimaMT/en-pt) |
+| pt-en | 65,001 | 291 → 227 (-22 %) | 543 → 291 (-46 %) | yes | [OptimaMT/pt-en](https://huggingface.co/OptimaMT/pt-en) |
 
 </details>
 

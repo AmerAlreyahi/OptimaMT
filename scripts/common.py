@@ -179,3 +179,13 @@ def environment() -> dict:
 def write_json(path: Path, data) -> None:
     path.parent.mkdir(parents=True, exist_ok=True)
     path.write_text(json.dumps(data, indent=1, ensure_ascii=False) + "\n", encoding="utf-8")
+
+
+def merge_rows(path: Path, new: list[dict]) -> list[dict]:
+    """Rows of `path` with `new` replacing the rows of the same pairs (a run over some pairs keeps the others)."""
+    import csv
+    done = {r["pair"] for r in new}
+    old = [r for r in csv.DictReader(path.open(encoding="utf-8"))] if path.exists() else []
+    rows = [r for r in old if r["pair"] not in done] + new
+    order = {e["pair"]: i for i, e in enumerate(sources())}
+    return sorted(rows, key=lambda r: order[r["pair"]])

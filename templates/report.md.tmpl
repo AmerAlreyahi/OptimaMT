@@ -12,7 +12,7 @@ subgraph in front of the branches, so it is folded once.
 | | Linux | Windows |
 |---|---:|---:|
 | ms/step, defaults → fast mode (median, 5 pairs) | $ms_v1_default → $ms_v2_qdq_off | $win_ms_v1_default → $win_ms_v2_qdq_off |
-| Fast mode memory, original → $name (median, $pairs pairs) | $qdq_off_v1_med → $qdq_off_v2_med MiB | $win_qdq_off_v1_med → $win_qdq_off_v2_med MiB |
+| Fast mode memory, original → $name (median; Linux $pairs pairs, Windows $win_pairs) | $qdq_off_v1_med → $qdq_off_v2_med MiB | $win_qdq_off_v1_med → $win_qdq_off_v2_med MiB |
 | Fast mode saving per pair | $qdq_off_pct_min–$qdq_off_pct_max % | $win_qdq_off_pct_min–$win_qdq_off_pct_max % |
 | Defaults memory, original → $name | $default_v1_med → $default_v2_med MiB | $win_default_v1_med → $win_default_v2_med MiB |
 | Speed change from the rebuild | none ($ms_v1_qdq_off → $ms_v2_qdq_off ms) | none ($win_ms_v1_qdq_off → $win_ms_v2_qdq_off ms) |
@@ -119,8 +119,8 @@ the batch. Fast mode is also faster in the browser, by less than in native ONNX 
 
 $win_reference_table
 
-All $pairs pairs: $win_qdq_off_pct_min–$win_qdq_off_pct_max % less with `disable_quant_qdq = 1`, $win_default_pct_min–$win_default_pct_max %
-less with the defaults ([results/memory_all_windows.csv](results/memory_all_windows.csv)). The token ids on the
+$win_pairs of $pairs pairs: $win_qdq_off_pct_min–$win_qdq_off_pct_max % less with `disable_quant_qdq = 1`, $win_default_pct_min–$win_default_pct_max %
+less with the defaults ([results/memory_all_windows.csv](results/memory_all_windows.csv)). $win_note The token ids on the
 reference batch are the same on Windows and Linux (`ids_md5` in the reference files).
 
 ### ONNX Runtime versions

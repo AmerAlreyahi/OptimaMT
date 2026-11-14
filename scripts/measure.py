@@ -12,6 +12,7 @@ another's memory. Four configurations per pair:
 
     python scripts/measure.py reference   # 5 pairs: RSS, peaks, ms/step on a 20-line batch
     python scripts/measure.py all         # all pairs: RSS after load
+    python scripts/measure.py all --pairs en-pt,pt-en   # only these pairs; the other rows are kept
 
 Memory figures are the resident set the encoder and decoder sessions add to
 the process (RSS after load minus RSS just before creating them), in MiB.
@@ -29,8 +30,8 @@ import time
 from concurrent.futures import ThreadPoolExecutor
 from pathlib import Path
 
-from common import (DEC, ENC, REFERENCE, RESULTS, Tok, environment, greedy_timed, sentences, session, source,
-                    sources, v1_dir, v2_decoder, write_json)
+from common import (DEC, ENC, REFERENCE, RESULTS, Tok, environment, greedy_timed, merge_rows, sentences, session,
+                    source, sources, v1_dir, v2_decoder, write_json)
 
 CONFIGS = ["v1-default", "v1-qdq_off", "v2-qdq_off", "v2-default"]
 RUNS = 5
@@ -120,7 +121,9 @@ def main() -> None:
     RESULTS.mkdir(exist_ok=True)
     env = environment()
     env["threads"] = 4
-    tag = "" if len(sys.argv) < 3 else "_" + sys.argv[2]  # e.g. "windows"
+    args = [a for a in sys.argv[2:] if a != "--pairs" and "," not in a and a not in {e["pair"] for e in sources()}]
+    tag = "" if not args else "_" + args[0]  # e.g. "windows"
+    only = sys.argv[sys.argv.index("--pairs") + 1].split(",") if "--pairs" in sys.argv else None
     write_json(RESULTS / f"environment{tag}.json", env)
     if sys.argv[1] == "reference":
         rows = []
@@ -134,12 +137,12 @@ def main() -> None:
         write_json(RESULTS / f"reference{tag}.json", rows)
         write_csv(RESULTS / f"reference{tag}.csv", rows)
     elif sys.argv[1] == "all":
-        jobs = [(e["pair"], c) for e in sources() for c in CONFIGS]
+        jobs = [(e["pair"], c) for e in sources() if only is None or e["pair"] in only for c in CONFIGS]
         with ThreadPoolExecutor(4) as pool:
             rows = list(pool.map(lambda j: spawn(j[0], j[1], False), jobs))
         for r in rows:
             print(json.dumps(r), flush=True)
-        write_csv(RESULTS / f"memory_all{tag}.csv", rows)
+        write_csv(RESULTS / f"memory_all{tag}.csv", merge_rows(RESULTS / f"memory_all{tag}.csv", rows))
 
 
 if __name__ == "__main__":

@@ -89,7 +89,7 @@ def saving(mems: dict) -> None:
     ax.set_yticks([-i for i in range(len(rows))], [f"{o}, {SETTINGS[s]}" for o, s in rows])
     ax.set_ylim(-len(rows) + 0.4, 0.8)
     ax.set_xlim(0, 55)
-    ax.set_xlabel(f"Memory saved after load, each dot one of {len(pairs)} pairs (%)")
+    ax.set_xlabel("Memory saved after load, each dot one pair (%)")
     save(fig, "saving.svg")
 
 
@@ -374,7 +374,8 @@ def page(refs: dict, mems: dict) -> None:
             "ort": env["onnxruntime"], "cpu": env["cpu"], "threads": env["threads"], "platform": env["os"],
             "pairs": [{"pair": e["pair"], "repo": repo_id(e["pair"]),
                        **{c: mem[(e["pair"], c)] for c in ("v1-default", "v2-default", "v1-qdq_off", "v2-qdq_off")},
-                       "identical": all(same[(e["pair"], s)] for s in SETTINGS)} for e in sources()],
+                       "identical": all(same[(e["pair"], s)] for s in SETTINGS)} for e in sources()
+                      if (e["pair"], "v1-default") in mem],
             "reference": [{"pair": r["pair"], "config": r["config"], "load": float(r["load_mib"]),
                            "peak": float(r["batch_peak_mib"]), "ms": float(r["ms_per_step"])} for r in refs[os_]],
         }

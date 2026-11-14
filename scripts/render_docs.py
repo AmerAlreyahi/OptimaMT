@@ -49,16 +49,19 @@ def main() -> None:
         v.update({pre + "ort": env["onnxruntime"], pre + "os": env["os"], pre + "cpu": env["cpu"],
                   pre + "cores": str(env["logical_cpus"]), pre + "ram": str(env["ram_gb"]),
                   pre + "python": env["python"], pre + "threads": str(env["threads"])})
+        ps = [p for p in pairs if (p, "v1-default") in mem]  # the pairs measured on this OS
+        v[pre + "pairs"] = str(len(ps))
+        v[pre + "unmeasured"] = ", ".join(p for p in pairs if p not in ps)
         for s in SETTINGS:
-            saved = [mem[(p, "v1-" + s)] - mem[(p, "v2-" + s)] for p in pairs]
-            share = [100 * (mem[(p, "v1-" + s)] - mem[(p, "v2-" + s)]) / mem[(p, "v1-" + s)] for p in pairs]
+            saved = [mem[(p, "v1-" + s)] - mem[(p, "v2-" + s)] for p in ps]
+            share = [100 * (mem[(p, "v1-" + s)] - mem[(p, "v2-" + s)]) / mem[(p, "v1-" + s)] for p in ps]
             v[f"{pre}{s}_saved_min"] = f"{min(saved):.0f}"
             v[f"{pre}{s}_saved_max"] = f"{max(saved):.0f}"
             v[f"{pre}{s}_pct_med"] = f"{med(share):.0f}"
             v[f"{pre}{s}_pct_min"] = f"{min(share):.0f}"
             v[f"{pre}{s}_pct_max"] = f"{max(share):.0f}"
-            v[f"{pre}{s}_v1_med"] = f"{med(mem[(p, 'v1-' + s)] for p in pairs):.0f}"
-            v[f"{pre}{s}_v2_med"] = f"{med(mem[(p, 'v2-' + s)] for p in pairs):.0f}"
+            v[f"{pre}{s}_v1_med"] = f"{med(mem[(p, 'v1-' + s)] for p in ps):.0f}"
+            v[f"{pre}{s}_v2_med"] = f"{med(mem[(p, 'v2-' + s)] for p in ps):.0f}"
         for c in ("v1-default", "v1-qdq_off", "v2-qdq_off", "v2-default"):
             key = c.replace("-", "_")
             for name, field, d in (("ms", "ms_per_step", 1), ("peak", "batch_peak_mib", 0), ("load", "load_mib", 0),
@@ -89,6 +92,7 @@ def main() -> None:
     v["all_runs"] = str(len(runs))
     v["identical_tokens"] = f"{sum(int(r['tokens']) for r in runs):,}"
     v["pairs"] = str(len(pairs))
+    v["win_note"] = (f"Measured on Linux only: {v['win_unmeasured']}." if v["win_unmeasured"] else "")
     v["ref_pairs"] = ", ".join(REFERENCE)
 
     t = ["| Pair | Vocabulary | Defaults (MiB) | qdq off (MiB) | Identical | Model |", "|---|---:|---:|---:|---|---|"]

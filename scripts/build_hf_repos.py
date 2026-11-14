@@ -22,7 +22,7 @@ from common import (CACHE, CFG, DEC, HF, OSES, RESULTS, ROOT, collection_url, do
 
 LANGS = {"ar": "Arabic", "de": "German", "en": "English", "es": "Spanish", "fr": "French", "hi": "Hindi",
          "id": "Indonesian", "it": "Italian", "ja": "Japanese", "ko": "Korean", "nl": "Dutch", "pl": "Polish",
-         "ru": "Russian", "th": "Thai", "uk": "Ukrainian", "vi": "Vietnamese", "zh": "Chinese"}
+         "pt": "Portuguese", "ru": "Russian", "th": "Thai", "uk": "Ukrainian", "vi": "Vietnamese", "zh": "Chinese"}
 EXPORT_FILES = ["config.json", "generation_config.json", "special_tokens_map.json", "tokenizer.json",
                 "tokenizer_config.json", "quantize_config.json", "target.spm"]
 UPSTREAM_FILES = ["config.json", "generation_config.json", "tokenizer_config.json", "target.spm"]
@@ -146,6 +146,7 @@ def card(e: dict, files: list[dict]) -> str:
         results_url=results_url(), results_name=results_url().split("spaces/")[1],
         py_lang=f' --lang "{token}"' if token else "", py_text=example,
         ort=json.loads((RESULTS / "environment.json").read_text(encoding="utf-8"))["onnxruntime"], lang_note=lang_note,
+        hosts="Linux; Windows in a VM" if "Windows" in mems else "Linux only, not yet measured on Windows",
         github=CFG["github_repo"], count=len(sources()), scheme=scheme(), used_in=used_in(),
         collection_url=collection_url(), speedup=headline()["speedup"],
         files_note="Only `onnx/decoder_model_merged_quantized.onnx` is rebuilt; every other file is the original, byte "
@@ -171,6 +172,8 @@ def org_card() -> None:
             sub[f"{pre}{key}_v2"] = f"{statistics.median(val[(p, 'v2-' + s)] for p in pairs):.0f}"
             cut = statistics.median(100 * (1 - val[(p, "v2-" + s)] / val[(p, "v1-" + s)]) for p in pairs)
             sub[f"{pre}{key}_pct"] = f"{-cut:.0f}"
+        if suffix:
+            sub["win_count"] = str(len(pairs))
     text = Template((ROOT / "templates" / "org_card.md").read_text(encoding="utf-8")).substitute(
         name=CFG["name"], long_name=CFG["long_name"], tagline=tagline(), count=len(sources()),
         results=results_url(), github=CFG["github_repo"], example=repo_id("en-ar"), scheme=scheme(),
